@@ -52,6 +52,8 @@ menusLinks:
     url: /
   - title: 关于
     url: /about.html
+  - title: 收藏集
+    url: http://collection.yukapril.com
 
 # 栏目列表
 # 需要手动编写, 放置在categories目录下
