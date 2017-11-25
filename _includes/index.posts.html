@@ -1,0 +1,26 @@
+<section class="g-posts g-block f-w960">
+    <p class="title"><span>ARTICLES</span></p>
+    {% for post in paginator.posts %}
+    {% include index.post.html %}
+    {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+<section class="g-pagination f-w960 f-tac f-cf">
+    {% if paginator.previous_page %}
+    <a class="f-dib pre" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+        <span>&lt;</span>
+    </a>
+    {% else %}
+    <span class="f-dib pre"><span>&lt;</span></span>
+    {% endif %}
+    <span class="f-dib mid">PAGE {{paginator.page}} OF {{paginator.total_pages}}</span>
+    {% if paginator.next_page %}
+    <a class="f-dib next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+        <span>&gt;</span>
+    </a>
+    {% else %}
+    <span class="f-dib next"><span>&gt;</span></span>
+    {% endif %}
+</section>
+{% endif %}

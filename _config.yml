@@ -1,0 +1,101 @@
+# ====config 设置====
+# 依赖组件
+plugins: [jekyll-paginate]
+
+# 本地服务器 
+host: 0.0.0.0
+port: 4001
+
+# 时区
+timezone: Asia/Shanghai
+
+# 代码高亮模式
+highlighter: rouge
+
+# markdown语法
+markdown: kramdown
+
+
+# 根目录设置
+# 如果是根目录, 不要填写'/', 直接留空就行
+# 如果是非根目录访问, 如http://abc.com/blog, 此处填写'/blog'
+baseurl:
+
+# 分页设置
+paginate: 10
+
+# 分页形式
+paginate_path: "page:num"
+
+# 链接形式
+permalink: /:year/:month/:day/:title.html
+
+
+# ====site info 站点信息====
+# 站点地址：用于本站链接及生成sitemap使用
+# 例：http://example.com
+website: http://yukapril.com
+
+# 标题: 在底部版权位置显示，以及页面meta标签（SEO）
+title: yukaPriL上午茶时间
+
+# 站点描述和关键词 仅作用于页面meta标签使用(SEO)
+description: yukaPriL的上午茶时间，yukaPriL的主页，yukaPriL的博客，yukaPriL的技术博客。银色的旋律，记忆的水音。
+keywords: yukaPriL,jekyll,simack,小站,博客
+
+
+# 站内导航
+# 需要使用'/'开头
+# md文章，会被转码为html文章，所以扩展名也为html
+menusLinks:
+  - title: 首页
+    url: /
+  - title: 关于
+    url: /about.html
+
+# 栏目列表
+# 需要手动编写, 放置在categories目录下
+categoryLinks:
+  - title: 随笔
+    url: /categories/normal.html
+  - title: 软件推荐
+    url: /categories/share.html
+  - title: 前端研究
+    url: /categories/f2e.html
+  - title: 编程学习
+    url: /categories/code.html
+  - title: 键盘
+    url: /categories/keyboard.html
+  - title: 高等数学
+    url: /categories/mathematics.html
+  - title: codewars
+    url: /categories/codewars.html
+  - title: simack
+    url: /categories/simack.html
+
+
+# 友情链接(此链接在新窗口打开)
+friendLinks:
+  - title: simack
+    url: https://github.com/yukapril/jekyll-theme-simack
+  - title: GitHub
+    url: https://github.com/yukapril
+  - title: Weibo
+    url: http://weibo.com/119880129
+  - title: yukaPriL下午茶时间
+    url: http://yukapril.lofter.com
+  - title: 每个博客都有它的历史
+    url: http://lemmychrist.blog.163.com
+
+
+# 评论配置
+comments:
+  status: true
+
+# 统计分析
+# 为了了兼容各平台，尤其是百度、CNZZ等高级统计分析（事件触发分析）
+# 请自行在`_includes/user.analysis.html`中修改
+
+
+# 备案信息
+miibeian: 京ICP备15045677号-1

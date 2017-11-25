@@ -1,0 +1,22 @@
+<footer class="g-footer">
+    <div class="f-w960">
+        <div class="links">
+            <ul class="list">
+                {% for link in site.friendLinks %}
+                <li class="{% if forloop.last %}last{% endif %}"><a href="{{link.url}}" target="_blank" rel="nofollow">{{link.title}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="copyright">
+            &copy;{{site.time|date: "%Y"}}&nbsp;<a href="{{site.website}}">{{site.title}}</a>.
+            Powered by <a href="http://jekyllrb.com" target="_blank" rel="nofollow">Jekyll</a>.&nbsp;
+            Theme by <a href="https://github.com/yukapril/jekyll-theme-simack" target="_blank" rel="nofollow">simack</a>.
+            {% if site.miibeian %}
+            <a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">{{site.miibeian}}</a>
+            {% endif %}
+            </ul>
+        </div>
+    </div>
+</footer>

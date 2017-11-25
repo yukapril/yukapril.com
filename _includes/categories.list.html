@@ -1,0 +1,17 @@
+<div class="g-posts g-block f-w960">
+    <p class="title"><span>{{include.param}}</span></p>
+    {% if site.categories.[include.param].size == null %}
+    <span style="white-space: pre;line-height: 0;font-family: monospace;">
+ _
+| |__ _ _ __ _
+| '_ \| | | |/ _` |
+| |_) | |_| | (_| |
+|_.__/ \__,_|\__, |
+             |___/
+    </span>
+    <p class="no-article">无相应文章~</p>
+    {% endif %}
+    {% for post in site.categories.[include.param] %}
+    {% include index.post.html %}
+    {% endfor %}
+</div>

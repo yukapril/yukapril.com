@@ -1,0 +1,45 @@
+<article class="post-item{% if post.imgUrl != null %} image{% endif %}">
+    <div class="f-cf">
+        <div class="left">
+            <time datetime="{{ post.date | date: '%F' }}">
+                <span class="time1">{{ post.date | date: '%d' }}</span>
+                <span class="time2">{{ post.date | date: '%b.%Y' }}</span>
+            </time>
+            <div class="cat">
+                {% for cat in post.categories %}<span>{{cat}}</span>{% endfor %}
+            </div>
+        </div>
+        <div class="right">
+            <h2 class="post-source">
+                {% if post.categories.size > 0 %}
+                <div class="cat f-dib">
+                    {% for cat in post.categories %}
+                    <span>{{cat}}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% if post.tags.size > 0 %}
+                &nbsp;
+                <div class="tags f-dib">
+                    <span>#</span>
+                    {% for tag in post.tags %}
+                    <span>{{tag}}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </h2>
+            <h1 class="post-title">
+                {% if post.jumpUrl != nil %}
+                <a href="{{ post.jumpUrl }}" target="_blank">{{ post.title }}</a>
+                {% else %}
+                <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">{{ post.title }}</a>
+                {% endif %}
+            </h1>
+            <div class="post-excerpt">{{ post.excerpt | excerpt_separator:""| strip_html }}</div>
+        </div>
+        <div class="post-image"><img src="{{post.imgUrl}}"></div>
+    </div>
+    {% if forloop.last != true %}
+    <div class="sep"></div>
+    {% endif %}
+</article>

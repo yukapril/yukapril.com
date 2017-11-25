@@ -1,0 +1,29 @@
+--- 
+layout: null 
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>{{site.website}}</loc>
+        <priority>1.00</priority>
+        <lastmod>{{site.time | date: "%Y-%m-%d"}}</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    {% for cat in site.categoryLinks %}
+    <url>
+        <loc>{{site.website}}{{site.baseurl}}{{cat.url}}</loc>
+        <priority>0.5</priority>
+        <lastmod>{{site.time | date: "%Y-%m-%d"}}</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    {% endfor %} 
+    {% for post in site.posts limit:100 %}
+    <url>
+        <loc>{{site.website}}{{site.baseurl}}{{post.url}}</loc>
+        <priority>0.5</priority>
+        <lastmod>{{post.date | date: "%Y-%m-%d"}}</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    {% endfor %}
+</urlset>

@@ -1,0 +1,22 @@
+<header class="g-header">
+    <div class="links">
+        <ul class="list f-w960">
+            {% for link in site.menusLinks %}
+            <li><a class="f-links-x" href="{{site.baseurl}}{{link.url}}">{{link.title}}</a></li>
+            {% endfor %}
+            <li class="cat">
+                <p id="J_Header_Cat">分类</p>
+                <ul class="cat-list">
+                    {% for cat in site.categoryLinks %}
+                    <li><a class="" href="{{site.baseurl}}{{cat.url}}">{{cat.title}}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="g-banner">
+        <div class="wrapper">
+            <h1>{{site.title}}</h1>
+        </div>
+    </div>
+</header>

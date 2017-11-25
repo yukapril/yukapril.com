@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+{% include common.head.html %}
+<body>
+{% include common.header.html %}
+<div class="g-main" id="J_Main">
+    <article class="g-article f-w960">
+        <h1 class="title f-tac">{{page.title}}</h1>
+        <h3 class="source f-tac">
+            <time datetime="{{ page.date | date: '%F' }}">{{ page.date | date: '%F' }}</time>
+            {% if page.categories.size > 0 %}
+            &nbsp;
+            <div class="cat f-dib">
+                {% for cat in page.categories %}
+                <span>{{cat}}</span>
+                {% endfor %}
+            </div>
+            {% endif%}
+        </h3>
+        <div class="content markdown-body">{{page.content}}</div>
+        {% if page.tags.size > 0 %}
+        <div class="tags">
+            <span>#</span>
+            {% for tag in page.tags %}
+            <span>{{tag}}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </article>
+    {% include user.page.foot.html %}
+    {% if page.nocomments != true %}
+    <div class="g-comments f-w960">
+        {% if site.comments.status == true %}
+        {% include user.comments.html %}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% include common.scripts.html %}
+</body>
+</html>
+

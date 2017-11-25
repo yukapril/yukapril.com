@@ -1,0 +1,8 @@
+<div class="g-category g-block f-w960">
+    <p class="title"><span>CATEGORIES</span></p>
+    <ul class="list f-cf">
+        {% for cat in site.categoryLinks %}
+        <li><a class="f-links-x" href="{{site.baseurl}}{{cat.url}}">{{cat.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
