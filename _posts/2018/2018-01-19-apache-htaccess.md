@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "虚拟主机 Apache 下一个目录划分多个域名使用"
+title: "虚拟主机 Apache 一个目录划分多个域名使用"
 date: 2018-01-19 22:52:00 +8:00
 categories: [前端研究]
 tags:  [apache, htaccess]
