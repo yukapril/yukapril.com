@@ -123,7 +123,11 @@ var Checkbox = function () {
 ```js
 new UglifyJSPlugin({
     compress: {screw_ie8: false},
-    mangle: {except: ['$']},
+    output: {screw_ie8: false},
+    mangle: {
+      screw_ie8: false, 
+      except: ['$']
+    },
     support_ie8: true
 })
 ```
