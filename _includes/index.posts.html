@@ -7,8 +7,12 @@
 
 {% if paginator.total_pages > 1 %}
 <section class="g-pagination f-w960 f-tac f-cf">
-    {% if paginator.previous_page %}
-    <a class="f-dib pre" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+    {% if paginator.previous_page == 1 %}
+    <a class="f-dib pre" href="/">
+        <span>&lt;</span>
+    </a>
+    {% elsif paginator.previous_page > 1 %}
+    <a class="f-dib pre" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | append: '/index.html' }}">
         <span>&lt;</span>
     </a>
     {% else %}
@@ -16,7 +20,7 @@
     {% endif %}
     <span class="f-dib mid">PAGE {{paginator.page}} OF {{paginator.total_pages}}</span>
     {% if paginator.next_page %}
-    <a class="f-dib next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+    <a class="f-dib next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | append: '/index.html' }}">
         <span>&gt;</span>
     </a>
     {% else %}
