@@ -49,7 +49,7 @@ var bool2 = new Boolean(true); // object
 
 来看张图：
 
-![image](http://cdn0.yukapril.com/blog/2017-02-26-javascript-proto.png-wm.black)
+![image](https://cdn0.yukapril.com/blog/2017-02-26-javascript-proto.png-wm.black)
 
 对象 `obj` 的父辈是 `Object`，对象 `arr` 的父辈是 `Array`。
 
@@ -118,7 +118,7 @@ console.log(p.canSpeak); // true
 
 我们查看下这个对象的结构：
 
-![image](http://cdn0.yukapril.com/blog/2017-02-26-javascript-prototype.png-wm.black)
+![image](https://cdn0.yukapril.com/blog/2017-02-26-javascript-prototype.png-wm.black)
 
 当我们访问 `p.canSpeak`时候，由于对象上本身没有 `canSpeak` 方法，就去它的原型去找此方法。说白了，自己没有，就去看看父辈那里有没有这种方法。
 
@@ -136,7 +136,7 @@ console.log(p.canSpeak); // 123
 
 我们看看它的结果：
 
-![image](http://cdn0.yukapril.com/blog/2017-02-26-javascript-prototype2.png-wm.black)
+![image](https://cdn0.yukapril.com/blog/2017-02-26-javascript-prototype2.png-wm.black)
 
 这就说明了，如果自己本身有这个方法，是不会去父辈（原型链）那里寻找的。
 

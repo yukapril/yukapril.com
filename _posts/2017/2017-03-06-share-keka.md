@@ -4,7 +4,7 @@ title: "Keka - 可视化多格式压缩工具 [MAC]"
 date: 2017-03-06 21:42:00 +8:00
 categories: [软件推荐]
 tags:  []
-imgUrl: http://cdn0.yukapril.com/blog/2017-03-06-share-keka.png-wm.black
+imgUrl: https://cdn0.yukapril.com/blog/2017-03-06-share-keka.png-wm.black
 ---
 
 在 MAC 下，想找一款好用的压缩软件，绝对很难。我找了很久，也试过了很多，基本上没有特别好用的。
@@ -17,13 +17,13 @@ imgUrl: http://cdn0.yukapril.com/blog/2017-03-06-share-keka.png-wm.black
 
 除去 rar，我觉得用的最顺手的就是 Keka 了。
 
-![image](http://cdn0.yukapril.com/blog/2017-03-06-share-keka.png-wm.black)
+![image](https://cdn0.yukapril.com/blog/2017-03-06-share-keka.png-wm.black)
 
 选好要压缩的格式，比如 Zip，还可以进行选项配置。之后直接把目录或文件拖拽到软件界面上就 OK 了。
 
 当然，他还可以有默认配置。绝对算是好用。
 
-![image](http://cdn0.yukapril.com/blog/2017-03-06-share-keka2.png-wm.black)
+![image](https://cdn0.yukapril.com/blog/2017-03-06-share-keka2.png-wm.black)
 
 不仅如此，Keka 还能解压缩。同样是用它打开压缩文件就可以了。和系统一样，自动解压到当前目录。不过我还是喜欢 (Dr.Unarchiver)[http://yukapril.com/2016/11/18/share-drunarchiver.html]
 

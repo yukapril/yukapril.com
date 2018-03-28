@@ -13,5 +13,5 @@ tags:  [恋爱, 长辈相处]
 [端午节叫男朋友上门，家人要他带身份证和毕业证，男朋友很生气，说这是作践他的人格，硬是不带，怎么办？](https://www.zhihu.com/question/60416551)
 
 <video width="320" height="240" controls>
-<source src="http://cdn0.yukapril.com/blog/2017-05-31-before-marry.mp4" type="video/mp4">
+<source src="https://cdn0.yukapril.com/blog/2017-05-31-before-marry.mp4" type="video/mp4">
 </video>

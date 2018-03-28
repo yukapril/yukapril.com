@@ -4,7 +4,7 @@ title: "codewars - Father and son"
 date: 2016-10-31 22:14:00 +8:00
 categories: [codewars]
 tags:  []
-imgUrl: http://cdn0.yukapril.com/blog/logo-codewars.png-logo
+imgUrl: https://cdn0.yukapril.com/blog/logo-codewars.png-logo
 ---
 
 在codewars上面做题，有这样[一道题](https://www.codewars.com/kata/shortest-code-father-and-son)。
