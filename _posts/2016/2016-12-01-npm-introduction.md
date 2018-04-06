@@ -2,7 +2,7 @@
 layout: post
 title: "node npm入门"
 date: 2016-12-01 00:18:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [node,npm]
 ---
 

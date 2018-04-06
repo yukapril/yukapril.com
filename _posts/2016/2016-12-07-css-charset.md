@@ -2,7 +2,7 @@
 layout: post
 title: "CSS编码引发的问题"
 date: 2016-12-07 22:18:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [css,编码]
 ---
 

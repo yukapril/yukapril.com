@@ -2,7 +2,7 @@
 layout: post
 title: "JS的__proto__ prototype constructor理解"
 date: 2017-02-26 23:51:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [js, proto, prototype, constructor]
 ---
 

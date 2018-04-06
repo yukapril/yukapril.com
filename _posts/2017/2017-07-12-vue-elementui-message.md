@@ -2,7 +2,7 @@
 layout: post
 title: "elementUI Message 独立引入的用法"
 date: 2017-07-12 13:04:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [vue,elementUI]
 ---
 

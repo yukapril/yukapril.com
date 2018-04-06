@@ -60,20 +60,20 @@ menusLinks:
 categoryLinks:
   - title: 随笔
     url: /categories/normal.html
-  - title: 软件推荐
+  - title: 软件
     url: /categories/share.html
-  - title: 前端研究
+  - title: 前端
     url: /categories/f2e.html
-  - title: 编程学习
+  - title: 编程
     url: /categories/code.html
   - title: 键盘
     url: /categories/keyboard.html
-  - title: 高等数学
+  - title: 数学
     url: /categories/mathematics.html
   - title: codewars
     url: /categories/codewars.html
-  - title: simack
-    url: /categories/simack.html
+  - title: theme
+    url: /categories/theme.html
 
 
 # 友情链接(此链接在新窗口打开)

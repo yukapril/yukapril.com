@@ -2,7 +2,7 @@
 layout: post
 title: "学习 React - MobX"
 date: 2017-06-03 14:16:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [react,mobx]
 ---
 

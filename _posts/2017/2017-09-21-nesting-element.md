@@ -2,7 +2,7 @@
 layout: post
 title: "嵌套结构的处理与渲染"
 date: 2017-09-21 21:45:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [js,render]
 ---
 

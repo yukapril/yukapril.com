@@ -2,7 +2,7 @@
 layout: post
 title: "js 模板编译的实现"
 date: 2017-01-09 21:03:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [模板,编译]
 ---
 

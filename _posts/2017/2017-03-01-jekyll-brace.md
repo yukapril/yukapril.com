@@ -2,7 +2,7 @@
 layout: post
 title: "jekyll 下文章无法显示双大括号{{ }}和{% %}的处理"
 date: 2017-03-01 21:25:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [jekyll,括号,转义]
 ---
 

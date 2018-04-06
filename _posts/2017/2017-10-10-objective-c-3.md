@@ -2,7 +2,7 @@
 layout: post
 title: "Objective-C 学习（三） - 内存管理 KVC"
 date: 2017-10-10 22:23:00 +8:00
-categories: [编程学习]
+categories: [编程]
 tags:  [Objective-C]
 ---
 

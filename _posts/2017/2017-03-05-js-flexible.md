@@ -2,7 +2,7 @@
 layout: post
 title: "移动端采用flexible布局 安卓机华为vivo 10rem大于屏幕宽度的解决办法"
 date: 2017-03-05 22:35:00 +8:00
-categories: [前端研究]
+categories: [前端]
 tags:  [flexible]
 ---
 

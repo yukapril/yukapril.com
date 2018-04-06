@@ -2,7 +2,7 @@
 layout: post
 title: "Objective-C 学习（二）- NSDictionary NSSet 类型转换 NSData NSError"
 date: 2017-10-08 18:03:00 +8:00
-categories: [编程学习]
+categories: [编程]
 tags:  [Objective-C]
 ---
 

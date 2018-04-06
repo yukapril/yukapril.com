@@ -2,7 +2,7 @@
 layout: post
 title: "Keka - 可视化多格式压缩工具 [MAC]"
 date: 2017-03-06 21:42:00 +8:00
-categories: [软件推荐]
+categories: [软件]
 tags:  []
 imgUrl: https://cdn0.yukapril.com/blog/2017-03-06-share-keka.png-wm.black
 ---

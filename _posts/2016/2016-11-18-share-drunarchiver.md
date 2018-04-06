@@ -2,7 +2,7 @@
 layout: post
 title: "Dr.Unarchiver - 可视化解压缩软件 [MAC]"
 date: 2016-11-18 23:22:00 +8:00
-categories: [软件推荐]
+categories: [软件]
 tags:  []
 imgUrl: https://cdn0.yukapril.com/blog/2016-11-18-drunarchiver.png-wm.black
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: "Shadowsocks 影梭使用"
 date: 2017-03-20 23:58:00 +8:00
-categories: [软件推荐]
+categories: [软件]
 tags:  [影梭,shadowsocks,翻墙]
 ---
 
