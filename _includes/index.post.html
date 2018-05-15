@@ -37,7 +37,9 @@
             </h1>
             <div class="post-excerpt">{{ post.excerpt | excerpt_separator:""| strip_html }}</div>
         </div>
+        {% if post.imgUrl %}
         <div class="post-image"><img src="{{post.imgUrl}}"></div>
+        {% endif %}
     </div>
     {% if forloop.last != true %}
     <div class="sep"></div>
