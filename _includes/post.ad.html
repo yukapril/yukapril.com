@@ -1,0 +1,31 @@
+<style>
+    @-webkit-keyframes hue {
+        from {
+            -webkit-filter: hue-rotate(0deg);
+        }
+        to {
+            -webkit-filter: hue-rotate(-360deg);
+        }
+    }
+
+    .article-tips {
+        margin-bottom: 1em;
+        color: red;
+        background-image: -webkit-linear-gradient(358deg, #f35626, #feab3a);
+        background-image: linear-gradient(92deg, #f35626, #feab3a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-animation: hue 10s infinite linear;
+        animation: hue 10s infinite linear;
+    }
+
+    .article-tips p {
+        margin: 0;
+    }
+</style>
+<div class="article-tips">
+    <p>+----------------------------------+</p>
+    <p>&nbsp;打开支付宝首页搜索“7098292”，即可领红包</p>
+    <p>+----------------------------------+</p>
+</div>
