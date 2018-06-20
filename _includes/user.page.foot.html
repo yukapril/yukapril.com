@@ -3,7 +3,7 @@
         margin: 2rem 0;
         text-align: center;
     }
-    
+
     .u-reward button {
         padding: .4rem 1rem;
         font-size: 1rem;
@@ -12,13 +12,13 @@
         border-radius: 6px;
         color: #fff;
     }
-    
+
     .u-reward-box {
         display: none;
         opacity: 0;
         transition: all 0.8s linear;
     }
-    
+
     .u-reward-bg {
         position: fixed;
         top: 0;
@@ -28,7 +28,7 @@
         background: rgba(0, 0, 0, .2);
         z-index: 998;
     }
-    
+
     .u-reward-block {
         position: fixed;
         top: 20%;
@@ -43,24 +43,25 @@
         box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
         box-sizing: border-box;
     }
-    
+
     .u-reward-block .close {
         text-align: right;
     }
-    
+
     .u-reward-block .close span {
         cursor: pointer;
     }
-    
+
     .u-reward-block img {
         width: 45%;
     }
-    
+
     @media screen and (max-width: 650px) {
         .u-reward {
             display: none;
         }
-        .u-reward-block{
+
+        .u-reward-block {
             width: 80%;
             left: 0;
             margin: 0 10%
@@ -81,43 +82,43 @@
     </div>
 </div>
 <script>
-var btnReward = document.getElementById('J_RewardBtn');
-var boxReward = document.getElementById('J_RewardBox');
-var bgReward = document.getElementById('J_RewardBg');
-var closeBtn = document.getElementById('J_RewardClose');
-btnReward.addEventListener('click', function() {
-    _hmt.push(['_trackEvent', 'reward', document.title]);
-    boxReward.style.display = 'block';
-    setTimeout(function() {
-        boxReward.style.opacity = 1;
-    }, 0);
-}, false);
+    var btnReward = document.getElementById('J_RewardBtn');
+    var boxReward = document.getElementById('J_RewardBox');
+    var bgReward = document.getElementById('J_RewardBg');
+    var closeBtn = document.getElementById('J_RewardClose');
+    btnReward.addEventListener('click', function () {
+        _hmt.push(['_trackEvent', 'reward', document.title]);
+        boxReward.style.display = 'block';
+        setTimeout(function () {
+            boxReward.style.opacity = 1;
+        }, 0);
+    }, false);
 
-bgReward.addEventListener('click', function() {
-    boxReward.style.opacity = 0;
-    setTimeout(function() {
-        boxReward.style.display = 'none';
-    }, 1000);
-}, false);
+    bgReward.addEventListener('click', function () {
+        boxReward.style.opacity = 0;
+        setTimeout(function () {
+            boxReward.style.display = 'none';
+        }, 1000);
+    }, false);
 
-closeBtn.addEventListener('click', function() {
-    boxReward.style.opacity = 0;
-    setTimeout(function() {
-        boxReward.style.display = 'none';
-    }, 1000);
-}, false);
+    closeBtn.addEventListener('click', function () {
+        boxReward.style.opacity = 0;
+        setTimeout(function () {
+            boxReward.style.display = 'none';
+        }, 1000);
+    }, false);
 
-var isWeixinBrowser = function(){
-    var ua = navigator.userAgent;
-    if(/MicroMessenger/i.test(ua) && /Mobile/i.test(ua)){
-        return true;    
+    var isWeixinBrowser = function () {
+        var ua = navigator.userAgent;
+        if (/MicroMessenger/i.test(ua) && /Mobile/i.test(ua)) {
+            return true;
+        }
+        return false;
+    };
+
+    if (isWeixinBrowser()) {
+        document.getElementById('J_ArticleReward').style.display = 'block';
+        document.getElementById('J_RewardAlipay').style.display = 'none';
+        document.getElementById('J_RewardWeixinTips').style.display = 'block';
     }
-    return false;
-};
-
-if(isWeixinBrowser()){
-    document.getElementById('J_ArticleReward').style.display = 'block';
-    document.getElementById('J_RewardAlipay').style.display = 'none';
-    document.getElementById('J_RewardWeixinTips').style.display = 'block';
-}
 </script>
