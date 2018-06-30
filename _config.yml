@@ -78,8 +78,8 @@ categoryLinks:
 
 # 友情链接(此链接在新窗口打开)
 friendLinks:
-  - title: simack
-    url: https://github.com/yukapril/jekyll-theme-simack
+  - title: 名片
+    url: http://jingchen.li
   - title: GitHub
     url: https://github.com/yukapril
   - title: Weibo
