@@ -2,7 +2,7 @@
 layout: post
 title: "GO 语言学习片段"
 date: 2017-03-31 00:09:00 +8:00
-categories: [编程]
+categories: [代码]
 tags:  [go,指针]
 ---
 
