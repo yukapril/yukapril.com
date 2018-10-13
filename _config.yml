@@ -95,7 +95,7 @@ comments:
   status: true
 
 # 统计分析
-# 为了了兼容各平台，尤其是百度、CNZZ等高级统计分析（事件触发分析）
+# 为了兼容各平台，尤其是百度、CNZZ等高级统计分析（事件触发分析）
 # 请自行在`_includes/user.analysis.html`中修改
 
 
