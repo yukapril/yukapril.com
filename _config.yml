@@ -66,8 +66,8 @@ categoryLinks:
     url: /categories/f2e.html
   - title: 代码
     url: /categories/code.html
-  - title: 键盘
-    url: /categories/keyboard.html
+  - title: 外设
+    url: /categories/device.html
   - title: 数学
     url: /categories/mathematics.html
   - title: codewars
