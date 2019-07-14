@@ -25,7 +25,7 @@ p hello!
 **这里我更想说模板。** 写一个最简单的模板。
 
 ```html
-<p>Hello, \{\{name\}\}!</p>
+<p>Hello, { {name} }!</p>
 ```
 
 这个模板用数据`{name:'world'}`渲染后的结果就是：
@@ -58,14 +58,14 @@ p hello!
         for (var item in data) {
             // 遍历data每一个字段
             if (data.hasOwnProperty(item)) {
-                var re = new RegExp('\{\{' + item + '\}\}', 'g');
+                var re = new RegExp('{ {' + item + '} }', 'g');
                 ret = ret.replace(re, data[item]);
             }
         }
         return ret;
     };
 
-    var tpl = "<p>Hello, I'm \{\{name\}\}! \{\{age\}\} years old!</p>";
+    var tpl = "<p>Hello, I'm { {name} }! { {age} } years old!</p>";
     var data = {
         name: 'Jason',
         age: 25
@@ -85,7 +85,7 @@ p hello!
 模板：
 
 ```html
-<p>Hello, I'm \{\{user.name\}\}! \{\{user.age\}\} years old!</p>
+<p>Hello, I'm { {user.name} }! { {user.age} } years old!</p>
 ```
 
 渲染数据是：
@@ -152,17 +152,17 @@ var template = function (tpl) {
 };
 ```
 
-我们接下来要做的是，把`\{\{xxx.xxx\}\}`部分都找出来，替换为`obj.xxx.xxx`就行了。
+我们接下来要做的是，把`{ {xxx.xxx} }`部分都找出来，替换为`obj.xxx.xxx`就行了。
 
 ```js
 var template = function (tpl) {
     // 模板字符串
-    var retStr = tpl.replace(/\{\{(.+?)\}\}/g, 'obj.$1');
+    var retStr = tpl.replace(/{ {(.+?)} }/g, 'obj.$1');
     retStr = 'return "' + retStr + '"';
     return new Function('obj', retStr);
 };
 
-var tpl = "<p>Hello, I'm \{\{user.name\}\}! \{\{user.age\}\} years old!</p>";
+var tpl = "<p>Hello, I'm { {user.name} }! { {user.age} } years old!</p>";
 var render = template(tpl);
 console.log(render);
 ```
@@ -181,12 +181,12 @@ return "<p>Hello, I'm obj.user.name! obj.user.age years old!</p>"
 ```js
 var template = function (tpl) {
     // 模板字符串
-    var retStr = tpl.replace(/\{\{(.+?)\}\}/g, '" + obj.$1 + "');
+    var retStr = tpl.replace(/{ {(.+?)} }/g, '" + obj.$1 + "');
     retStr = 'return "' + retStr + '"';
     return new Function('obj', retStr);
 };
 
-var tpl = "<p>Hello, I'm \{\{user.name\}\}! \{\{user.age\}\} years old!</p>";
+var tpl = "<p>Hello, I'm { {user.name} }! { {user.age} } years old!</p>";
 var data = {
     user: {
         name: 'Jason',
@@ -233,9 +233,9 @@ return "<p>Hello, I'm " + obj.user.name + "! " + obj.user.age + " years old!</p>
 2. 我对逻辑循环等语法进行了设计，比如：
 
 ```html
-\{\{# each hobbys as item \}\}
-    <li>\{\{$index+1\}\}/\{\{$length\}\} - \{\{item\}\}</li>
-\{\{# endeach \}\}
+{ {# each hobbys as item } }
+    <li>{ {$index+1} }/{ {$length} } - { {item} }</li>
+{ {# endeach } }
 ```
 
 我也见有人这里干脆不设计，直接就用原生js语法，那么上面的三步过程，可以调整为两步：第一步解析，第二步当做js语法进行拼接处理。

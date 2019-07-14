@@ -117,7 +117,7 @@ git branch -a                # 列出所有分支
 git merge <branch>          # 分支合并
 git merge --no-ff <branch>  # 分支合并，禁用fast-forward
 git merge --squash <branch> # 将分支多条提交整合并合并
-git rebase -i@yukapril.com               # 交互式变基
+git rebase -i               # 交互式变基
 git cherry-pick <commitId>  # 检出某次提交到当前分支
 ```
 
@@ -318,7 +318,7 @@ grb='git rebase'
 grba='git rebase --abort'
 grbc='git rebase --continue'
 grbd='git rebase develop'
-grbi='git rebase -i@yukapril.com'
+grbi='git rebase -i'
 grbm='git rebase master'
 grbs='git rebase --skip'
 grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
