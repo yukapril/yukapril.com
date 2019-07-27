@@ -37,7 +37,7 @@ archive_type: 'monthly'
 show_count: true
 
 # Miscellaneous
-google_analytics:
+google_analytics: UA-120054388-1
 baidu_analytics: 515a77345b51b4568446b02f666467d3
 favicon: /favicon.ico
 twitter:
