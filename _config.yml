@@ -9,7 +9,7 @@ description: yukaPriL的上午茶时间，yukaPriL的主页，yukaPriL的博客�
 keywords: yukaPriL, yukapril, 博客
 author: yukaPriL
 language: zh-CN
-timezone:
+timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

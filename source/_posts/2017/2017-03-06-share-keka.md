@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Keka - 可视化多格式压缩工具 [MAC]"
-date: 2017-03-06 21:42:00 GMT+0000
+date: 2017-03-06 21:42:00 GMT+0800
 categories: [软件]
 tags:  [keka]
 ---

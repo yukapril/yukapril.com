@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "购买beyond compare"
-date: 2016-10-23 22:25:00 GMT+0000
+date: 2016-10-23 22:25:00 GMT+0800
 categories: [随笔]
 tags:  [beyond compare,bc]
 ---

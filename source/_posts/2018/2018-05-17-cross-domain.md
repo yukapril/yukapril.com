@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "前端 ajax 请求跨域处理"
-date: 2018-05-17 23:23:00 GMT+0000
+date: 2018-05-17 23:23:00 GMT+0800
 categories: [前端]
 tags:  [cross domain,ajax,jquery,axios]
 ---

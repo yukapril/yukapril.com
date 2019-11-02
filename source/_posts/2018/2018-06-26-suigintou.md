@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 入手水银灯
-date: 2018-06-27 00:45:00 GMT+0000
+date: 2018-06-27 00:45:00 GMT+0800
 categories: [随笔]
 tags:  [蔷薇少女,水银灯]
 ---

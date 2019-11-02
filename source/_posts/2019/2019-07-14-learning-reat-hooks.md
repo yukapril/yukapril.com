@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React Hooks 入门
-date: 2019-07-14 10:45:00 GMT+0000
+date: 2019-07-14 10:45:00 GMT+0800
 categories: [前端]
 tags:  [react, hooks]
 ---

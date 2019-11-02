@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 移除自动启动的 Adobe Creative Cloud 
-date: 2018-07-02 21:03:00 GMT+0000
+date: 2018-07-02 21:03:00 GMT+0800
 categories: [随笔]
 tags:  []
 ---

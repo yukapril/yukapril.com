@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "学习 React - MobX"
-date: 2017-06-03 14:16:00 GMT+0000
+date: 2017-06-03 14:16:00 GMT+0800
 categories: [前端]
 tags:  [react,mobx]
 ---

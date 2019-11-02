@@ -1,7 +1,7 @@
 ---
 layout: post
 title: useragent 详解
-date: 2018-10-13 22:02:00 GMT+0000
+date: 2018-10-13 22:02:00 GMT+0800
 categories: [代码]
 tags:  [useragent]
 ---

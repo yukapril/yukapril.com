@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "苹果MAC系统读写NTFS格式u盘硬盘方法"
-date: 2017-04-22 16:04:00 GMT+0000
+date: 2017-04-22 16:04:00 GMT+0800
 categories: [随笔]
 tags:  [MAC,NFTS,U盘]
 ---

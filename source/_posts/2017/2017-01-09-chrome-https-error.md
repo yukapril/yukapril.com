@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "chrome浏览器无法打开htpps网站的处理"
-date: 2017-01-09 00:34:00 GMT+0000
+date: 2017-01-09 00:34:00 GMT+0800
 categories: [随笔]
 tags:  [chrome,https,无法连接]
 ---

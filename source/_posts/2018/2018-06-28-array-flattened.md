@@ -1,7 +1,7 @@
 ---
 layout: post
 title: js 数组扁平化与反扁平化处理（下）
-date: 2018-06-28 00:24:00 GMT+0000
+date: 2018-06-28 00:24:00 GMT+0800
 categories: [前端]
 tags:  [扁平化]
 ---

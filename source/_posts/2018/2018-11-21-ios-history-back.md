@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS safari 后退 js 不执行的问题
-date: 2018-11-21 21:36:00 GMT+0000
+date: 2018-11-21 21:36:00 GMT+0800
 categories: [前端]
 tags:  [ios, safari, history, 后退]
 ---

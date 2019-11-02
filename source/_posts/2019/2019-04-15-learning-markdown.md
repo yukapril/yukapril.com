@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Learning Markdown
-date: 2019-04-15 23:24:00 GMT+0000
+date: 2019-04-15 23:24:00 GMT+0800
 categories: [代码]
 tags:  [markdown]
 ---

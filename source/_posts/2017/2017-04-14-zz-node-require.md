@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[转载] 在 Node.js 中引入模块：你所需要知道的一切都在这里"
-date: 2017-04-14 17:52:00 GMT+0000
+date: 2017-04-14 17:52:00 GMT+0800
 categories: [前端]
 tags:  [node,module,require]
 ---

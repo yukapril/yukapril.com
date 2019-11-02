@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "嵌套结构的处理与渲染"
-date: 2017-09-21 21:45:00 GMT+0000
+date: 2017-09-21 21:45:00 GMT+0800
 categories: [前端]
 tags:  [js,render]
 ---

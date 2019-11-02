@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "codewars - Father and son"
-date: 2016-10-31 22:14:00 GMT+0000
+date: 2016-10-31 22:14:00 GMT+0800
 categories: [codewars]
 tags:  [codewars]
 ---

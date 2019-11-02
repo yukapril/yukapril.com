@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "GO 语言学习片段"
-date: 2017-03-31 00:09:00 GMT+0000
+date: 2017-03-31 00:09:00 GMT+0800
 categories: [代码]
 tags:  [go,指针]
 ---

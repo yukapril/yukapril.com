@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Redux 学习 - reducer 合并
-date: 2019-11-02 23:09:00 GMT+0000
+date: 2019-11-02 23:09:00 GMT+0800
 categories: [前端]
 tags:  [react,redux]
 ---

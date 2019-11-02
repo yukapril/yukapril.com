@@ -1,7 +1,7 @@
 ---
 layout: post
 title: class 的 constructor 什么时候可以不写
-date: 2018-12-30 18:38:00 GMT+0000
+date: 2018-12-30 18:38:00 GMT+0800
 categories: [前端]
 tags:  [constructor]
 ---

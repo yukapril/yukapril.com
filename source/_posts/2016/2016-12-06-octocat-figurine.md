@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "提前获得圣诞礼物 - Octocat Figurine"
-date: 2016-12-06 21:50:00 GMT+0000
+date: 2016-12-06 21:50:00 GMT+0800
 categories: [随笔]
 tags:  [Octocat Figurine,章鱼猫,github]
 photos: [https://cdn0.yukapril.com/blog/2016-12-6-octocat-figurine6.jpg-wm.pic]

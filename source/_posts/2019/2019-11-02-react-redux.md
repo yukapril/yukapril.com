@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Redux 学习 - react-redux
-date: 2019-11-02 15:44:00 GMT+0000
+date: 2019-11-02 15:44:00 GMT+0800
 categories: [前端]
 tags:  [react,redux]
 ---

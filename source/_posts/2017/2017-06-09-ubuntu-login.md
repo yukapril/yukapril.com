@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ubuntu 只能以访客登录的问题处理"
-date: 2017-06-09 21:47:00 GMT+0000
+date: 2017-06-09 21:47:00 GMT+0800
 categories: [随笔]
 tags:  [ubuntu,访客,登录]
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "重装 macOS"
-date: 2018-06-20 23:46:00 GMT+0000
+date: 2018-06-20 23:46:00 GMT+0800
 categories: [随笔]
 tags:  [macOS]
 ---

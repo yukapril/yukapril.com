@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "webpack uglifyJS 在 IE8 下的兼容处理"
-date: 2017-08-05 11:34:00 GMT+0000
+date: 2017-08-05 11:34:00 GMT+0800
 categories: [前端]
 tags:  [webpack,uglifyjs,ie8]
 ---

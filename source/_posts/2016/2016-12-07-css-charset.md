@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CSS编码引发的问题"
-date: 2016-12-07 22:18:00 GMT+0000
+date: 2016-12-07 22:18:00 GMT+0800
 categories: [前端]
 tags:  [css,编码]
 ---

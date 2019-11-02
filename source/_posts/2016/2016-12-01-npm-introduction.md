@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "node npm入门"
-date: 2016-12-01 10:18:00 GMT+0000
+date: 2016-12-01 10:18:00 GMT+0800
 categories: [前端]
 tags:  [node,npm]
 ---

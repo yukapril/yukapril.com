@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hello World!"
-date: 2016-10-15 18:28:00 GMT+0000
+date: 2016-10-15 18:28:00 GMT+0800
 categories: [随笔]
 tags:  []
 ---

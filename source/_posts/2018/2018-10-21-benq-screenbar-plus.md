@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 入手明基 ScreenBar Plus 台灯
-date: 2018-10-21 14:15:00 GMT+0000
+date: 2018-10-21 14:15:00 GMT+0800
 categories: [外设]
 tags:  [benq,screenbar]
 ---
