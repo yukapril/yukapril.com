@@ -178,7 +178,7 @@ const globalReducer = (state = { count: 10 }, action) => {
 export default globalReducer
 ```
 
-reducer 是描述如何修改 `state` 的函数，不能有副作用。同时也必须是同步函数（不能是异步的）。
+reducer 是描述如何修改 `state` 的函数，不能有副作用。同时也必须是同步函数（不能是异步的）。**传入的全局状态，不可修改，必须重新返回的一个新对象。**
 
 第一个参数建议配置默认值。如果 `index.js` 中创建全局 store 没有配置，这里也没配置，会报错。
 
