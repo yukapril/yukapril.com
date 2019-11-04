@@ -37,7 +37,6 @@ sequenceDiagram
     participant modified as modified
     participant stage as stage(Index)
     participant history as history(HEAD)
-    
     work->>modified: 编辑
     modified->>work: git checkout -- file
     modified->>stage: git add
@@ -373,5 +372,5 @@ gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no
 * [Learn Git Branching](https://learngitbranching.js.org/)
 * [git book](https://book.git-scm.com/book/zh/v2)
 
-<script src="/assets/js/mermaid-v7.1.0.min.js"></script>
+<script src="/js/mermaid-v8.4.0.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
