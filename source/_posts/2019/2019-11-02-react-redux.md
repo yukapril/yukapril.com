@@ -164,7 +164,7 @@ class Counter extends React.PureComponent {
 
 #### reducer.js
 
-```js
+```jsx
 const globalReducer = (state = { count: 10 }, action) => {
   switch (action.type) {
     case "INCREMENT":

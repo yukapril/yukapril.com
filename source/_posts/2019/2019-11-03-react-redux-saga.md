@@ -26,7 +26,7 @@ reducer 是负责同步修改 state，这个逻辑不会改变。
 
 #### index.js
 
-```js
+```jsx
   import React from "react"
   import ReactDOM from "react-dom"
   import { Provider } from "react-redux"
@@ -74,7 +74,7 @@ sagaMiddleware.run(saga) // run 必须写到 createStore 之后，否则报错
 
 #### Counter.js
 
-```js
+```jsx
   import React from "react"
   import { connect } from "react-redux"
 

@@ -22,7 +22,7 @@ tags:  [react,redux]
 
 #### reducer.js
 
-```
+```jsx
 + import { combineReducers } from "redux";
 
   const globalReducer = (state = { count: 10 }, action) => {
@@ -78,7 +78,7 @@ tags:  [react,redux]
 
 #### Counter.js
 
-```
+```jsx
   import React from "react"
   import { connect } from "react-redux"
 
