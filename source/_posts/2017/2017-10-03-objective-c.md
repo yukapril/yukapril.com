@@ -2,7 +2,7 @@
 layout: post
 title: "Objective-C 学习（一）- 字符串 数字 数组 NSIndexSet"
 date: 2017-10-03 23:35:00 GMT+0800
-categories: [代码]
+categories: [编程]
 tags:  [Objective-C]
 ---
 

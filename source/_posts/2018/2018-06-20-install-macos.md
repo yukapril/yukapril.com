@@ -2,8 +2,8 @@
 layout: post
 title: "重装 macOS"
 date: 2018-06-20 23:46:00 GMT+0800
-categories: [随笔]
-tags:  [macOS]
+categories: [杂谈]
+tags:  [macOS,重装系统]
 ---
 
 最近觉得 mac 垃圾文件太多了，也懒得清理，就找了了些重装 macOS 的资料，整理下写成文章。

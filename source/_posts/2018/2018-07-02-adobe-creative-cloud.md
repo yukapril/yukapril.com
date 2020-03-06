@@ -2,8 +2,8 @@
 layout: post
 title: 移除自动启动的 Adobe Creative Cloud 
 date: 2018-07-02 21:03:00 GMT+0800
-categories: [随笔]
-tags:  []
+categories: [杂谈]
+tags:  [adobe,cc]
 ---
 
 自从安装了新版 adobe cc 套件，就被默认安装了 Creative Cloud。这玩意装了也就算了，可还是自启动。而且 Mac 下，还不能通过用户管理-开机启动里面关闭掉。

@@ -2,7 +2,7 @@
 layout: post
 title: 静态博客的部署
 date: 2019-08-16 01:07:00 GMT+0800
-categories: [随笔]
+categories: [技术]
 tags:  [blog]
 ---
 

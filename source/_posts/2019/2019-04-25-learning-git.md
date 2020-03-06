@@ -2,7 +2,7 @@
 layout: post
 title: Learning Git
 date: 2019-04-25 22:23:00 GMT+0800
-categories: [代码]
+categories: [编程]
 tags:  [git]
 ---
 
