@@ -3,7 +3,7 @@ layout: post
 title: CSS世界阅读笔记（一）
 date: 2020-02-03 22:18:00 GMT+0800
 categories: [前端]
-tags:  [CSS世界,读书]
+tags:  [css,读书]
 ---
 
 过节实在是无聊，也没办法出门，就拿出书看看，结果收获颇多。
