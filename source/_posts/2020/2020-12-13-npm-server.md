@@ -3,7 +3,7 @@ layout: post
 title: npm 私服 - 搭建和发布篇
 date: 2020-12-13 13:07:00 GMT+0800
 categories: [前端]
-tags:  [npm,私服,Verdaccio,nenus]
+tags:  [npm,私服,Verdaccio,nexus]
 ---
 
 有的时候，我们需要使用 npm 私服，这篇文章就来介绍如何搭建 npm 私服。
