@@ -32,9 +32,10 @@ index_widgets:
 # - tagcloud
 # - archive
 
-# widget behavior
+# Widget behavior
 archive_type: 'monthly'
 show_count: true
+recent_posts_limits: 5
 
 # Miscellaneous
 google_analytics: UA-120054388-1
