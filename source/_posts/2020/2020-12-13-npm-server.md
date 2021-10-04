@@ -105,7 +105,7 @@ npm publish --registry http://localhost:4873/
 
 之后可以到私服地址上看看 `http://localhost:4873/`，能看到自己刚刚发布的包。
 
-![已经发布的包](https://cdn0.yukapril.com/2020-12-13-verdaccio.png-wm.white)
+![已经发布的包](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354342742-79c9953d-e28b-4e36-a0ff-b15806fc2761.png)
 
 通过 Verdaccio 私服，也可以安装其他公网的包：
 
@@ -151,7 +151,7 @@ npm install lodash --registry http://localhost:4873/
 
 **建立 `npm(proxy)`**
 
-![创建 npm proxy](https://cdn0.yukapril.com/2020-12-13-nexus-npm-proxy.png-wm.black)
+![创建 npm proxy](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354341103-096c6bb2-c0aa-4bef-8cbb-a465395d9e74.png)
 
 Name 随意，就是区分，我这里叫做 `npm-proxy`。
 
@@ -171,7 +171,7 @@ npm install xxx --registry http://localhost:8081/repository/npm-proxy/
 
 **建立 `npm(hosted)`**
 
-![建立 npm hosted](https://cdn0.yukapril.com/2020-12-13-nexus-npm-hosted.png-wm.black)
+![建立 npm hosted](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354341005-ba412bb2-77dd-47e9-95c2-b7355d8955fb.png)
 
 Name 随意，就是区分，我这里叫做 `npm-hosted`。
 
@@ -185,15 +185,15 @@ Name 随意，就是区分，我这里叫做 `npm-hosted`。
 
 首先要增加一个 npm 角色组，我分配了所有 npm 的权限。参见如下：
 
-![配置权限](https://cdn0.yukapril.com/2020-12-13-nexus-npm-roles.png-wm.black)
+![配置权限](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354341046-e5db6e20-519c-4a43-a313-05f2dd833b5a.png)
 
 之后新增一个账号，参见如下：
 
-![增加用户](https://cdn0.yukapril.com/2020-12-13-nexus-npm-user.png-wm.black)
+![增加用户](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354342875-4b9e3800-a3af-4d57-9206-b79b9d1c0be5.png)
 
 最后，还要修改下 Realms。把 `npm Bearer Token Realm` 弄到右侧激活区。
 
-![处理 Realms](https://cdn0.yukapril.com/2020-12-13-nexus-npm-realms.png-wm.black)
+![处理 Realms](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354340959-47c21016-c8da-4254-85f6-1c82cdbe9cd2.png)
 
 否则后续操作可能会遇到如下错误：
 
@@ -217,7 +217,7 @@ npm publish --registry http://localhost:8081/repository/npm-hosted/
 
 **建立 `npm(group)`**
 
-![建立 npm group](https://cdn0.yukapril.com/2020-12-13-nexus-npm-group.png-wm.black)
+![建立 npm group](https://cdn.nlark.com/yuque/0/2021/png/86612/1633354340968-a8a887aa-cbe5-4bf1-8ac4-63c0f8f76935.png)
 
 Name 随意，就是区分，我这里叫做 `npm-group`。
 
