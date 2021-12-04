@@ -3,6 +3,7 @@ menu:
   首页: /
   归档: /archives
   收藏集: https://collection.yukapril.com
+  知识森林: https://knowledge.yukapril.com
 rss: /atom.xml
 
 # Content
@@ -20,10 +21,10 @@ widgets:
 
 # Footer
 links:
-  名片: http://jingchen.li
+  名片: https://jingchen.li
   GitHub: https://github.com/yukapril
-  Weibo: http://weibo.com/119880129
-  yukaPriL下午茶时间: http://yukapril.lofter.com
+  Weibo: https://weibo.com/119880129
+  yukaPriL下午茶时间: https://yukapril.lofter.com
 beian: 京ICP备15045677号-1
 
 # display widgets at the bottom of index pages (pagination == 2)
