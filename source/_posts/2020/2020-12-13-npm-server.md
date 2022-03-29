@@ -179,7 +179,7 @@ Name 随意，就是区分，我这里叫做 `npm-hosted`。
 
 返回后，可以看到多了一条 `npm-hosted` 记录。同样的，复制后就获得了地址 `http://localhost:8081/repository/npm-hosted/`。
 
-这个地址不能用于代理，比如 `npm i@yukapril.com xxx`，会提示找不到对应的包。
+这个地址不能用于代理，比如 `npm i xxx`，会提示找不到对应的包。
 
 此时你不能通过 `npm adduser` 来增加账号。需要通过 nexus 来增加用户。
 
