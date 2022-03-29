@@ -27,7 +27,7 @@ npm config set registry http://localhost:8081/repository/npm-group/
 * 临时切换源。命令最后跟上 `--registry` 参数，仅对当前命令生效：
 
 ```sh
-npm i@yukapril.com xxx --registry http://localhost:8081/repository/npm-group/
+npm i xxx --registry http://localhost:8081/repository/npm-group/
 ```
 
 * 使用第三方工具。比如 `nrm`。其本质还是修改 `~/.npmrc`。但是可以实现多个源切换，免去拿小本本自己记录了。
@@ -39,13 +39,13 @@ npm i@yukapril.com xxx --registry http://localhost:8081/repository/npm-group/
 临时通过私服下载包（不推荐）：
 
 ```sh
-npm i@yukapril.com xxx --registry http://localhost:8081/repository/npm-group/
+npm i xxx --registry http://localhost:8081/repository/npm-group/
 ```
 
 或者配置好 `registry`，直接使用 npm：
 
 ```sh
-npm i@yukapril.com xxx
+npm i xxx
 ```
 
 唯独要注意下，使用 nexus 部署的话，需要用 group 的链接，不能用 hosted 链接。因为 hosted 不能下载。
@@ -171,9 +171,9 @@ Current Tags
 这样，我们可以通过各种 tags 来安装不同的版本，比如：
 
 ```sh
-npm i@yukapril.com react  # 不传版本号，等同于 latest
-npm i@yukapril.com react@latest
-npm i@yukapril.com react@next
+npm i react  # 不传版本号，等同于 latest
+npm i react@latest
+npm i react@next
 ```
 
 版本 tag 功能，可以使用 `dist-tag` 来实现。
@@ -187,7 +187,7 @@ npm dist-tag add test1@1.2.0 next
 后续可以通过下列命令安装这个标签版本：
 
 ```sh
-npm i@yukapril.com test1@next
+npm i test1@next
 ```
 
 ## 废弃一个包

@@ -505,4 +505,4 @@ const memoized = useMemo(() => {
 
 根据我这一段时间的使用，基本上没遇到太多坑，也就是参考上文的这些处理方法基本都可解决。
 
-唯独要注意的是，hooks 里面不要使用 `setInterval`，一言难尽，建议看 react 原作者文章（[见此](https://overreacted.io/zh-hans/making-seti@yukapril.comnterval-declarative-with-react-hooks)），解释的很清晰，也有直接用的 `useInterval` 方案。
+唯独要注意的是，hooks 里面不要使用 `setInterval`，一言难尽，建议看 react 原作者文章（[见此](https://overreacted.io/zh-hans/making-setinterval-declarative-with-react-hooks)），解释的很清晰，也有直接用的 `useInterval` 方案。
