@@ -24,11 +24,10 @@ jobs:
         run: npm i && npm run build
 
       - name: Upload COS
-        uses: Bluefissure/tencent-cos-action@v0.1.1
+        uses: zkqiang/tencent-cos-action@v0.1.0
         with:
           args: delete -r -f / && upload -r ./public/ /
           secret_id: ${{ secrets.TENCENT_CLOUD_SECRET_ID }}
           secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
           bucket: ${{ secrets.COS_BUCKET }}
           region: ${{ secrets.COS_REGION }}
-          accelerate: false
