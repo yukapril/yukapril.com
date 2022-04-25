@@ -372,5 +372,5 @@ gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no
 * [Learn Git Branching](https://learngitbranching.js.org/)
 * [git book](https://book.git-scm.com/book/zh/v2)
 
-<script src="/js/mermaid-v8.4.0.min.js"></script>
+<script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/mermaid/8.4.0/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});</script>
