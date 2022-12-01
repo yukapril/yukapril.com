@@ -10,6 +10,14 @@ tags:  [email, 邮箱, 域名邮箱, zoho]
 
 <!-- more -->
 
+> 系列文章：
+> 
+> 1. [再谈域名邮箱](https://www.yukapril.com/2022/11/06/email.html)
+> 2. [域名邮箱操作指南 - zoho 域名邮箱配置方法](https://www.yukapril.com/2022/11/12/email-zoho.html)
+> 3. [域名邮箱操作指南 - 网易域名邮箱配置方法](https://www.yukapril.com/2022/11/20/email-netease.html)
+> 4. [域名邮箱操作指南 - cloudflare 邮件转发](https://www.yukapril.com/2022/11/27/email-cloudflare.html)
+> 5. [域名邮箱操作指南 - Gmail 及 Outlook、网易邮件代发](https://www.yukapril.com/2022/12/01/email-gmail.html)
+
 ## zoho 域名邮箱配置方法
 
 首先是注册 zoho 国际版。访问地址：[https://www.zoho.com](https://www.zoho.com)。注册时候注意选择的地区，不要选 China，我选择了 Japan。其实选择香港、美国估计更好。不过日本的服务器速度也还行。这个地区直接决定你的服务器地址（你访问服务器的域名也会随之确定）。

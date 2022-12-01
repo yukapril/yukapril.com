@@ -10,6 +10,14 @@ tags:  [email, 邮箱, 域名邮箱, 网易]
 
 <!-- more -->
 
+> 系列文章：
+> 
+> 1. [再谈域名邮箱](https://www.yukapril.com/2022/11/06/email.html)
+> 2. [域名邮箱操作指南 - zoho 域名邮箱配置方法](https://www.yukapril.com/2022/11/12/email-zoho.html)
+> 3. [域名邮箱操作指南 - 网易域名邮箱配置方法](https://www.yukapril.com/2022/11/20/email-netease.html)
+> 4. [域名邮箱操作指南 - cloudflare 邮件转发](https://www.yukapril.com/2022/11/27/email-cloudflare.html)
+> 5. [域名邮箱操作指南 - Gmail 及 Outlook、网易邮件代发](https://www.yukapril.com/2022/12/01/email-gmail.html)
+
 ## 网易域名邮箱配置方法
 
 访问地址：[https://ym.163.com](https://ym.163.com)。直接输入手机号完成登录，之后输入域名等用户信息即可创建。
