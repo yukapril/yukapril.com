@@ -18,6 +18,7 @@ widgets:
 # - tag
 - tagcloud
 # - archive
+#- toc
 
 # Footer
 links:
