@@ -76,7 +76,7 @@ const main = async () => {
         for (const gistFileKey of Object.keys(gistInfo.files)) {
           const gistFileInfo = gistInfo.files[gistFileKey]
           console.log(`[QUERY] query content, gistId=${gist.id}, length=${gistFileInfo.content.length}`)
-          const uploadResult = await uploadContent(gistFile.filename, gistFileInfo.content, 'main')
+          const uploadResult = await uploadContent(gistFile.filename, gistFileInfo.content, 'master')
           if (uploadResult?.commit?.sha) {
             console.log(`[UPLOAD] upload success! gistId=${gist.id}`)
             const result = await delGist(gist.id)
