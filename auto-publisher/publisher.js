@@ -5,10 +5,11 @@ const CryptoJS = require('crypto-js')
 const CryptoBase64 = require('crypto-js/enc-base64')
 
 for (const key in process.env) {
-  console.log(`key=${process.env[key]}`)
+  console.log(`${key}=${process.env[key]}`)
 }
 
-console.log('FIND=', process.env.GH_AUTH_SECRET)
+console.log('FIND1=', process.env.GH_AUTH_SECRET)
+console.log('FIND2=', process.env.GH_AUTH_SECRET2)
 
 const auth = ''
 const owner = 'yukapril'

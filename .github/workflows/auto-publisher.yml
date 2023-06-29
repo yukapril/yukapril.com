@@ -23,6 +23,7 @@ jobs:
           cache: npm
         env:
           GH_AUTH_SECRET: ${{ secrets.GH_AUTH_SECRET }}
+          GH_AUTH_SECRET2: ${{ secrets.GH_AUTH_SECRET2 }}
       - run: pwd
       - run: npm i
       - run: node ./publisher.js
