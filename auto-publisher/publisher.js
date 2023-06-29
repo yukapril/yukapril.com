@@ -1,22 +1,23 @@
 'use strict'
 
-const { Octokit } = require('octokit')
+const {Octokit} = require('octokit')
 const CryptoJS = require('crypto-js')
 const CryptoBase64 = require('crypto-js/enc-base64')
 
-console.log(1111, JSON.stringify(process.env))
-
-const Base64 = str => {
-  const wordArray = CryptoJS.enc.Utf8.parse(str)
-  const base64String = CryptoBase64.stringify(wordArray)
-  return base64String
-}
+console.log('cur env:', JSON.stringify(process.env))
 
 const auth = ''
 const owner = 'yukapril'
 const repo = 'yukapril.com'
 
-const octokit = new Octokit({ auth })
+return
+
+const octokit = new Octokit({auth})
+
+const Base64 = str => {
+  const wordArray = CryptoJS.enc.Utf8.parse(str)
+  return CryptoBase64.stringify(wordArray)
+}
 
 const getGistList = async () => {
   const json = await octokit.request('GET /users/yukapril/gists', {
@@ -78,10 +79,10 @@ const main = async () => {
       if (/^\d{4}-\d{2}-\d{2}/.test(gistFile.filename)) {
         console.log(`[FIND] find available gist, gistId=${gist.id}, filename=${gistFile.filename}`)
         const gistInfo = await getGist(gist.id)
-        Object.keys(gistInfo.files).forEach(async gistFileKey => {
+        for (const gistFileKey of Object.keys(gistInfo.files)) {
           const gistFileInfo = gistInfo.files[gistFileKey]
           console.log(`[QUERY] query content, gistId=${gist.id}, length=${gistFileInfo.content.length}`)
-          const uploadResult = await uploadContent(gistFile.filename, gistFileInfo.content, 'dev')
+          const uploadResult = await uploadContent(gistFile.filename, gistFileInfo.content, 'main')
           if (uploadResult?.commit?.sha) {
             console.log(`[UPLOAD] upload success! gistId=${gist.id}`)
             const result = await delGist(gist.id)
@@ -89,7 +90,7 @@ const main = async () => {
               console.log(`[DELETE] delete success! gistId=${gist.id}`)
             }
           }
-        })
+        }
       }
     })
   })
