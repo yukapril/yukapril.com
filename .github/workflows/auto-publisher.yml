@@ -23,11 +23,6 @@ jobs:
           cache: npm
         env:
           GH_AUTH_SECRET: ${{ secrets.GH_AUTH_SECRET }}
-          GH_AUTH_SECRET2: ${{ secrets.GH_AUTH_SECRET2 }}
-          GH_TEST: test
       - run: pwd
       - run: npm i
-      - run: export GH_AUTH_SECRET= ${{ secrets.GH_AUTH_SECRET }}
-      - run: export GH_AUTH_SECRET2= ${{ secrets.GH_AUTH_SECRET2 }}
-      - run: export GH_TEST= test2
-      - run: node ./publisher.js
+      - run: export GH_AUTH_SECRET=${{ secrets.GH_AUTH_SECRET }} node ./publisher.js
