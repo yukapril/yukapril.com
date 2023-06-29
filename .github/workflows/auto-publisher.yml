@@ -6,6 +6,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: auto-publisher
     steps:
       - name: Checkout master
         uses: actions/checkout@v3
@@ -20,6 +24,5 @@ jobs:
         env:
           GH_AUTH_SECRET: ${{ secrets.GH_AUTH_SECRET }}
       - run: pwd
-      - run: cd ./auto-publisher
-      - run: pwd
-      - run: npm i && node ./publisher.js
+      - run: npm i
+      - run: node ./publisher.js
