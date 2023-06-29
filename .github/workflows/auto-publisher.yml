@@ -19,5 +19,7 @@ jobs:
           cache: npm
         env:
           GH_AUTH_SECRET: ${{ secrets.GH_AUTH_SECRET }}
-      - run: cd auto-publisher
+      - run: pwd
+      - run: cd ./auto-publisher
+      - run: pwd
       - run: npm i && node ./publisher.js
