@@ -4,7 +4,11 @@ const {Octokit} = require('octokit')
 const CryptoJS = require('crypto-js')
 const CryptoBase64 = require('crypto-js/enc-base64')
 
-console.log('cur env:', JSON.stringify(process.env))
+for (const key in process.env) {
+  console.log(`key=${process.env[key]}`)
+}
+
+console.log('FIND=', process.env.GH_AUTH_SECRET)
 
 const auth = ''
 const owner = 'yukapril'
