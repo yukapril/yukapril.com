@@ -21,8 +21,6 @@ jobs:
         with:
           node-version: "16"
           cache: npm
-        env:
-          GH_AUTH_SECRET: ${{ secrets.GH_AUTH_SECRET }}
       - run: pwd
       - run: npm i
-      - run: export GH_AUTH_SECRET=${{ secrets.GH_AUTH_SECRET }} node ./publisher.js
+      - run: GH_AUTH_SECRET=${{ secrets.GH_AUTH_SECRET }} node ./publisher.js
