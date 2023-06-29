@@ -11,5 +11,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "16"
-      - run: npm i
-      - run: node auto-publisher.js
+          cache: npm
+        env:
+          GH_AUTH_SECRET: ${{ secrets.GH_AUTH_SECRET }}
+      - run: cd auto-publisher
+      - run: npm i && node publisher.js
