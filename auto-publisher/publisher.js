@@ -1,21 +1,10 @@
-'use strict'
-
 const {Octokit} = require('octokit')
 const CryptoJS = require('crypto-js')
 const CryptoBase64 = require('crypto-js/enc-base64')
 
-
-for (const key in process.env) {
-  console.log(`${key}=${process.env[key]}`)
-}
-
-console.log('FIND1=', process.env.GH_AUTH_SECRET)
-
-const auth = ''
+const auth = process.env.GH_AUTH_SECRET
 const owner = 'yukapril'
 const repo = 'yukapril.com'
-
-return
 
 const octokit = new Octokit({auth})
 
