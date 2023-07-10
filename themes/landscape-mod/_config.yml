@@ -13,10 +13,10 @@ fancybox: false
 # Sidebar
 sidebar: right
 widgets:
-- category
-- recent_posts
-# - tag
-- tagcloud
+  - category
+  - recent_posts
+  # - tag
+  - tagcloud
 # - archive
 #- toc
 
@@ -42,6 +42,7 @@ recent_posts_limits: 5
 # Miscellaneous
 google_analytics: G-906P2DKKHD
 baidu_analytics: 515a77345b51b4568446b02f666467d3
+google_ads: ca-pub-8154725414525944
 favicon: /favicon.ico
 twitter:
 fb_admins:

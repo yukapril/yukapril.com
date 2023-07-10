@@ -1,6 +1,5 @@
 <head>
   <meta charset="utf-8">
-  <%- partial('google-analytics') %>
   <%
   var title = page.title;
 
@@ -32,5 +31,9 @@
     <!-- <link href="https://fonts.loli.net/css?family=Source+Code+Pro" rel="stylesheet" type="text/css"> -->
   <% } %>
   <%- css('css/style') %>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8154725414525944" crossorigin="anonymous"></script>
+
+
+  <% if (theme.google_ads){ %>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= theme.google_ads %>" crossorigin="anonymous"></script>
+  <% } %>
 </head>
