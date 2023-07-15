@@ -18,8 +18,7 @@
   }
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="referrer" content="no-referrer" />
+
   <%- open_graph({twitter_id: theme.twitter, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
     <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml">
@@ -32,8 +31,9 @@
   <% } %>
   <%- css('css/style') %>
 
+  <%- partial('google-analytics') %>
+  <%- partial('baidu-analytics') %>
 
-  <% if (theme.google_ads){ %>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= theme.google_ads %>" crossorigin="anonymous"></script>
-  <% } %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="referrer" content="no-referrer" />
 </head>
