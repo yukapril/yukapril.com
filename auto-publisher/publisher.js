@@ -14,7 +14,7 @@ const Base64 = str => {
 }
 
 const getGistList = async () => {
-  const json = await octokit.request('GET /users/yukapril/gists', {
+  const json = await octokit.request(`GET /users/${owner}/gists`, {
     headers: {
       'X-GitHub-Api-Version': '2022-11-28',
     },
