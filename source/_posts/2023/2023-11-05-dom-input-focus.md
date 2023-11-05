@@ -12,7 +12,7 @@ tags: [ dom, input, focus ]
 
 <!-- more -->
 
-```vue
+```html
 <template>
   <div id="app">
     <span v-if="!editMode">{{ msg }}</span>
@@ -60,7 +60,7 @@ export default {
 
 最终代码如下：
 
-```vue
+```html
 <template>
   <div id="app">
     <span v-if="!editMode">{{ msg }}</span>
