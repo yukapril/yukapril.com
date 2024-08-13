@@ -34,12 +34,12 @@ const getGist = async gistId => {
 }
 
 const delGist = async gistId => {
-  const {response} = await octokit.request(`DELETE /gists/${gistId}`, {
+  const {status} = await octokit.request(`DELETE /gists/${gistId}`, {
     headers: {
       'X-GitHub-Api-Version': '2022-11-28',
     },
   })
-  return response.status === 204
+  return status === 204
 }
 
 const uploadContent = async (filename, content, branch) => {
