@@ -1,6 +1,6 @@
-const {Octokit} = require('octokit')
-const CryptoJS = require('crypto-js')
-const CryptoBase64 = require('crypto-js/enc-base64')
+import {Octokit} from 'octokit'
+import CryptoJS from 'crypto-js'
+import CryptoBase64 from 'crypto-js/enc-base64.js'
 
 const auth = process.env.GH_AUTH_SECRET
 const owner = 'yukapril'
