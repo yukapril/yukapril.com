@@ -2,8 +2,8 @@
 layout: post
 title: 邮箱客户端
 date: 2020-03-05 00:40:00 GMT+0800
-categories: [杂谈]
-tags:  [email, 邮箱, 域名邮箱]
+categories: [ 杂谈 ]
+tags: [ email, 邮箱, 域名邮箱 ]
 ---
 
 上文讲述了多个邮箱如何管理邮件，以及自己的域名邮箱绑定的一些思路。即便使用了邮件代收，那么一个人可能还是有多个邮箱。
@@ -20,7 +20,7 @@ tags:  [email, 邮箱, 域名邮箱]
 
 #### Outlook
 
-![outlook](https://cdn0.yukapril.com/2020-03-04-mail-outlook1.png-wm.black)
+![outlook](https://cdn1.yukapril.com/2020-03-04-mail-outlook1.png)
 
 我最喜欢的客户端。主要是规矩且稳定。而且对 exchange 的支持感觉最好。它支持我最爱用的打标签，而且更换设备也能同步。目前来看，只有 Outlook 一款软件可以做到。
 
@@ -28,13 +28,14 @@ tags:  [email, 邮箱, 域名邮箱]
 
 还有就是“会议”功能，很多年前没有现代钉钉企业微信等软件时候，开会用“会议”，开会前会有提醒，非常实用。不过这几年由于钉钉和企业微信兴起，一般都是聊天工具里面通知了。
 
-由于我几乎从不使用日历，也很少用 TO-DO 类软件，所以 outlook 的一些特色感受不到了。不过 Outlook 就是这种很规矩，没有太多特色，但是很稳定的软件。你挑不出来它什么毛病，但又没有什么特别突出的特色来推荐它。唯一让我气愤的是，**MacOS 版本不支持定时发送，但 Windows 版本就支持**，瞬间感觉被歧视了。
+由于我几乎从不使用日历，也很少用 TO-DO 类软件，所以 outlook 的一些特色感受不到了。不过 Outlook 就是这种很规矩，没有太多特色，但是很稳定的软件。你挑不出来它什么毛病，但又没有什么特别突出的特色来推荐它。唯一让我气愤的是，
+**MacOS 版本不支持定时发送，但 Windows 版本就支持**，瞬间感觉被歧视了。
 
 费用吗，需要专业版 office 365 或者 office 买断版本才行。最便宜的方案就是 office 365 个人购买，或者家庭购买多人使用平摊费用。平摊费用来讲，一年 office 365 大概需要 80 元不到。
 
 #### Foxmail
 
-![Foxmail](https://cdn0.yukapril.com/2020-03-04-mail-foxmail1.png-wm.black)
+![Foxmail](https://cdn1.yukapril.com/2020-03-04-mail-foxmail1.png)
 
 国内肯定很多人用，我周边也是很多同事在用。支持 exchange，但是却需要手动配置一个服务器地址。我发现国外的客户端都不要配置这个的。
 
@@ -48,19 +49,20 @@ tags:  [email, 邮箱, 域名邮箱]
 
 #### 网易邮箱大师
 
-![网易邮箱大师](https://cdn0.yukapril.com/2020-03-04-mail-netease1.png-wm.black)
+![网易邮箱大师](https://cdn1.yukapril.com/2020-03-04-mail-netease1.png)
 
-![网易邮箱大师](https://cdn0.yukapril.com/2020-03-04-mail-netease2.png-wm.black)
+![网易邮箱大师](https://cdn1.yukapril.com/2020-03-04-mail-netease2.png)
 
 我估计也应该有部分用户在用。支持 exchange，同样的需要配置一个服务器地址。好奇怪为啥国内客户端都要配置服务器地址。
 
-整体功能也比较简单，带有星标功能，更换设备不确定能否同步。特色是第一个提出了群发单显（群发邮件时收件人只能看到自己），不过好像 Foxmail windows 版也支持了。网易邮箱大师定时发送、回执、“会议”等功能也支持。可惜 exchange 不支持邮件分类。默认带有发件模板，对于刚入职的新人可能比较合适。
+整体功能也比较简单，带有星标功能，更换设备不确定能否同步。特色是第一个提出了群发单显（群发邮件时收件人只能看到自己），不过好像 Foxmail windows 版也支持了。网易邮箱大师定时发送、回执、“会议”等功能也支持。可惜
+exchange 不支持邮件分类。默认带有发件模板，对于刚入职的新人可能比较合适。
 
 #### Spark (MacOS)
 
-![Spark](https://cdn0.yukapril.com/2020-03-04-mail-spark1.png-wm.black)
+![Spark](https://cdn1.yukapril.com/2020-03-04-mail-spark1.png)
 
-![Spark](https://cdn0.yukapril.com/2020-03-04-mail-spark2.png-wm.black)
+![Spark](https://cdn1.yukapril.com/2020-03-04-mail-spark2.png)
 
 界面美观，功能一应俱全，也兼容 exchange 协议，关键是免费。还支持集成其他第三方服务，反正各个方面都很优秀。
 
@@ -74,9 +76,9 @@ Spark 支持邮箱别名（替身邮箱），但需要服务器支持。说白�
 
 #### Airmail (MacOS)
 
-![Airmail](https://cdn0.yukapril.com/2020-03-04-mail-Airmail1.png-wm.black)
+![Airmail](https://cdn1.yukapril.com/2020-03-04-mail-Airmail1.png)
 
-![Airmail](https://cdn0.yukapril.com/2020-03-04-mail-Airmail2.png-wm.black)
+![Airmail](https://cdn1.yukapril.com/2020-03-04-mail-Airmail2.png)
 
 页面美观，也很棒的软件。感觉比 Spark 还要强大一些。按照邮箱进行分类查阅，比较顺手。默认建立了一系列彩色文件夹，让人耳目一新。它假装支持标签，实际还是建立文件夹。但如果一封邮件有两个标签咋办？比较鸡贼的是他们把邮件复制了两封，分别放到两个文件夹下！所以好处是换台电脑也能识别，就算是换个软件都能识别。
 
