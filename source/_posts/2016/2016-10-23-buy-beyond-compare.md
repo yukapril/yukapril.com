@@ -2,8 +2,8 @@
 layout: post
 title: "购买beyond compare"
 date: 2016-10-23 22:25:00 GMT+0800
-categories: [随笔]
-tags:  [beyond compare,bc]
+categories: [ 随笔 ]
+tags: [ beyond compare,bc ]
 ---
 
 一直在找MAC下的bc（beyond compare），倒还好，不太急。一方面是办公还有windows用，当时找到了bc3的破解版。一方面是bc可以免费试用30天（我总觉得是30次）。
@@ -33,13 +33,14 @@ tags:  [beyond compare,bc]
 > 同一个局域网内，相同注册信息只能有一个机器里的软件能启动，其他机器不能启动。机器上会有同网段提醒。
 
 ### 今天再次去看看
+
 之前记得有一个20% off的优惠，今天又再次去看看，主要是看看能不能支付宝支付。
 
 结果发现20% off是给一个优惠码，购买时候可以输入。
 
 这样发现**奇迹**了，原本30美金的bc，直接变成了24美金！欣喜若狂！！激动的查看支付方式，果真，只能信用卡/PayPal。
 
-![image](https://cdn0.yukapril.com/blog/2016-10-23-buy-bc.png-wm.white)
+![image](https://cdn1.yukapril.com/2016-10-23-buy-bc.png)
 
 还好自己有PayPal。
 
@@ -97,5 +98,5 @@ tags:  [beyond compare,bc]
 
 最后，注册成功！
 
-![image](https://cdn0.yukapril.com/blog/2016-10-23-bc-register.png-wm.white)
+![image](https://cdn1.yukapril.com/2016-10-23-bc-register.png)
 
