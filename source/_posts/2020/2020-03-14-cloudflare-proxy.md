@@ -2,9 +2,9 @@
 layout: post
 title: 使用 cloudflare 实现访问代理
 date: 2020-03-14 18:50:00 GMT+0800
-categories: [技术]
-tags:  [cloudflare,workers,proxy]
-photos: [https://cdn0.yukapril.com/20200314-cloudflare-proxy.png]
+categories: [ 技术 ]
+tags: [ cloudflare,workers,proxy ]
+photos: [ https://cdn1.yukapril.com/2020-03-14-cloudflare-proxy.png ]
 ---
 
 昨天写了一篇文章，讲到可以使用 `nvm` 来部署 node。其中第一步安装的时候，要访问 github 的资源服务器。这一步的访问可能在国内非常不畅。这就需要有一个访问代理来协助。
@@ -23,7 +23,7 @@ photos: [https://cdn0.yukapril.com/20200314-cloudflare-proxy.png]
 
 cloudflare workers 提供本地编程的工具包，但是我的需求很简单，直接在线编辑测试就可以了。
 
-![cloudflare workers](https://cdn0.yukapril.com/20200314-cloudflare-proxy.png)
+![cloudflare workers](https://cdn1.yukapril.com/2020-03-14-cloudflare-proxy.png)
 
 选择页面上的 `Start Building` 开始。之后可以选择右侧的 Workers 栏目进入。
 
