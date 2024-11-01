@@ -30,16 +30,15 @@ reducer 是负责同步修改 state，这个逻辑不会改变。
 import React from "react"
 import ReactDOM from "react-dom"
 import {Provider} from "react-redux"
--import {createStore} from "redux"
-+import {createStore, applyMiddleware} from "redux"
-+import createSagaMiddleware from "redux-saga"
-+import saga from "./sagas"
+import {createStore, applyMiddleware} from "redux"
+import createSagaMiddleware from "redux-saga"
+import saga from "./sagas"
 import reducer from "./reducer.js"
 import Counter from "./Counter"
-+const sagaMiddleware = createSagaMiddleware()
--const store = createStore(reducer)
-+const store = createStore(reducer, applyMiddleware(sagaMiddleware)) 
-+sagaMiddleware.run(saga)
+
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(reducer, applyMiddleware(sagaMiddleware))
+sagaMiddleware.run(saga)
 
 class App extends React.PureComponent {
   render() {
@@ -74,7 +73,7 @@ sagaMiddleware.run(saga) // run 必须写到 createStore 之后，否则报错
 #### Counter.js
 
 ```jsx
-  import React from "react"
+import React from "react"
 import {connect} from "react-redux"
 
 class Counter extends React.PureComponent {
@@ -89,12 +88,12 @@ class Counter extends React.PureComponent {
         <button onClick={() => dispatch({type: "DECREMENT", payload: 1})}>
           -1
         </button>
-        + <button onClick={() => dispatch({type: "INCREMENT_ASYNC", payload: 2})}>
-        + +2 async takeEvery
-        + </button>
-        + <button onClick={() => dispatch({type: "DECREMENT_ASYNC", payload: 2})}>
-        + -2 async takeLatest
-        + </button>
+        <button onClick={() => dispatch({type: "INCREMENT_ASYNC", payload: 2})}>
+          +2 async takeEvery
+        </button>
+        <button onClick={() => dispatch({type: "DECREMENT_ASYNC", payload: 2})}>
+          -2 async takeLatest
+        </button>
       </div>
     )
   }

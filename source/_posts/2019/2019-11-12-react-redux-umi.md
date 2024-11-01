@@ -81,10 +81,8 @@ export default {
 
 一种是默认的 `takeEvery`，在 redux-saga 中我们接触过它。默认写法的语法是：
 
-```js
-*
-incrementAsync(action, effects)
-{
+```text
+*incrementAsync(action, effects){
 }
 ```
 

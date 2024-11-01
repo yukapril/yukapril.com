@@ -68,7 +68,7 @@ tags: [ flexible ]
 ## 最后，附上我们的解决方案代码
 
 ```js
-    (function (win) {
+(function (win) {
   // html根元素
   var HTML_ELEMENT = document.documentElement;
   // 屏幕宽度

@@ -157,7 +157,7 @@ router.delete('/deleteData', (ctx, next) => {
 #### 首先是前端部分，相对简单一些：
 
 ```js
-    $.ajax({
+$.ajax({
   url: 'http://localhost:3100/login',
   type: 'post',
   xhrFields: {
@@ -226,10 +226,9 @@ router.post('/loginedData', (ctx, next) => {
 * 需要带上（处理）cookie，就必须增加 `Access-Control-Allow-Credentials`，而且 `Access-Control-Allow-Origin` 不可以设置为 `*`
 
 * 请求是简单请求吗？简单请求的定义参考上文 “简单的跨域处理” 部分。是的话不需要其他字段了，不是的话，根据情况增加字段：
-
-  | 响应头                            | 解释         | 备注                                       |
-    | ------------------------------ | ---------- | ---------------------------------------- |
-  | `Access-Control-Allow-Methods` | 服务器接受那些方法  | 不配置的话，默认相当于 "HEAD, GET, POST"            |
+  | 响应头 | 解释 | 备注 |
+  | ------------------------------ | ---------- | ---------------------------------------- |
+  | `Access-Control-Allow-Methods` | 服务器接受那些方法 | 不配置的话，默认相当于 "HEAD, GET, POST"            |
   | `Access-Control-Allow-Headers` | 服务器接受那些请求头 | 请求中带有或不带有此字段，可以成功；请求中带有其他字段，整个请求失败（没有通过 `OPTIONS` 请求） |
 
   其他响应头，建议搜索查表。我认为用的很少，就不列举了。

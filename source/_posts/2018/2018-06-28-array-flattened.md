@@ -81,39 +81,33 @@ console.log('flattenedArr:', flattenedArr)
 每次递归时候，必须带上父节点信息，否则怎么知道属于那个节点呢？所以函数签名（参数）也需要改造下：
 
 ```js
-----
-const flatten = arr => {
-  ++++
-  const flatten = (arr, pid) => {
-    let unflattenedArr = JSON.parse(JSON.stringify(arr))
-    let ret = []
-    // 循环遍历
-    unflattenedArr.forEach(item => {
-      // 直接放置到存储数组中
-      let obj = {
-        id: item.id,
-        text: item.text
-      }
-      ++++
-      if (pid) obj.pid = pid
-      ret.push(obj)
+const flatten = (arr, pid) => {
+  let unflattenedArr = JSON.parse(JSON.stringify(arr))
+  let ret = []
+  // 循环遍历
+  unflattenedArr.forEach(item => {
+    // 直接放置到存储数组中
+    let obj = {
+      id: item.id,
+      text: item.text
+    }
+    if (pid) obj.pid = pid
+    ret.push(obj)
 
-      // 如果存在子节点，还需要递归遍历
-      if (item.children) {
-        ----let
-        temp = flatten(item.children)
-        ++++let
-        temp = flatten(item.children, item.id)
-        // 将子节点数据合并到存储数组中
-        ret = [...ret, ...temp]
-      }
-    })
-    return ret
-  }
+    // 如果存在子节点，还需要递归遍历
+    if (item.children) {
 
-  let flattenedArr = flatten(unflattenedArr)
-  console.log('unflattenedArr:', unflattenedArr)
-  console.log('flattenedArr:', flattenedArr)
+      let temp = flatten(item.children, item.id)
+      // 将子节点数据合并到存储数组中
+      ret = [...ret, ...temp]
+    }
+  })
+  return ret
+}
+
+let flattenedArr = flatten(unflattenedArr)
+console.log('unflattenedArr:', unflattenedArr)
+console.log('flattenedArr:', flattenedArr)
 ```
 
 这样就搞定了。
