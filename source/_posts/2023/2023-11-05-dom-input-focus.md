@@ -13,32 +13,33 @@ tags: [ dom, input, focus ]
 <!-- more -->
 
 ```html
+
 <template>
-  <div id="app">
-    <span v-if="!editMode">{{ msg }}</span>
-    <input v-if="editMode" v-model="msg" ref="inputRef" />
-    <button @click="onEditClick">edit</button>
-  </div>
+    <div id="app">
+        <span v-if="!editMode">{{ msg }}</span>
+        <input v-if="editMode" v-model="msg" ref="inputRef"/>
+        <button @click="onEditClick">edit</button>
+    </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      editMode: false,
-      msg: "hello world",
+    export default {
+        data() {
+            return {
+                editMode: false,
+                msg: "hello world",
+            };
+        },
+        methods: {
+            onEditClick() {
+                this.editMode = true;
+                setTimeout(() => {
+                    // do something...
+                    this.$refs.inputRef.focus();
+                }, 10);
+            },
+        },
     };
-  },
-  methods: {
-    onEditClick() {
-      this.editMode = true;
-      setTimeout(() => {
-        // do something...
-        this.$refs.inputRef.focus();
-      }, 10);
-    },
-  },
-};
 </script>
 ```
 

@@ -2,8 +2,8 @@
 layout: post
 title: Redux 学习 - react-saga
 date: 2019-11-03 14:18:00 GMT+0800
-categories: [前端]
-tags:  [react,redux,saga]
+categories: [ 前端 ]
+tags: [ react,redux,saga ]
 ---
 
 上两篇文章主要说了 redux 的用法。redux 中 reducer 只能处理同步的状态更新，那如果是有异步或者副作用呢，这时候我们就必须对 redux 使用中间件处理了。
@@ -27,38 +27,37 @@ reducer 是负责同步修改 state，这个逻辑不会改变。
 #### index.js
 
 ```jsx
-  import React from "react"
-  import ReactDOM from "react-dom"
-  import { Provider } from "react-redux"
-- import { createStore } from "redux"
-+ import { createStore, applyMiddleware } from "redux"
-+ import createSagaMiddleware from "redux-saga"
-+ import saga from "./sagas"
-  import reducer from "./reducer.js"
-  import Counter from "./Counter"
+import React from "react"
+import ReactDOM from "react-dom"
+import {Provider} from "react-redux"
+-import {createStore} from "redux"
++import {createStore, applyMiddleware} from "redux"
++import createSagaMiddleware from "redux-saga"
++import saga from "./sagas"
+import reducer from "./reducer.js"
+import Counter from "./Counter"
++const sagaMiddleware = createSagaMiddleware()
+-const store = createStore(reducer)
++const store = createStore(reducer, applyMiddleware(sagaMiddleware)) 
++sagaMiddleware.run(saga)
 
-+ const sagaMiddleware = createSagaMiddleware()
-- const store = createStore(reducer)
-+ const store = createStore(reducer, applyMiddleware(sagaMiddleware))
-+ sagaMiddleware.run(saga)
-
-  class App extends React.PureComponent {
-    render () {
-      return (
-        <Provider store={store}>
-          <Counter />
-        </Provider>
-      )
-    }
+class App extends React.PureComponent {
+  render() {
+    return (
+      <Provider store={store}>
+        <Counter/>
+      </Provider>
+    )
   }
+}
 
-  const rootElement = document.getElementById("root")
-  ReactDOM.render(<App />, rootElement)
+const rootElement = document.getElementById("root")
+ReactDOM.render(<App/>, rootElement)
 ```
 
 修改 store 的创建方式，增加 saga 的中间件。
 
-这里要注意写法： 
+这里要注意写法：
 
 ```js
 // 这样写是不可以的
@@ -76,33 +75,33 @@ sagaMiddleware.run(saga) // run 必须写到 createStore 之后，否则报错
 
 ```jsx
   import React from "react"
-  import { connect } from "react-redux"
+import {connect} from "react-redux"
 
-  class Counter extends React.PureComponent {
-    render () {
-      const { globalState, dispatch } = this.props
-      return (
-        <div>
-          <p>COUNT:{globalState.count}</p>
-          <button onClick={() => dispatch({ type: "INCREMENT", payload: 1 })}>
-            +1
-          </button>
-          <button onClick={() => dispatch({ type: "DECREMENT", payload: 1 })}>
-            -1
-          </button>
-+         <button onClick={() => dispatch({ type: "INCREMENT_ASYNC", payload: 2 })}>
-+           +2 async takeEvery
-+         </button>
-+         <button onClick={() => dispatch({ type: "DECREMENT_ASYNC", payload: 2 })}>
-+           -2 async takeLatest
-+         </button>
-        </div>
-      )
-    }
+class Counter extends React.PureComponent {
+  render() {
+    const {globalState, dispatch} = this.props
+    return (
+      <div>
+        <p>COUNT:{globalState.count}</p>
+        <button onClick={() => dispatch({type: "INCREMENT", payload: 1})}>
+          +1
+        </button>
+        <button onClick={() => dispatch({type: "DECREMENT", payload: 1})}>
+          -1
+        </button>
+        + <button onClick={() => dispatch({type: "INCREMENT_ASYNC", payload: 2})}>
+        + +2 async takeEvery
+        + </button>
+        + <button onClick={() => dispatch({type: "DECREMENT_ASYNC", payload: 2})}>
+        + -2 async takeLatest
+        + </button>
+      </div>
+    )
   }
+}
 
-  const mapStateToProps = state => ({ globalState: state })
-  export default connect(mapStateToProps)(Counter)
+const mapStateToProps = state => ({globalState: state})
+export default connect(mapStateToProps)(Counter)
 ```
 
 组件内增加两个异步的调用按钮。调用类型分别是 `INCREMENT_ASYNC` `DECREMENT_ASYNC`。
@@ -112,25 +111,27 @@ sagaMiddleware.run(saga) // run 必须写到 createStore 之后，否则报错
 #### sagas.js
 
 ```js
-import { put, all, takeEvery, takeLatest, delay } from "redux-saga/effects"
+import {put, all, takeEvery, takeLatest, delay} from "redux-saga/effects"
 
-function* incrementAsync (action) {
+function* incrementAsync(action) {
   yield delay(1000)
-  yield put({ type: "INCREMENT", payload: action.payload })
-}
-function* decrementAsync (action) {
-  yield delay(1000)
-  yield put({ type: "DECREMENT", payload: action.payload })
+  yield put({type: "INCREMENT", payload: action.payload})
 }
 
-function* watchIncrementAsync () {
+function* decrementAsync(action) {
+  yield delay(1000)
+  yield put({type: "DECREMENT", payload: action.payload})
+}
+
+function* watchIncrementAsync() {
   yield takeEvery("INCREMENT_ASYNC", incrementAsync)
 }
-function* watchDecrementAsync () {
+
+function* watchDecrementAsync() {
   yield takeLatest("DECREMENT_ASYNC", decrementAsync)
 }
 
-function* saga () {
+function* saga() {
   yield all([watchIncrementAsync(), watchDecrementAsync()])
 }
 
@@ -155,13 +156,13 @@ yield all([call(watchIncrementAsync), call(watchDecrementAsync)])
 
 这个文件导入了很多辅助函数，下面列出一些说明。具体内容参考[官方文档](https://redux-saga.js.org/docs/api/)：
 
-| 辅助函数 | 用途 |
-|---|---|
-| all | 合并多个异步监听函数使用 |
-| takeEvery | 监听函数使用，起到如何监听异步事件。表示每次都监听到，依次执行  |
-| takeLatest | 监听函数使用，起到如何监听异步事件。表示仅执行最后一次操作 |
-| put | 相当于 dispatch，触发 action 使用 |
-| delay | 延时使用，真实项目一般项目用不到 |
+| 辅助函数       | 用途                              |
+|------------|---------------------------------|
+| all        | 合并多个异步监听函数使用                    |
+| takeEvery  | 监听函数使用，起到如何监听异步事件。表示每次都监听到，依次执行 |
+| takeLatest | 监听函数使用，起到如何监听异步事件。表示仅执行最后一次操作   |
+| put        | 相当于 dispatch，触发 action 使用       |
+| delay      | 延时使用，真实项目一般项目用不到                |
 
 > 最后，你感兴趣的话，可以在 `reducer.js` 文件中加入日志，就会发现 dispatch 异步 action 也会调用 reducer，只不过没有命中任何条件。在执行异步任务之后，还会 dispatch 一个同步 action，此时 reducer 再次执行一次。
 

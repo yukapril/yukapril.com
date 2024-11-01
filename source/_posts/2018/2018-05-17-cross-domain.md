@@ -2,8 +2,8 @@
 layout: post
 title: "前端 ajax 请求跨域处理"
 date: 2018-05-17 23:23:00 GMT+0800
-categories: [前端]
-tags:  [cross domain,ajax,jquery,axios]
+categories: [ 前端 ]
+tags: [ cross domain,ajax,jquery,axios ]
 ---
 
 最近在做一个前后端分离的项目，业务管理平台。一个前端项目要对应多个后端接口地址，免不了各种跨域，查了一些资料，做一个小结。
@@ -158,12 +158,12 @@ router.delete('/deleteData', (ctx, next) => {
 
 ```js
     $.ajax({
-      url: 'http://localhost:3100/login',
-      type: 'post',
-      xhrFields: {
-        withCredentials: true
-      }
-    })
+  url: 'http://localhost:3100/login',
+  type: 'post',
+  xhrFields: {
+    withCredentials: true
+  }
+})
 ```
 
 需要增加 `withCredentials` 字段，axios 也是需要设置此字段。
@@ -221,14 +221,14 @@ router.post('/loginedData', (ctx, next) => {
 
 2. 非要手动配置，可以参考如下方案配置：
 
-* 只要是跨域，就必须增加 `Access-Control-Allow-Origin` 
+* 只要是跨域，就必须增加 `Access-Control-Allow-Origin`
 
 * 需要带上（处理）cookie，就必须增加 `Access-Control-Allow-Credentials`，而且 `Access-Control-Allow-Origin` 不可以设置为 `*`
 
 * 请求是简单请求吗？简单请求的定义参考上文 “简单的跨域处理” 部分。是的话不需要其他字段了，不是的话，根据情况增加字段：
 
   | 响应头                            | 解释         | 备注                                       |
-  | ------------------------------ | ---------- | ---------------------------------------- |
+    | ------------------------------ | ---------- | ---------------------------------------- |
   | `Access-Control-Allow-Methods` | 服务器接受那些方法  | 不配置的话，默认相当于 "HEAD, GET, POST"            |
   | `Access-Control-Allow-Headers` | 服务器接受那些请求头 | 请求中带有或不带有此字段，可以成功；请求中带有其他字段，整个请求失败（没有通过 `OPTIONS` 请求） |
 

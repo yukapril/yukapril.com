@@ -2,8 +2,8 @@
 layout: post
 title: "Objective-C 学习（三） - 内存管理 KVC"
 date: 2017-10-10 22:23:00 GMT+0800
-categories: [编程]
-tags:  [Objective-C]
+categories: [ 编程 ]
+tags: [ Objective-C ]
 ---
 
 记录学习过程，做好笔记。
@@ -42,7 +42,6 @@ ARC 管理下，一般情况下，无需手动管理内存。
 * `__bridge_retained` 修改为手动管理
 * `__bridge_transfer` 修改为 ARC 管理
 
-
 ```objective-c
 NSString *str1 = @"apple";
 // str1 强转，并且保留 str1 的 ARC 管理
@@ -56,7 +55,6 @@ NSString *str4 = (__bridge NSString *) str3;
 // str3 强转，并修改内存管理方式为手动管理
 NSString *str41 = (__bridge_transfer NSString *) str3;
 ```
-
 
 ## @property
 

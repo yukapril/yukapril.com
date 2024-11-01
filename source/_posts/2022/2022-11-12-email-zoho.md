@@ -2,8 +2,8 @@
 layout: post
 title: 域名邮箱操作指南 - zoho 域名邮箱配置方法
 date: 2022-11-12 16:08:00 GMT+0800
-categories: [杂谈]
-tags:  [email, 邮箱, 域名邮箱, zoho]
+categories: [ 杂谈 ]
+tags: [ email, 邮箱, 域名邮箱, zoho ]
 ---
 
 这篇文章来写如何配置 zoho 国际版的域名邮箱。
@@ -11,7 +11,7 @@ tags:  [email, 邮箱, 域名邮箱, zoho]
 <!-- more -->
 
 > 系列文章：
-> 
+>
 > 1. [再谈域名邮箱](https://www.yukapril.com/2022/11/06/email.html)
 > 2. [域名邮箱操作指南 - zoho 域名邮箱配置方法](https://www.yukapril.com/2022/11/12/email-zoho.html)
 > 3. [域名邮箱操作指南 - 网易域名邮箱配置方法](https://www.yukapril.com/2022/11/20/email-netease.html)
@@ -67,6 +67,5 @@ tags:  [email, 邮箱, 域名邮箱, zoho]
 zoho 域名邮箱功能强大，常用的功能都提供，也非常易用。配置起来也算不太复杂。
 
 缺点就是免费版只能网页端收发信件，或者使用官方 APP，以及最多 5 个邮箱账号。
-
 
 --END--

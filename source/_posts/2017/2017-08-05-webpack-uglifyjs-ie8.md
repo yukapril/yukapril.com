@@ -2,8 +2,8 @@
 layout: post
 title: "webpack uglifyJS 在 IE8 下的兼容处理"
 date: 2017-08-05 11:34:00 GMT+0800
-categories: [前端]
-tags:  [webpack,uglifyjs,ie8]
+categories: [ 前端 ]
+tags: [ webpack,uglifyjs,ie8 ]
 ---
 
 最近在做组件项目，写 ES6 代码，通过 webpack3 进行打包，中途用 uglifyjs-webpack-plugin 插件进行压缩。
@@ -40,7 +40,7 @@ tags:  [webpack,uglifyjs,ie8]
     <![endif]-->
 </head>
 <body>
-  ...
+...
 </body>
 </html>
 ```
@@ -50,8 +50,6 @@ tags:  [webpack,uglifyjs,ie8]
 由于我需要针对 IE9 做一些补丁，所以额外打了一个 ie.min.js 补丁。
 
 这样，大部分ES5 的兼容性问题都可以解决了。
-
-
 
 ## webpack
 
@@ -64,16 +62,22 @@ tags:  [webpack,uglifyjs,ie8]
 webpack 打包（`umd` 方式）后，未压缩的代码部分：
 
 ```js
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
 var Checkbox = function () {
   function Checkbox(element) {
     var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     _classCallCheck(this, Checkbox);
   }
+
   _createClass(Checkbox, [{
     key: 'on',
-    value: function on() {    }
+    value: function on() {
+    }
   }]);
   return Checkbox;
 }();
@@ -91,8 +95,6 @@ var Checkbox = function () {
 
 在上面代码中，有一步 `_classCallCheck(this,Checkbox)`，这个竟然 `throw new TypeError` 了，原本上用 `class Checkbox`，改成了 `function Checkbox(){}`，最后又改回去了，自己就好了。
 
-
-
 ## 代码压缩 uglifyJS
 
 这个问题比较大，不过还好可以通过配置来解决。
@@ -107,7 +109,7 @@ var Checkbox = function () {
 
 方法描述摘抄如下：
 
->```
+> ```
 >--screw-ie8     Use this flag if you don't wish to support
 >                Internet Explorer 6/7/8.
 >                By default UglifyJS will not try to be IE-proof.
@@ -124,13 +126,13 @@ var Checkbox = function () {
 
 ```js
 new UglifyJSPlugin({
-    compress: {screw_ie8: false},
-    output: {screw_ie8: false},
-    mangle: {
-      screw_ie8: false, 
-      except: ['$']
-    },
-    support_ie8: true
+  compress: {screw_ie8: false},
+  output: {screw_ie8: false},
+  mangle: {
+    screw_ie8: false,
+    except: ['$']
+  },
+  support_ie8: true
 })
 ```
 

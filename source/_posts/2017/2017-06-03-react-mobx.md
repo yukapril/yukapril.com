@@ -2,8 +2,8 @@
 layout: post
 title: "学习 React - MobX"
 date: 2017-06-03 14:16:00 GMT+0800
-categories: [前端]
-tags:  [react,mobx]
+categories: [ 前端 ]
+tags: [ react,mobx ]
 ---
 
 计划学习 React，就接触到了 MobX。之前听过 Redux，因为我接触过 Vuex，感觉差不太多，就没有再去学习。还听说 Redux 的作者推荐 MobX，看来在不是很复杂的数据流动选择 MobX 是非常正确的。
@@ -25,42 +25,45 @@ import React from "react";
 import "./App.css";
 
 const now = () => {
-    let t = new Date().toISOString().replace('T', ' ');
-    return t.substring(0, t.length - 5);
+  let t = new Date().toISOString().replace('T', ' ');
+  return t.substring(0, t.length - 5);
 };
 
 class Timer extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            timer: null,
-            timeString: now()
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      timer: null,
+      timeString: now()
     }
-    componentDidMount() {
-        let timer = setInterval(() => {
-            this.setState({
-                timeString: now()
-            });
-        }, 1000);
-        this.setState({timer});
-    }
-    componentWillUnmount() {
-        clearInterval(this.state.timer);
-    }
-    render() {
-        return (<span>now: { this.state.timeString } </span> )
-    }
+  }
+
+  componentDidMount() {
+    let timer = setInterval(() => {
+      this.setState({
+        timeString: now()
+      });
+    }, 1000);
+    this.setState({timer});
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.timer);
+  }
+
+  render() {
+    return (<span>now: {this.state.timeString} </span>)
+  }
 }
 
 class App extends React.Component {
-    render() {
-        return (
-            <div className="app">
-                <Timer></Timer>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="app">
+        <Timer></Timer>
+      </div>
+    )
+  }
 }
 
 export default App;
@@ -88,33 +91,33 @@ import {observable} from "mobx";
 import {observer} from "mobx-react";
 
 const now = () => {
-    let t = new Date().toISOString().replace('T', ' ');
-    return t.substring(0, t.length - 5);
+  let t = new Date().toISOString().replace('T', ' ');
+  return t.substring(0, t.length - 5);
 };
 
 let store = observable({
-    timerString: now()
+  timerString: now()
 });
 
 setInterval(() => {
-    store.timerString = now();
+  store.timerString = now();
 }, 1000);
 
 @observer
 class Timer extends React.Component {
-    render() {
-        return (<span>now: { store.timerString } </span> )
-    }
+  render() {
+    return (<span>now: {store.timerString} </span>)
+  }
 }
 
 class App extends React.Component {
-    render() {
-        return (
-            <div className="app">
-                <Timer></Timer>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className="app">
+        <Timer></Timer>
+      </div>
+    )
+  }
 }
 
 export default App;
@@ -127,7 +130,7 @@ export default App;
 - 引入了新包 `mobx` 和 `mobx-react`
 - 共享的状态，直接写到了全局下，而且还是 `observable` （可观察的）
 - 状态的修改，也直接放到了全局下，当然，这个放在那里都无所谓，也可以放到组件内
-- 原有的 `Timer` 组件，直接引用全局共享状态，并且加上了装饰器 `observer` 
+- 原有的 `Timer` 组件，直接引用全局共享状态，并且加上了装饰器 `observer`
 - 需要说明的一点：**observable 如果使用装饰器形式，只能写在类（ `class` ）内，所以这里没办法写成装饰器形式**
 
 ## 小结

@@ -19,53 +19,54 @@ tags:  [vue,input]
 `Input.vue`  如下：
 
 ```html
+
 <template>
-  <input ref="input" />
+    <input ref="input"/>
 </template>
 
 <script>
-export default {
-  props: {
-    // 传入最新的值
-    value: { type: String, default: "" },
-  },
-  data() {
-    return {
-      // 本地缓存上一次老值
-      oldVal: "",
+    export default {
+        props: {
+            // 传入最新的值
+            value: {type: String, default: ""},
+        },
+        data() {
+            return {
+                // 本地缓存上一次老值
+                oldVal: "",
+            };
+        },
+        computed: {
+            // 输入框元素
+            input() {
+                return this.$refs.input;
+            },
+        },
+        watch: {
+            // 处理每次外层改变新值时候，要修正老值和输入框显示值
+            value(newVal, oldVal) {
+                this.oldVal = newVal;
+                this.input.value = newVal;
+            },
+        },
+        methods: {
+            listener(e) {
+                const target = e.target;
+                // 要想实现输入内容防抖，这里必须写成老值
+                // 后续等待外层改变新值时候，触发 watch->value 方法
+                target.value = this.oldVal;
+                this.$emit("input", e);
+            },
+        },
+        mounted() {
+            this.oldVal = this.value;
+            this.input.value = this.value;
+            this.input.addEventListener("input", this.listener);
+        },
+        beforeUnmount() {
+            this.input.removeEventListener("input", this.listener);
+        },
     };
-  },
-  computed: {
-    // 输入框元素
-    input() {
-      return this.$refs.input;
-    },
-  },
-  watch: {
-    // 处理每次外层改变新值时候，要修正老值和输入框显示值
-    value(newVal, oldVal) {
-      this.oldVal = newVal;
-      this.input.value = newVal;
-    },
-  },
-  methods: {
-    listener(e) {
-      const target = e.target;
-      // 要想实现输入内容防抖，这里必须写成老值
-      // 后续等待外层改变新值时候，触发 watch->value 方法
-      target.value = this.oldVal;
-      this.$emit("input", e);
-    },
-  },
-  mounted() {
-    this.oldVal = this.value;
-    this.input.value = this.value;
-    this.input.addEventListener("input", this.listener);
-  },
-  beforeUnmount() {
-    this.input.removeEventListener("input", this.listener);
-  },
-};
 </script>
 ```
 

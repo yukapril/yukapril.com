@@ -2,8 +2,8 @@
 layout: post
 title: 树莓派 Raspberry Pi (三)：安装RSS TT-RSS
 date: 2020-07-05 16:05:00 GMT+0800
-categories: [开发板]
-tags:  [树莓派,Tiny Tiny,rss]
+categories: [ 开发板 ]
+tags: [ 树莓派,Tiny Tiny,rss ]
 ---
 
 一直在加班，可算抽出点时间可以写博客了。不过由于 TTRSS 安装复杂，我也在测试它的稳定性。结果，上次树莓派重启后，果真挂了，所以只能大概说说当时安装时候的经验，可以参考。但不推荐在树莓派上跑。

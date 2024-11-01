@@ -2,8 +2,8 @@
 layout: post
 title: "CSS编码引发的问题"
 date: 2016-12-07 22:18:00 GMT+0800
-categories: [前端]
-tags:  [css,编码]
+categories: [ 前端 ]
+tags: [ css,编码 ]
 ---
 
 今天突然接到一个测试反馈，是说项目IE8下面CSS样式不对，但其他高级浏览器都没有问题。

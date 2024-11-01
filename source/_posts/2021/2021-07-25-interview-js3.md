@@ -13,13 +13,13 @@ tags:  [面试,宏任务,微任务]
 说出下列输出打印顺序：
 
 ```js
-async function async1 () {
+async function async1() {
   console.log('async1 start')
   await async2()
   console.log('async1 end')
 }
 
-async function async2 () {
+async function async2() {
   console.log('async2')
 }
 

@@ -2,9 +2,10 @@
 layout: post
 title: class 的 constructor 什么时候可以不写
 date: 2018-12-30 18:38:00 GMT+0800
-categories: [前端]
-tags:  [constructor]
+categories: [ 前端 ]
+tags: [ constructor ]
 ---
+
 最近写 React 项目时候，本来觉得自己清楚 `constructor` 的写法，但是还是发现不够清晰，特查询总结下。
 
 <!-- more -->
@@ -21,13 +22,13 @@ tags:  [constructor]
 
 关于最后一条，默认构造函数，基类默认的 `constructor` 是：
 
-```js
+```
 constructor() {} // 就是啥都不干
 ```
 
 派生类默认的 `constructor` 是：
 
-```js
+```
 constructor(...args) {
   super(...args) // 用派生类实例的参数调用下基类构造函数
 }
@@ -41,7 +42,7 @@ constructor(...args) {
 
 ```js
 class A {
-  constructor (x, y) {
+  constructor(x, y) {
     this.x = x
     this.y = y
   }
@@ -54,8 +55,9 @@ class A {
 
 ```js
 class B {
-  constructor () {} // 可以不写
-  say () { 
+  constructor() {
+  } // 可以不写
+  say() {
     console.log('hello')
   }
 }
@@ -69,7 +71,7 @@ class B {
 
 ```js
 class C extends A {
-  constructor (props) {
+  constructor(props) {
     super(props) // 可以省略
   }
 }
@@ -83,9 +85,9 @@ class C extends A {
 
 ```js
 class C extends A {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.state = { val: '' }
+    this.state = {val: ''}
   }
 }
 ```
@@ -94,10 +96,11 @@ class C extends A {
 
 ```js
 class C extends A {
-  constructor (props) {
+  constructor(props) {
     super(props) // 此时可以省略
   }
-  state = { val: '' }
+
+  state = {val: ''}
 }
 ```
 

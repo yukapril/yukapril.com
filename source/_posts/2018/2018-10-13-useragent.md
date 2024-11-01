@@ -2,8 +2,8 @@
 layout: post
 title: useragent 详解
 date: 2018-10-13 22:02:00 GMT+0800
-categories: [编程]
-tags:  [useragent]
+categories: [ 编程 ]
+tags: [ useragent ]
 ---
 
 因为工作需要，稍微认真的了解了下 useragent，发现它的配置理想和现实还是差距很大的。至于历史什么的，详细的就不多说了，很多网站可以搜索到。总之，各个浏览器厂商为了能所谓的页面兼容，useragent 也越来越相似。
@@ -79,8 +79,8 @@ WeiboBroswer/1.0 (Windows NT 10)
 
 ```js
 var ua = window.navigator.userAgent
-if(ua.indexOf('Mozilla') === 0) {
-    // 开启xxx功能
+if (ua.indexOf('Mozilla') === 0) {
+  // 开启xxx功能
 }
 ```
 
@@ -158,30 +158,30 @@ Mozilla/5.0 (hp-tablet; Linux; hpwOS/3.0.0; U; en-US)
 **平台及系统字段：**
 
 * `Windows NT x.x`：Windows 系统环境
-	* `5.0`： Windows 2000
-	* `5.1`： Windows XP
-	* `6.0`： Windows Vista / Windows Server 2008
-	* `6.1`： Windows 7 / Windows Server 2008 R2
-	* `6.2`： Windows 8 / Windows RT / Windows Server 2012
-	* `6.3`： Windows 8.1 / Windows Server 2012 R2
+    * `5.0`： Windows 2000
+    * `5.1`： Windows XP
+    * `6.0`： Windows Vista / Windows Server 2008
+    * `6.1`： Windows 7 / Windows Server 2008 R2
+    * `6.2`： Windows 8 / Windows RT / Windows Server 2012
+    * `6.3`： Windows 8.1 / Windows Server 2012 R2
 * `Macintosh`：苹果 Mac 系统环境
 * `Intel Mac OS X x_x_x`：苹果 Mac 系统及版本号
 * `x11`：X窗口系统，指代 Linux 系统，并不是所有 Linux 浏览器都有此字段
 * `Linux xxxx`：Linux 系统环境，也可能不带有CPU信息
-	* `i586`：很老的处理器（貌似指不含 MMX 指令集的 CPU）
-	* `i686`：一般 CPU
-	* `x86_64`：64 位 CPU
-	* `mips`：MIPS 处理器
-	* `ppc`：PowerPC
-	* `amd64`：因该是指 AMD64 专属 CPU，并非常见的 `x86_64`
-	* `armv7l`：ARM v7 处理器
+    * `i586`：很老的处理器（貌似指不含 MMX 指令集的 CPU）
+    * `i686`：一般 CPU
+    * `x86_64`：64 位 CPU
+    * `mips`：MIPS 处理器
+    * `ppc`：PowerPC
+    * `amd64`：因该是指 AMD64 专属 CPU，并非常见的 `x86_64`
+    * `armv7l`：ARM v7 处理器
 * `Linux x.x.x.xxxx`：Linux 系统环境，后面跟着内核版本号，例如 `Linux 2.6.31-16-generic`，这种写法不常见。
 * `iPhone` `iPad` `iPod`：苹果相应的设备
 * `Android`：一般会跟在 `Linux` 字段后面。安卓设备，后面还可能跟有设备信息。
 * `U` `I` `N`：加密等级，`U`-强安全加密，`I`-弱安全加密，`N`-无安全加密
-	
+
 **Windows 专属字段：**
-	
+
 * `compatible`：仅在 IE 浏览器中出现，表示兼容 `Mozilla/4.0` `Mozilla/5.0`，常见于 IE 浏览器，其他早些的浏览器比如 `Konqueror` 也有使用到。
 * `Trident/x.x`：仅在 IE 浏览器中出现，表示 Trident 渲染引擎版本。对于第三方浏览器，比如 Mathon，可能会出现两个值
 * `MSIE x.x`：IE浏览器版本，不一定带有小数点，而且老的版本可能是 `MSIE 6.0b` `MSIE 5.50` 这种形式
@@ -217,7 +217,6 @@ like Gecko
 很久以前 Opera 浏览器是 `Presto`。
 
 IE 11 开始写上了 `like Gecko`，我认为没什么用。此外，IE浏览器渲染引擎及版本在上一节中有提到。
-
 
 ## 扩展字段
 

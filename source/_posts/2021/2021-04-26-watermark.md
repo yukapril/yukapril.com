@@ -52,8 +52,13 @@ tags: [ 水印 ]
 其中关键的代码是：
 
 ```css
-z-index: 9999;
-pointer-events: none;
+z-index:
+
+9999
+;
+pointer-events: none
+
+;
 ```
 
 * 要保持水印图层是最高层级的。

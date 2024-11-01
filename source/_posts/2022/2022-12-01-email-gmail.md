@@ -2,8 +2,8 @@
 layout: post
 title: 域名邮箱操作指南 - Gmail 及 Outlook、网易邮件代发
 date: 2022-12-01 20:01:00 GMT+0800
-categories: [杂谈]
-tags:  [email, 邮箱, 域名邮箱, cloudflare]
+categories: [ 杂谈 ]
+tags: [ email, 邮箱, 域名邮箱, cloudflare ]
 ---
 
 这次要做的是，使用 Gmail 来给域名邮件提供代发服务。Outlook、网易代发，文末有提到。
@@ -11,7 +11,7 @@ tags:  [email, 邮箱, 域名邮箱, cloudflare]
 <!-- more -->
 
 > 系列文章：
-> 
+>
 > 1. [再谈域名邮箱](https://www.yukapril.com/2022/11/06/email.html)
 > 2. [域名邮箱操作指南 - zoho 域名邮箱配置方法](https://www.yukapril.com/2022/11/12/email-zoho.html)
 > 3. [域名邮箱操作指南 - 网易域名邮箱配置方法](https://www.yukapril.com/2022/11/20/email-netease.html)

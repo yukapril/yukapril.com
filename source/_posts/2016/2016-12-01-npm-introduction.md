@@ -2,8 +2,8 @@
 layout: post
 title: "node npm入门"
 date: 2016-12-01 10:18:00 GMT+0800
-categories: [前端]
-tags:  [node,npm]
+categories: [ 前端 ]
+tags: [ node,npm ]
 ---
 
 这篇文章，主要介绍了npm的各种使用方法，从如何创建配置文件、安装、全局安装、项目安装、卸载组件、启动脚本等。
@@ -46,6 +46,7 @@ console.log('hello world!');
 cd /Users/yukapril #进入文件目录
 node test.js
 ```
+
 这样，我们在我们可以看到结果，返回了一句话`hello world!`。
 
 那node有什么用呢？
@@ -241,9 +242,9 @@ Is this ok? (yes) yes
 
 * 在`srcipts`中，可以使用`npm_package_`前缀来获取`package.json`中的字段值。
 
-    比如：`npm_package_name` `npm_package_scripts_test`。
+  比如：`npm_package_name` `npm_package_scripts_test`。
 
-    由于`scripts`里面是bash脚本，所以只能使用bash语法。不支持js语法的。
+  由于`scripts`里面是bash脚本，所以只能使用bash语法。不支持js语法的。
 
 * 在项目代码中，要读取`package.json`中的`name`字段，那么怎么来处理？只能使用常规的读取文件方案。
 
@@ -252,26 +253,25 @@ var package = require('./package.json');
 console.log('项目名：', package.name);
 ```
 
-
 ## 小结
 
 npm语法，其中`init` `install` `run`为重点
 
-* `npm init` : 创建`package.json` 
+* `npm init` : 创建`package.json`
 
 * `npm install` : 根据`package.json`安装依赖
 
 * `npm install -g some-package` : 全局安装包
 
-* `npm install some-package` : 项目安装包 
+* `npm install some-package` : 项目安装包
 
 * `npm install some-package -save` : 项目安装包，并更新`package.json`的普通依赖
 
-* `npm install some-package -save-dev` : 项目安装包，并更新`package.json`的开发依赖 
+* `npm install some-package -save-dev` : 项目安装包，并更新`package.json`的开发依赖
 
 * `npm root -g` : 获取npm依赖包全局安装路径
 
-* `npm root` : 获取npm依赖包项目安装路径 
+* `npm root` : 获取npm依赖包项目安装路径
 
 * `npm list` : 列出当前项目的依赖包
 

@@ -2,8 +2,8 @@
 layout: post
 title: Redux 学习 - reducer 合并
 date: 2019-11-02 23:09:00 GMT+0800
-categories: [前端]
-tags:  [react,redux]
+categories: [ 前端 ]
+tags: [ react,redux ]
 ---
 
 上一篇文章主要说了 redux 的简单用法，为了和后续 umi 体系进行对齐，增加一篇 redux 有多个 reducer，并且合并的情况用法。
@@ -22,7 +22,7 @@ tags:  [react,redux]
 
 #### reducer.js
 
-```jsx
+```text
 + import { combineReducers } from "redux";
 
   const globalReducer = (state = { count: 10 }, action) => {
@@ -58,7 +58,7 @@ tags:  [react,redux]
 
 `combineReducers` 里的对象默认是如下形式：
 
-```js
+```json
 {
   globalReducer: globalReducer,
   otherReducer: otherReducer
@@ -67,7 +67,7 @@ tags:  [react,redux]
 
 当然你可以改名为：
 
-```js
+```json
 {
   aaa: globalReducer,
   bbb: otherReducer
@@ -78,7 +78,7 @@ tags:  [react,redux]
 
 #### Counter.js
 
-```jsx
+```text
   import React from "react"
   import { connect } from "react-redux"
 
@@ -118,8 +118,7 @@ tags:  [react,redux]
 
 与之前不同的是，全局 `state` 不再是一层对象了，而是被我们 reducer 定义的字段名包了一层。
 
-**需要注意的是，我们调用 `dispatch({ type: "DECREMENT", payload: 1 })` 后，不仅 `globalReducer` 会被执行，`otherReducer` 也会被执行。只不过 `otherReducer` 走到了 `default` 情况。这也就是 reducer 不要写带有副作用的功能！**
-
-
+**需要注意的是，我们调用 `dispatch({ type: "DECREMENT", payload: 1 })` 后，不仅 `globalReducer` 会被执行，`otherReducer` 也会被执行。只不过 `otherReducer` 走到了 `default` 情况。这也就是 reducer
+不要写带有副作用的功能！**
 
 --END--

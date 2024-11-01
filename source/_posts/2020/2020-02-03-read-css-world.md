@@ -2,8 +2,8 @@
 layout: post
 title: CSS世界阅读笔记（一）
 date: 2020-02-03 22:18:00 GMT+0800
-categories: [前端]
-tags:  [css,读书]
+categories: [ 前端 ]
+tags: [ css,读书 ]
 ---
 
 过节实在是无聊，也没办法出门，就拿出书看看，结果收获颇多。
@@ -17,19 +17,20 @@ tags:  [css,读书]
 ```html
 HTML：
 <div class="box">
-  <p class="content">文字内容</p>
+    <p class="content">文字内容</p>
 </div>
 ```
 
 ```css
 .box {
-  padding: 10px;
-  background-color: #cd0000;
-  text-align: center;
+    padding: 10px;
+    background-color: #cd0000;
+    text-align: center;
 }
+
 .content {
-  display: inline-block;
-  text-align: left;
+    display: inline-block;
+    text-align: left;
 }
 ```
 
@@ -51,12 +52,14 @@ HTML：
 
 具体例子参见[这里](https://demo.cssworld.cn/3/2-6.php)。
 
-## box-sizing 
+## box-sizing
 
 写页面经常先写上这句话：
 
 ```css
-body * { box-sizing: border-box; }
+body * {
+    box-sizing: border-box;
+}
 ```
 
 后续直接定义宽度 width 就好了，不会导致元素超过尺寸，但是具体为什么，也不清楚。
@@ -80,8 +83,5 @@ content-box --> padding-box --> border-box --> margin-box
 但如果作用到 `border` 上呢？自然这个问题迎刃而解。
 
 除了默认的 `content-box` 和常用的 `border-box` 外，另外两个基本上浏览器不支持。
-
-
-
 
 --END--
