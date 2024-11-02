@@ -19,7 +19,6 @@ tags: [ disabled ]
 对比代码如下：
 
 ```html
-
 <style>
     h1 {
         font-size: 20px;

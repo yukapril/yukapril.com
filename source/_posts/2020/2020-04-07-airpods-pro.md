@@ -46,8 +46,7 @@ tags: [ AirPods Pro ]
 
 * AirPods Pro 和 AirPods 2 区别?
 
-AirPods Pro 除了外观差异（变短了、操作区变成了按压）外，重要的就是增加了降噪，据说目前是降噪水准最好的蓝牙入耳耳机。AirPods 2 区分有线版（使用数据线充电）和无线版（可以 QI 无线充电或者有线充电），但是 AirPods
-Pro 不区分，只有无线充电版。
+AirPods Pro 除了外观差异（变短了、操作区变成了按压）外，重要的就是增加了降噪，据说目前是降噪水准最好的蓝牙入耳耳机。AirPods 2 区分有线版（使用数据线充电）和无线版（可以 QI 无线充电或者有线充电），但是 AirPods Pro 不区分，只有无线充电版。
 
 * AirPods Pro 和 AirPods 2 外观有多少差异？
 

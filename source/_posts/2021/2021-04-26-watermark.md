@@ -13,7 +13,6 @@ tags: [ 水印 ]
 特意找了个网上的项目，查看了一下，结果发现实现起来特别简单。
 
 ```html
-
 <style>
     .wm {
         position: fixed;
@@ -51,14 +50,9 @@ tags: [ 水印 ]
 
 其中关键的代码是：
 
-```css
-z-index:
-
-9999
-;
-pointer-events: none
-
-;
+```text
+z-index: 9999;
+pointer-events: none;
 ```
 
 * 要保持水印图层是最高层级的。

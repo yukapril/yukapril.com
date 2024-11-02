@@ -21,8 +21,7 @@ photos: [ https://cdn1.yukapril.com/2020-03-18-notification-bar-1.png ]
 
 Itsycal 效果比较清爽简约，此外还支持暗色模式。授权后，可以显示一周内的日历行为。
 
-我觉得只显示日期效果比较好。当然你也可以让它显示时间。需要在设置里面输入日期的格式。具体的时间配置方法可以参考官方[配置文档](https://www.mowglii.com/itsycal/datetime.html)。配置好后，按住 <key>
-command</key>，可以拖动到系统时间旁边。
+我觉得只显示日期效果比较好。当然你也可以让它显示时间。需要在设置里面输入日期的格式。具体的时间配置方法可以参考官方[配置文档](https://www.mowglii.com/itsycal/datetime.html)。配置好后，按住 <key>command</key>，可以拖动到系统时间旁边。
 
 **Itsycal**
 
