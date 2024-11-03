@@ -13,7 +13,6 @@ tags: [ dom, input, focus ]
 <!-- more -->
 
 ```html
-
 <template>
     <div id="app">
         <span v-if="!editMode">{{ msg }}</span>
