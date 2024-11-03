@@ -2,8 +2,8 @@
 layout: post
 title: iOS safari 后退 js 不执行的问题
 date: 2018-11-21 21:36:00 GMT+0800
-categories: [前端]
-tags:  [ios, safari, history, 后退]
+categories: [ 前端 ]
+tags: [ ios, safari, history, 后退 ]
 ---
 
 今天偶遇一个问题：iOS 10 safari 浏览器中，后退后，页面 js 没有运行。
@@ -43,9 +43,9 @@ window.onpageshow = function (e) {
   }
   if (isIos() && e.persisted) {
     var cb = window.historyBack
-    if(typeof cb === 'function') {
-      if(cb()) {
-        window.location.reload(true)        
+    if (typeof cb === 'function') {
+      if (cb()) {
+        window.location.reload(true)
       }
     } else {
       window.location.reload(true)
@@ -57,21 +57,25 @@ window.onpageshow = function (e) {
 ```js
 // 页面代码
 var page = {
-  getData: function() {
-    ajax().then(function(json){
+  getData: function () {
+    ajax().then(function (json) {
       this.render(json)
     })
   },
-  render: function(){},
-  init: function(){ this.getData() }
+  render: function () {
+  },
+  init: function () {
+    this.getData()
+  }
 }
 page.init()
 
-window.historyBack = function() {
+window.historyBack = function () {
   page.getData()
   return false // 阻止全局刷新
 }
 ```
+
 这样是我目前能想到的比较好的处理方法。可以全局配置默认强制刷新代码，每个页面也支持自定义刷新方案。代码量还不算太多。
 
 --END--

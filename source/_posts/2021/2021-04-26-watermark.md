@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 网页增加水印 
+title: 网页增加水印
 date: 2021-04-26 22:08:00 GMT+0800
-categories: [前端]
-tags:  [水印]
+categories: [ 前端 ]
+tags: [ 水印 ]
 ---
 
 之前看到有的内部项目，为了防止外放，再或者为了方便调试，都会为项目页面增加水印。
@@ -50,7 +50,7 @@ tags:  [水印]
 
 其中关键的代码是：
 
-```css
+```text
 z-index: 9999;
 pointer-events: none;
 ```
@@ -61,7 +61,7 @@ pointer-events: none;
 
 效果如下：
 
-![水印效果](https://cdn0.yukapril.com/2021-04-26-watermark.png-wm.black)
+![水印效果](https://cdn1.yukapril.com/2021-04-26-watermark.png)
 
 这个功能还挺实用的。在多个业务之间互相跳转，或者后退，还有可能白屏的时候，加上水印，没有水印就不是自己的项目，可以防止项目间扯皮。
 

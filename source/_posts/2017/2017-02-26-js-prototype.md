@@ -2,8 +2,8 @@
 layout: post
 title: "JS的__proto__ prototype constructor理解"
 date: 2017-02-26 23:51:00 GMT+0800
-categories: [前端]
-tags:  [js, proto, prototype, constructor]
+categories: [ 前端 ]
+tags: [ js, proto, prototype, constructor ]
 ---
 
 Javascript 下的 `__proto__` `prototype` `constructor`，我一直都很困惑。
@@ -51,7 +51,7 @@ var bool2 = new Boolean(true); // object
 
 来看张图：
 
-![image](https://cdn0.yukapril.com/blog/2017-02-26-javascript-proto.png-wm.black)
+![image](https://cdn1.yukapril.com/2017-02-26-javascript-proto.png)
 
 对象 `obj` 的父辈是 `Object`，对象 `arr` 的父辈是 `Array`。
 
@@ -86,13 +86,13 @@ arr.__proto__.__proto__.__proto__ === null
 这玩意除了别人考你 new关键字的原理时候会用到，其他时候我没注意有啥用途。
 
 ```js
-function New (f) { 
-    var n = {};
-    n.__proto__ = f.prototype;
-    return function () { 
-        f.apply(n, arguments); 
-        return n; 
-   }; 
+function New(f) {
+  var n = {};
+  n.__proto__ = f.prototype;
+  return function () {
+    f.apply(n, arguments);
+    return n;
+  };
 }
 ```
 
@@ -103,7 +103,9 @@ function New (f) {
 这个应该最常见。比如ES5代码中：
 
 ```js
-function Person (){}
+function Person() {
+}
+
 Person.prototype.canSpeak = true;
 
 var p = new Person();
@@ -111,6 +113,7 @@ console.log(p.canSpeak); // true
 ```
 
 这里面有几个重要的点：
+
 * `Person` 是函数，准确地讲，是构造函数。直白一点，这个函数最终主要使用方法是 `new Person` 这种形式。
 * 绑定的 `canSpeak` 方法，可以是函数，也可以直接是字面量（字符串/数字等），这个无所谓。
 * 由于`canSpeak`绑定在 `prototype` 上，所以必须要实例化（`var p = new Person()`），`p` 就是实例化后的对象。
@@ -120,14 +123,16 @@ console.log(p.canSpeak); // true
 
 我们查看下这个对象的结构：
 
-![image](https://cdn0.yukapril.com/blog/2017-02-26-javascript-prototype.png-wm.black)
+![image](https://cdn1.yukapril.com/2017-02-26-javascript-prototype.png)
 
 当我们访问 `p.canSpeak`时候，由于对象上本身没有 `canSpeak` 方法，就去它的原型去找此方法。说白了，自己没有，就去看看父辈那里有没有这种方法。
 
 这里有一个有意思的实验：
 
 ```js
-function Person (){}
+function Person() {
+}
+
 Person.prototype.canSpeak = true;
 
 var p = new Person();
@@ -138,7 +143,7 @@ console.log(p.canSpeak); // 123
 
 我们看看它的结果：
 
-![image](https://cdn0.yukapril.com/blog/2017-02-26-javascript-prototype2.png-wm.black)
+![image](https://cdn1.yukapril.com/2017-02-26-javascript-prototype2.png)
 
 这就说明了，如果自己本身有这个方法，是不会去父辈（原型链）那里寻找的。
 
@@ -151,11 +156,13 @@ console.log(p.canSpeak); // 123
 在ES6里面，构造函数有了新的定义方法：
 
 ```js
-class Person{
-    constructor(){}
-    canSpeak(){
-        return 'yes';
-    };
+class Person {
+  constructor() {
+  }
+
+  canSpeak() {
+    return 'yes';
+  };
 }
 
 var p = new Person();
@@ -163,7 +170,6 @@ console.log(p.canSpeak());
 ```
 
 不过，我不太清楚如何想上面一样定义返回普通值的方法，而不是现在ES6中的函数。
-
 
 ## 最后提一提 构造器 `constructor`
 
@@ -177,7 +183,7 @@ str.__proto__ === String.prototype; // 字符串的父辈是String
 
 String.prototype.constructor === String;
 // 即
-str.__proto__.constructor === String; 
+str.__proto__.constructor === String;
 // 每个构造函数，其prototype中，constructor是指向自己的
 
 // 同时有
@@ -191,8 +197,10 @@ str.constructor === String;
 再来说构造函数
 
 ```js
-var Foo = function(){};
-Foo.prototype.bar = function(){};
+var Foo = function () {
+};
+Foo.prototype.bar = function () {
+};
 Foo.prototype.constructor === Foo; //  每个构造函数，其prototype中，constructor是指向自己的
 
 // 同时有
@@ -202,18 +210,18 @@ Foo.__proto__.constructor === Function; // Foo的原型是Function，所以其�
 // 再来看看构造函数的实例，和普通对象没区别
 var f = new Foo();
 f.prototype; //是不存在的，prototype存在于构造函数中
-f.__proto__ ===Foo.prototype;
+f.__proto__ === Foo.prototype;
 f.__proto__.constructor === Foo;
 ```
 
 看到这里，我们得到结论，所有构造函数，自己的 `prototype`中，除了我们定义的原型对象外，还有一个隐藏的 `constructor`，他不是通过其 `__proto__`得到的，而是真真正正自己的。而且 `constructor` 指向自己。
 
 **小结**
+
 * `constructor` 是构造函数特有的东西。
 * 构造函数本身自己的 `prototype` 中要有一个`constructor`，这样自己的实例才能指向到构造函数本身。
 * 所有对象，都是被父辈构造函数实例化出来的，所以他们`.__proto__.constructor`指向父辈。
 * **“`constructor`指向自己” —— 很关键，js实现继承的时候，需要提到。**
-
 
 ## 说一下js的继承
 
@@ -221,23 +229,25 @@ f.__proto__.constructor === Foo;
 
 ```js
 function extend(Child, Parent) {
-    var F = function () {}; 
-    
-    F.prototype = Parent.prototype; 
-    
-    Child.prototype = new F();
-    
-    Child.prototype.constructor ===Child;
-    
-    Child.uber = Parent.prototype;
-    // 这句话写不写无所谓，给Child构造函数增加一个静态方法，指向父辈原型对象，纯粹为了使用方便而已，不影响继承
+  var F = function () {
+  };
+
+  F.prototype = Parent.prototype;
+
+  Child.prototype = new F();
+
+  Child.prototype.constructor === Child;
+
+  Child.uber = Parent.prototype;
+  // 这句话写不写无所谓，给Child构造函数增加一个静态方法，指向父辈原型对象，纯粹为了使用方便而已，不影响继承
 }
 ```
 
 解释下：
 
 ```js
-var F = function () {}; 
+var F = function () {
+}; 
 ```
 
 创建一个新的构造函数，下文可以使用。
@@ -245,6 +255,7 @@ var F = function () {};
 ```js
 F.prototype = Parent.prototype; 
 ```
+
 把F构造函数的原型对象指向父辈原型对象，相当于把父辈的共享方法拷贝过来。
 
 这样通过 new Foo() 的实例，才会具有父辈的共享方法。
@@ -256,7 +267,7 @@ Child.prototype = new F();
 为了好说明，我们先定义 f，这样看的清晰：
 
 ```js
-var f = new F(); 
+var f = new F();
 Child.prototype = f;
 ```
 
@@ -301,14 +312,19 @@ Child.prototype.constructor === Child;
 我们测试下：
 
 ```js
-var Parent = function(){};
-Parent.prototype.running = function(){}; // 父亲会跑步
-Parent.prototype.swiming = function(){}; // 父亲会游泳
+var Parent = function () {
+};
+Parent.prototype.running = function () {
+}; // 父亲会跑步
+Parent.prototype.swiming = function () {
+}; // 父亲会游泳
 
-var Child = function(){};
-Child.prototype.pingpong = function(){}; //孩子会乒乓球
+var Child = function () {
+};
+Child.prototype.pingpong = function () {
+}; //孩子会乒乓球
 
-extend(Child,Parent);
+extend(Child, Parent);
 
 
 var xiaoming = new Child();
@@ -322,15 +338,20 @@ xiaoming.pingpong(); // TypeError，Child没有pingpong方法
 所以一定要在继承后，在添加原型对象：
 
 ```js
-var Parent = function(){};
-Parent.prototype.running = function(){}; // 父亲会跑步
-Parent.prototype.swiming = function(){}; // 父亲会游泳
+var Parent = function () {
+};
+Parent.prototype.running = function () {
+}; // 父亲会跑步
+Parent.prototype.swiming = function () {
+}; // 父亲会游泳
 
-var Child = function(){};
+var Child = function () {
+};
 
-extend(Child,Parent);
+extend(Child, Parent);
 
-Child.prototype.pingpong = function(){}; //孩子会乒乓球
+Child.prototype.pingpong = function () {
+}; //孩子会乒乓球
 
 
 var xiaohua = new Child();

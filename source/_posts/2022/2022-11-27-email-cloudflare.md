@@ -2,8 +2,8 @@
 layout: post
 title: 域名邮箱操作指南 - cloudflare 邮件转发
 date: 2022-11-27 20:01:00 GMT+0800
-categories: [杂谈]
-tags:  [email, 邮箱, 域名邮箱, cloudflare]
+categories: [ 杂谈 ]
+tags: [ email, 邮箱, 域名邮箱, cloudflare ]
 ---
 
 这次要做的是，使用 cloudflare 绑定域名，托管 DNS 解析，并配置邮件转发。
@@ -11,7 +11,7 @@ tags:  [email, 邮箱, 域名邮箱, cloudflare]
 <!-- more -->
 
 > 系列文章：
-> 
+>
 > 1. [再谈域名邮箱](https://www.yukapril.com/2022/11/06/email.html)
 > 2. [域名邮箱操作指南 - zoho 域名邮箱配置方法](https://www.yukapril.com/2022/11/12/email-zoho.html)
 > 3. [域名邮箱操作指南 - 网易域名邮箱配置方法](https://www.yukapril.com/2022/11/20/email-netease.html)
@@ -82,6 +82,5 @@ roan.ns.cloudflare.com
 默认是 `Drop` 丢弃邮件，可以配置成 `Send to` 邮件转发。
 
 配置完成后，注意把后面的状态从 `Disabled` 改成 `active` 才能生效。
-
 
 --END--

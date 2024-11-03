@@ -2,8 +2,8 @@
 layout: post
 title: Redux 学习 - reducer 合并
 date: 2019-11-02 23:09:00 GMT+0800
-categories: [前端]
-tags:  [react,redux]
+categories: [ 前端 ]
+tags: [ react,redux ]
 ---
 
 上一篇文章主要说了 redux 的简单用法，为了和后续 umi 体系进行对齐，增加一篇 redux 有多个 reducer，并且合并的情况用法。
@@ -23,42 +23,42 @@ tags:  [react,redux]
 #### reducer.js
 
 ```jsx
-+ import { combineReducers } from "redux";
+import {combineReducers} from "redux";
 
-  const globalReducer = (state = { count: 10 }, action) => {
-    switch (action.type) {
-      case "INCREMENT":
-        return { ...state, count: state.count + action.payload }
-      case "DECREMENT":
-        return { ...state, count: state.count - action.payload }
-      default:
-        return state
-    }
+const globalReducer = (state = {count: 10}, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return {...state, count: state.count + action.payload}
+    case "DECREMENT":
+      return {...state, count: state.count - action.payload}
+    default:
+      return state
   }
+}
 
-+ const otherReducer = (state = { count: 20 }, action) => {
-+   switch (action.type) {
-+     case "CLEAR":
-+       return { ...state, count: 0 }
-+     case "TOMAX":
-+       return { ...state, count: 100 }
-+     default:
-+       return state
-+   }
-+ }
+const otherReducer = (state = {count: 20}, action) => {
+  switch (action.type) {
+    case "CLEAR":
+      return {...state, count: 0}
+    case "TOMAX":
+      return {...state, count: 100}
+    default:
+      return state
+  }
+}
 
-- export default globalReducer
-+ export default combineReducers({
-+   globalReducer,
-+   otherReducer
-+ })
+
+export default combineReducers({
+  globalReducer,
+  otherReducer
+})
 ```
 
 我们增加一个 `otherReducer`，最后使用 `combineReducers` 进行合并。为了省事，我把两个 reducer 写到一个文件里了，实际项目更可能是分布在两个文件中。
 
 `combineReducers` 里的对象默认是如下形式：
 
-```js
+```json
 {
   globalReducer: globalReducer,
   otherReducer: otherReducer
@@ -67,7 +67,7 @@ tags:  [react,redux]
 
 当然你可以改名为：
 
-```js
+```json
 {
   aaa: globalReducer,
   bbb: otherReducer
@@ -79,47 +79,37 @@ tags:  [react,redux]
 #### Counter.js
 
 ```jsx
-  import React from "react"
-  import { connect } from "react-redux"
+import React from "react"
+import {connect} from "react-redux"
 
-  class Counter extends React.PureComponent {
-    render () {
--     const { globalState, dispatch } = this.props
-+     const { globalState, otherState, dispatch } = this.props
-      return (
-        <div>
-          <p>COUNT:{globalState.count}</p>
-          <button onClick={() => dispatch({ type: "INCREMENT", payload: 1 })}>
-            +1
-          </button>
-          <button onClick={() => dispatch({ type: "DECREMENT", payload: 1 })}>
-            -1
-          </button>
-+         <p>COUNT:{otherState.count}</p>
-+         <button onClick={() => dispatch({ type: "CLEAR" })}>
-+           clear
-+         </button>
-+         <button onClick={() => dispatch({ type: "TOMAX" })}>
-+           to max
-+         </button>
-        </div>
-      )
-    }
-  }
+class Counter extends React.PureComponent {
+  render() {
 
-  const mapStateToProps = state => {
--   return ({ globalState: state })
-+   return ({ globalState: state.globalReducer, otherState: state.otherReducer })
+    const {globalState, otherState, dispatch} = this.props
+    return (
+      <div>
+        <p>COUNT:{globalState.count}</p>
+        <button onClick={() => dispatch({type: "INCREMENT", payload: 1})}>+1</button>
+        <button onClick={() => dispatch({type: "DECREMENT", payload: 1})}>-1</button>
+        <p>COUNT:{otherState.count}</p>
+        <button onClick={() => dispatch({type: "CLEAR"})}>clear</button>
+        <button onClick={() => dispatch({type: "TOMAX"})}>to max</button>
+      </div>
+    )
   }
-  export default connect(mapStateToProps)(Counter)
+}
+
+const mapStateToProps = state => {
+  return ({globalState: state.globalReducer, otherState: state.otherReducer})
+}
+export default connect(mapStateToProps)(Counter)
 ```
 
 为了省事，我把这个组件增加了两个按钮功能，实际情况更可能是另外一个组件来调用对应的方法。
 
 与之前不同的是，全局 `state` 不再是一层对象了，而是被我们 reducer 定义的字段名包了一层。
 
-**需要注意的是，我们调用 `dispatch({ type: "DECREMENT", payload: 1 })` 后，不仅 `globalReducer` 会被执行，`otherReducer` 也会被执行。只不过 `otherReducer` 走到了 `default` 情况。这也就是 reducer 不要写带有副作用的功能！**
-
-
+**需要注意的是，我们调用 `dispatch({ type: "DECREMENT", payload: 1 })` 后，不仅 `globalReducer` 会被执行，`otherReducer` 也会被执行。只不过 `otherReducer` 走到了 `default` 情况。这也就是 reducer
+不要写带有副作用的功能！**
 
 --END--

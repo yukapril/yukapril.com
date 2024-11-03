@@ -2,8 +2,8 @@
 layout: post
 title: 树莓派 Raspberry Pi 4B 上手
 date: 2020-05-13 23:37:00 GMT+0800
-categories: [开发板]
-tags:  [树莓派]
+categories: [ 开发板 ]
+tags: [ 树莓派 ]
 ---
 
 从 2018 年就开始考虑入手一个树莓派玩玩，当时还是 Raspberry Pi 3B+ 刚出的时候。后来发现自己没有太多用途，也就没着急入手。一晃到了 2019 年，看了阮一峰老师的文章，介绍树莓派的入门，再次想起了这个东西。可惜当时感觉也没有什么用途，再加上听说要出 Raspberry Pi 4B 了，就特意等了等。
@@ -16,13 +16,13 @@ tags:  [树莓派]
 
 ## 入手 Raspberry Pi 4B (4GB)
 
-![外包装已经被我打开，因为收到后第一时间就开箱欣赏了](https://cdn0.yukapril.com/2020-05-11-pi-1.jpg-wm.white)
+![外包装已经被我打开，因为收到后第一时间就开箱欣赏了](https://cdn1.yukapril.com/2020-05-11-pi-1.jpg)
 
-![配件全家福](https://cdn0.yukapril.com/2020-05-11-pi-2.jpg-wm.white)
+![配件全家福](https://cdn1.yukapril.com/2020-05-11-pi-2.jpg)
 
-![Raspberry Pi 4B 特写](https://cdn0.yukapril.com/2020-05-11-pi-3.jpg-wm.white)
+![Raspberry Pi 4B 特写](https://cdn1.yukapril.com/2020-05-11-pi-3.jpg)
 
-![Raspberry Pi 4B 特写](https://cdn0.yukapril.com/2020-05-11-pi-4.jpg-wm.white)
+![Raspberry Pi 4B 特写](https://cdn1.yukapril.com/2020-05-11-pi-4.jpg)
 
 拿到手之后，才发现他是如此的小巧，和信用卡般的大小，拿在手里迷你至极。甚至打开快递盒后，一度认为电源的盒子内装的才是本体。
 
@@ -36,7 +36,7 @@ tags:  [树莓派]
 
 Raspberry Pi 3B / 3B+，虽然配置低了些，但是会温度低一些，跑跑日常工具也够用。
 
-价格上，现在（2020-05-11），Raspberry Pi 3B+ 235 元左右，Raspberry Pi 4B 的 2GB 版本 260 元左右，4GB版本 405 元左右。 
+价格上，现在（2020-05-11），Raspberry Pi 3B+ 235 元左右，Raspberry Pi 4B 的 2GB 版本 260 元左右，4GB版本 405 元左右。
 
 本着买新不买旧，如果没买过的话，建议 Raspberry Pi 4B。跑小功能的话，2GB版本够用了。如果不差钱，直接 4GB 版本。如果有了 3B 系列，没遇到瓶颈，可以不换。
 
@@ -50,7 +50,7 @@ Raspberry Pi 3B / 3B+，虽然配置低了些，但是会温度低一些，跑�
 
 Micro SD 卡就是 TF 卡。就是那种非常小，指甲盖大小的卡。如果套上一个外壳，可以变成 SD 卡。
 
-![各种卡介绍](https://cdn0.yukapril.com/2020-05-11-pi-5.jpg-wm.black)
+![各种卡介绍](https://cdn1.yukapril.com/2020-05-11-pi-5.jpg)
 
 为了好拼写，下文直接叫做 TF 卡。
 
@@ -104,9 +104,9 @@ Raspbian 操作系统官网提供三个版本：
 
 我选择的是 Raspbian Buster with desktop，后续可以通过 VNC 开远程桌面。不过 VNC 对我来说目前还没什么实际用途。
 
-#### 3. 烧录 TF 卡 
+#### 3. 烧录 TF 卡
 
-![Raspberry Pi Imager](https://cdn0.yukapril.com/2020-05-11-pi-6.jpg-wm.white)
+![Raspberry Pi Imager](https://cdn1.yukapril.com/2020-05-11-pi-6.jpg)
 
 使用第一步的软件，对第二步的系统 img 文件进行烧录。操作很简单。
 
@@ -141,11 +141,12 @@ ssh pi@10.0.0.81 # 以用户pi来链接10.0.0.81
 sudo raspi-config 
 ```
 
-![raspi-config](https://cdn0.yukapril.com/2020-05-11-pi-7.jpg-wm.white)
+![raspi-config](https://cdn1.yukapril.com/2020-05-11-pi-7.jpg)
 
 在这里可以修改密码、配置时区、键盘布局、网络 WiFi 等。请自行配置即可，比较容易的。
 
 #### 开启 VNC
+
 如果想远程桌面，可以开启 VNC。单独说下开启 VNC，因为有坑。
 
 进入`5 Interfacing Options` 后，选择 `P3 VNC` 进行开启。之后需要到 `7 Advanced Options`中，配置 `A5 Resolution` 分辨率。**如果不配置分辨率，使用 VNC 链接会屏幕无内容或报错。**

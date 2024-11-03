@@ -2,8 +2,8 @@
 layout: post
 title: CSS世界阅读笔记（二）
 date: 2020-11-22 16:26:00 GMT+0800
-categories: [前端]
-tags:  [css,读书]
+categories: [ 前端 ]
+tags: [ css,读书 ]
 ---
 
 今年特别忙。年初看的《CSS 世界》，刚有时间看第二次。
@@ -17,14 +17,16 @@ tags:  [css,读书]
 完全没想到还有 `content` 这种用法。
 
 ```html
+
 <style>
-  img {
-    width: 100px;
-    height: 100px;
-  }
-  img:hover {
-    content: url("https://images.unsplash.com/photo-1586971934493-d6829d89393c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80");
-  }
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    img:hover {
+        content: url("https://images.unsplash.com/photo-1586971934493-d6829d89393c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80");
+    }
 </style>
 
 
@@ -57,7 +59,7 @@ button 比较特殊，据说火狐浏览器用上述方案还会左右留下内�
 
 ```css
 button::-moz-focus-inner {
-    padding:0;
+    padding: 0;
 }
 ```
 
@@ -75,10 +77,11 @@ button {
 如果是我估计就会直接用元素画一根线，剩余两根用两个伪元素来实现。书中给出了用 `border` 来进行画上下两根线的方案。关键是我就算知道这个思路也画不出来，因为没用过也不会用 `background-clip`：
 
 ```html
+
 <div class="flex">
-  <div class="div1"></div>
-  <div>&nbsp;</div>
-  <div class="div2"></div>
+    <div class="div1"></div>
+    <div>&nbsp;</div>
+    <div class="div2"></div>
 </div>
 ```
 
@@ -95,6 +98,7 @@ button {
     height: 3px;
     background-color: #000;
 }
+
 .div1::before {
     content: '';
     position: relative;
@@ -104,6 +108,7 @@ button {
     height: 3px;
     background-color: #000;
 }
+
 .div1::after {
     content: '';
     position: relative;
@@ -139,16 +144,17 @@ button {
 文中给出了负 margin 解法，也听说过，不过也早忘记了。
 
 ```html
+
 <div class="box">
-  <div class="div1">
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-  </div>
-  <div class="div2">
-    <p>1</p>
-  </div>
+    <div class="div1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+    </div>
+    <div class="div2">
+        <p>1</p>
+    </div>
 </div>
 ```
 
@@ -165,7 +171,7 @@ button {
     background-color: blue;
 }
 
-.div1,.div2{
+.div1, .div2 {
     float: left;
     margin-bottom: -9999px;
     padding-bottom: 9999px;
@@ -176,7 +182,8 @@ button {
 此外文章还提到了 `table-cell` 解法，连查待尝试，摸索出来了。
 
 ```css
-.box {}
+.box {
+}
 
 .div1 {
     background-color: red;
@@ -185,7 +192,8 @@ button {
 .div2 {
     background-color: blue;
 }
-.div1,.div2{
+
+.div1, .div2 {
     display: table-cell;
     width: 100px;
 }

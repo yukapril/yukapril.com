@@ -2,8 +2,8 @@
 layout: post
 title: "使用 webpack 编译 less 后 z-index 值改变处理"
 date: 2018-02-10 17:10:00 GMT+0800
-categories: [前端]
-tags:  [webpack, less, OptimizeCssAssetsPlugin, cssnano]
+categories: [ 前端 ]
+tags: [ webpack, less, OptimizeCssAssetsPlugin, cssnano ]
 ---
 
 在一个老项目中新增加了功能，使用 webpack 编译后，发现其 `z-index` 被改变了，原本有的组件设置类似为 999 的都被优化为 1～9 了。看来得在插件上找问题。
@@ -25,21 +25,20 @@ let OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // ...
 
 new OptimizeCssAssetsPlugin({
-    assetNameRegExp: /\.css$/g,
-    cssProcessor: require('cssnano'),
-    cssProcessorOptions: {
-        discardComments: {removeAll: true},
-        autoprefixer: {add: true, browsers: ['last 2 versions']},
-        reduceIdents: false
-     },
-    canPrint: true
+  assetNameRegExp: /\.css$/g,
+  cssProcessor: require('cssnano'),
+  cssProcessorOptions: {
+    discardComments: {removeAll: true},
+    autoprefixer: {add: true, browsers: ['last 2 versions']},
+    reduceIdents: false
+  },
+  canPrint: true
 })
 ```
 
 查阅 [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin) 简陋的文档：
 
-![image](https://cdn0.yukapril.com/blog/2018-02-10-webpack-less.png-wm.black)
-
+![image](https://cdn1.yukapril.com/2018-02-10-webpack-less.png)
 
 意思是说，啥都没做，只是把 `cssProcessorOptions` 的配置传给处理器 `cssProcessor` 而已。
 
@@ -55,15 +54,15 @@ new OptimizeCssAssetsPlugin({
 
 ```js
 new OptimizeCssAssetsPlugin({
-    assetNameRegExp: /\.css$/g,
-    cssProcessor: require('cssnano'),
-    cssProcessorOptions: {
-        discardComments: {removeAll: true},
-        autoprefixer: {add: true, browsers: ['last 2 versions']},
-        reduceIdents: false,
-        zindex:false
-     },
-    canPrint: true
+  assetNameRegExp: /\.css$/g,
+  cssProcessor: require('cssnano'),
+  cssProcessorOptions: {
+    discardComments: {removeAll: true},
+    autoprefixer: {add: true, browsers: ['last 2 versions']},
+    reduceIdents: false,
+    zindex: false
+  },
+  canPrint: true
 })
 ```
 
@@ -78,8 +77,8 @@ new OptimizeCssAssetsPlugin({
 ```js
 // Prevent PostCSS from throwing when safe is defined
 if (options.safe === true) {
-    options.isSafe = true;
-    options.safe = null;
+  options.isSafe = true;
+  options.safe = null;
 }
 
 const safe = options.isSafe;
@@ -87,9 +86,9 @@ const safe = options.isSafe;
 
 ```js
 opts = assign({},
-    defaultOptions[plugin],
-    safe ? safeOptions[plugin] : null,
-    opts
+  defaultOptions[plugin],
+  safe ? safeOptions[plugin] : null,
+  opts
 );
 ```
 

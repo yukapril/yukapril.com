@@ -1,18 +1,19 @@
 ---
 layout: post
-title: 购入 AirPods Pro，常见问题问答 
+title: 购入 AirPods Pro，常见问题问答
 date: 2020-04-07 22:00:00 GMT+0800
-categories: [外设]
-tags:  [AirPods Pro]
+categories: [ 外设 ]
+tags: [ AirPods Pro ]
 ---
 
 在家办公会议太多了，正巧自己原本的 SONY 蓝牙耳机也用了快 10 年，就想着换个吧。才知道现在有百亿补贴活动，AirPods Pro 大概 1400+，AirPods 2 无线版大概 1200+。
 
 <!-- more -->
 
-本来特别想买 AirPods 2，主要是自己带着苹果 EarPods 的耳机特别舒服。而同样是入耳式的 SONY，带着估计不到半小时耳朵就有明显的听诊器效应，所以一开始特别抗拒 AirPods Pro。不过最终还是因为价格真香，本着买新不买旧，也就是多花 200 左右，所以还是入手了 AirPods Pro。
+本来特别想买 AirPods 2，主要是自己带着苹果 EarPods 的耳机特别舒服。而同样是入耳式的 SONY，带着估计不到半小时耳朵就有明显的听诊器效应，所以一开始特别抗拒 AirPods Pro。不过最终还是因为价格真香，本着买新不买旧，也就是多花
+200 左右，所以还是入手了 AirPods Pro。
 
-![曾经的 SONY](https://cdn0.yukapril.com/2020-04-07-airpods-pro-1.JPG-wm.black)
+![曾经的 SONY](https://cdn1.yukapril.com/2020-04-07-airpods-pro-1.jpg)
 
 当时 1470+ 购买的，结果第二天补贴更厉害了，大概到手价可以再便宜 80 左右。今天又看了下，基本上徘徊在 1390+ 左右。
 
@@ -22,22 +23,22 @@ tags:  [AirPods Pro]
 
 苹果的东西，外包装一向干净简洁。
 
-![外包装](https://cdn0.yukapril.com/2020-04-07-airpods-pro-2.JPG-wm.white)
+![外包装](https://cdn1.yukapril.com/2020-04-07-airpods-pro-2.jpg)
 
 打开后，AirPods Pro 映入眼帘。包装纸包裹非常整齐，我尝试撕开了下，很有阻力。内部已经放好了两枚耳机。
 
 拿出上层托板，下侧是盘好的数据线，USB Type-C 接口到苹果 Lightning 接口。可惜我没有 Type-C的设备，这根数据线就没什么用了。中间是备选的耳塞，默认耳机上的耳塞是 M 号，这里还有 S 和 L 号可以选择。
 
-![AirPods Pro 配件全家福](https://cdn0.yukapril.com/2020-04-07-airpods-pro-3.JPG-wm.white)
+![AirPods Pro 配件全家福](https://cdn1.yukapril.com/2020-04-07-airpods-pro-3.jpg)
 
 耳机盒正面，有一个灯，有橘色和绿色之分。开盖是磁吸形式的。可惜耳机盒不能立起来，只能躺着。不过 AirPods 系列好像也是不能立起来的。
 
-![AirPods Pro 正面](https://cdn0.yukapril.com/2020-04-07-airpods-pro-4.JPG-wm.white)
+![AirPods Pro 正面](https://cdn1.yukapril.com/2020-04-07-airpods-pro-4.jpg)
 
-![耳机全貌](https://cdn0.yukapril.com/2020-04-07-airpods-pro-5.JPG-wm.white)
+![耳机全貌](https://cdn1.yukapril.com/2020-04-07-airpods-pro-5.jpg)
 
 背面，有一个按钮，按下后，方便其他设备链接。
-![AirPods Pro 背面](https://cdn0.yukapril.com/2020-04-07-airpods-pro-6.JPG-wm.white)
+![AirPods Pro 背面](https://cdn1.yukapril.com/2020-04-07-airpods-pro-6.jpg)
 
 **问答**
 

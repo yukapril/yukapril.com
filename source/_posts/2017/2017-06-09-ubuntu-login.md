@@ -2,8 +2,8 @@
 layout: post
 title: "ubuntu 只能以访客登录的问题处理"
 date: 2017-06-09 21:47:00 GMT+0800
-categories: [技术]
-tags:  [ubuntu,访客,登录]
+categories: [ 技术 ]
+tags: [ ubuntu,访客,登录 ]
 ---
 
 今天打开笔记本，发现 Ubuntu 没有让输入密码，直接回车就进入了桌面，并且无法看到数据了。
@@ -23,8 +23,10 @@ tags:  [ubuntu,访客,登录]
 1. 重启，启动后按 <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>F1</kbd>（<kbd>F1</kbd> ~ <kbd>F5</kbd>都行，看到让你登录就好）
 2. 输入账号，密码，登录。
 3. 删除配置文件，以 `.Xaut` 开头的文件
+
 ```sh
 cd ~ 
 rm -rf .Xaut*
 ```
+
 4. 重启，正常

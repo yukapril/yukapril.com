@@ -2,8 +2,8 @@
 layout: post
 title: Learning Git
 date: 2019-04-25 22:23:00 GMT+0800
-categories: [编程]
-tags:  [git]
+categories: [ 编程 ]
+tags: [ git ]
 ---
 
 一直在学习 git，特此记录下常用的命令。
@@ -91,6 +91,7 @@ git reset HEAD^          # 取消当前提交(HEAD-->stage)
 ```
 
 #### 日志
+
 ```bash
 git log                  # 查看日志
 git log --oneline        # 单行显示(--pretty=oneline)
@@ -201,7 +202,6 @@ git bundle create repo.bundle HEAD master  # 项目打包
 git reflog # 查阅HEAD日志
 ```
 
-
 ## git alias
 
 自己网上找的，因为查看日志最麻烦，所以仅仅收集了日志部分。现在也很少使用了。主要在用系统 alias。
@@ -212,7 +212,6 @@ alias.ll=log --stat --abbrev-commit
 alias.lg=log --color --graph --pretty=format:'%C(bold white)%h%Creset -%C(bold green)%d%Creset %s %C(bold green)(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 alias.llg=log --color --graph --pretty=format:'%C(bold white)%H %d%Creset%n%s%n%+b%C(bold blue)%an <%ae>%Creset %C(bold green)%cr (%ci)' --abbrev-commit
 ```
-
 
 ## alias(git-plugin)
 

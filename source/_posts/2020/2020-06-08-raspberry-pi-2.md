@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 树莓派 Raspberry Pi (二)：DDNS 动态域名解析实现 
+title: 树莓派 Raspberry Pi (二)：DDNS 动态域名解析实现
 date: 2020-06-08 21:11:00 GMT+0800
-categories: [开发板]
-tags:  [树莓派,node]
+categories: [ 开发板 ]
+tags: [ 树莓派,node ]
 ---
 
 如果想从外网访问家里的树莓派，除了家里要有外网 IP 外，还需要配置动态域名解析。
@@ -80,11 +80,11 @@ client.request('AddDomainRecord', params, requestOption).then((result) => {
 首先是完成查询自己的 IP，我用的 ip-api 的接口：
 
 ```js
-function myIp () {
-  const { ctx } = this
+function myIp() {
+  const {ctx} = this
   return new Promise(async (resolve, reject) => {
     try {
-      const result = await ctx.curl('http://ip-api.com/json', { dataType: 'json' })
+      const result = await ctx.curl('http://ip-api.com/json', {dataType: 'json'})
       const json = result.data
       resolve(json)
     } catch (e) {
@@ -122,7 +122,7 @@ const getDnsRecord = (subdomain) => {
     try {
       const result = await client.request('DescribeDomainRecords', params, requestOption)
       const record = result.DomainRecords.Record.filter(item => {
-        return item.RR === subdomain 
+        return item.RR === subdomain
       })[0]
       resolve(record)
     } catch (ex) {
@@ -145,7 +145,7 @@ const updateDnsRecord = (recordId, rr, ip) => {
     endpoint: 'https://alidns.aliyuncs.com', // 不要改
     apiVersion: '2015-01-09' // 不要改
   })
-  
+
   const requestOption = {
     method: 'POST'
   }
@@ -173,7 +173,7 @@ const updateDnsRecord = (recordId, rr, ip) => {
 
 ```js
 // 自己要修改的子域名
-const rr = 'test' 
+const rr = 'test'
 
 // 查询自己的 IP
 const ipData = await myIp()
@@ -182,7 +182,7 @@ const ip = ipData.query
 // 查询阿里云配置的记录
 const record = await getDnsRecord(rr)
 // 如果配置的记录和当前 IP 相同，可以结束了
-if(record.Value === ip) return 
+if (record.Value === ip) return
 // 否则要更新阿里云 IP
 await updateDnsRecord(record.RecordId, rr, ip)
 ```

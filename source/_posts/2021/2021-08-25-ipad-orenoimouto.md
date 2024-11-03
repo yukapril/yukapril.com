@@ -2,8 +2,8 @@
 layout: post
 title: iPad Pro 阅读俺妹
 date: 2021-08-25 01:03:00 GMT+0800
-categories: [动漫]
-tags:  [我的妹妹,俺妹,iPad]
+categories: [ 动漫 ]
+tags: [ 我的妹妹,俺妹,iPad ]
 ---
 
 一周前就购买了 iPad Pro，本想着体验下，但还是比较冲动。能拿它阅读小说也是一件非常有乐趣的事情。
@@ -95,7 +95,7 @@ tags:  [我的妹妹,俺妹,iPad]
 拷贝方法：
 
 * iPad 安装转接头/扩展坞，之后用 U 盘。是否拷贝 iPad 本地随意。
-* 电脑将动漫拷贝到 iCloud，之后 iPad 通过 iCloud 拷贝 iPad  本地。此方法较慢，要上传 iCloud，但是省事。注意 iCloud 默认只有 5GB，拷几个后要随时删除，腾出空间继续传新的。
+* 电脑将动漫拷贝到 iCloud，之后 iPad 通过 iCloud 拷贝 iPad 本地。此方法较慢，要上传 iCloud，但是省事。注意 iCloud 默认只有 5GB，拷几个后要随时删除，腾出空间继续传新的。
 * 通过 macOS 直接 AirDrop 给 iPad，自动保存到 iPad 相册。后续可以手动一个一个转移到 iPad 本地。速度快，但是不能直接一步拷贝到 iPad 本地。
 
 > iPad 本地：是指「文件」下「我的 iPad」栏目。

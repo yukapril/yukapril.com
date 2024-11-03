@@ -2,8 +2,8 @@
 layout: post
 title: Redux 学习 - umijs
 date: 2019-11-12 21:56:00 GMT+0800
-categories: [前端]
-tags:  [react,redux,umi]
+categories: [ 前端 ]
+tags: [ react,redux,umi ]
 ---
 
 终于到最后一篇文章了。这次开始学习 umi 架构的 redux 用法。
@@ -35,13 +35,13 @@ export default {
     count: 10,
   },
   reducers: {
-    increment (state, action) {
+    increment(state, action) {
       return {
         ...state,
         count: state.count + action.payload,
       }
     },
-    decrement (state, action) {
+    decrement(state, action) {
       return {
         ...state,
         count: state.count - action.payload,
@@ -49,16 +49,16 @@ export default {
     },
   },
   effects: {
-    *incrementAsync (action, { put }) {
+    * incrementAsync(action, {put}) {
       yield delay(1000)
-      yield put({ type: 'increment', payload: action.payload })
+      yield put({type: 'increment', payload: action.payload})
     },
     decrementAsync: [
-      function* (action, { put }) {
+      function* (action, {put}) {
         yield delay(1000)
-        yield put({ type: 'decrement', payload: action.payload })
+        yield put({type: 'decrement', payload: action.payload})
       },
-      { type: 'takeLatest' }
+      {type: 'takeLatest'}
     ]
   },
 }
@@ -74,26 +74,29 @@ export default {
 
 `reducers` 和之前 redux 中用法一样，负责同步修改 `state` 内容。注意也是要返回一个新的 `state` 对象，并且函数必须是无副作用的。
 
-`effects` 就是处理副作用的位置。完成副作用（比如异步获取数据）后，通过 `put`（相当于 dispatch）调用后续合适的 `reducers` 方法，完成 `state` 更新。这里要注意的是，通过 `put` 调用，直接写类型即可，不需要写命名空间。即 **不用写成 `put({ type: 'global/increment', payload: action.payload })`**。
+`effects` 就是处理副作用的位置。完成副作用（比如异步获取数据）后，通过 `put`（相当于 dispatch）调用后续合适的 `reducers` 方法，完成 `state` 更新。这里要注意的是，通过 `put` 调用，直接写类型即可，不需要写命名空间。即
+**不用写成 `put({ type: 'global/increment', payload: action.payload })`**。
 
 这个例子 `effects` 写了两种用法。
 
 一种是默认的 `takeEvery`，在 redux-saga 中我们接触过它。默认写法的语法是：
 
-```js
-*incrementAsync (action, effects) {}
+```text
+*incrementAsync(action, effects){
+}
 ```
 
 另一种是 `takeLatest`，这个不是默认值，所以需要配置，语法是：
 
 ```js
 decrementAsync: [
-  function* (action, effects) {},
-  { type: 'takeLatest' }
+  function* (action, effects) {
+  },
+  {type: 'takeLatest'}
 ]
 ```
 
-两种的区别在于，入口一个是 generator 函数（有星号），一个是普通数组，数组内第一个参数是 generator 函数，第二个是类型配置。 
+两种的区别在于，入口一个是 generator 函数（有星号），一个是普通数组，数组内第一个参数是 generator 函数，第二个是类型配置。
 
 #### index.js
 
@@ -101,24 +104,24 @@ decrementAsync: [
 
 ```jsx
 import React from "react"
-import { connect } from "dva"
+import {connect} from "dva"
 
 class Counter extends React.PureComponent {
-  render () {
-    const { globalState, dispatch } = this.props
+  render() {
+    const {globalState, dispatch} = this.props
     return (
       <div>
         <p>COUNT:{globalState.count}</p>
-        <button onClick={() => dispatch({ type: "global/increment", payload: 1 }) }>
+        <button onClick={() => dispatch({type: "global/increment", payload: 1})}>
           +1
         </button>
-        <button onClick={() => dispatch({ type: "global/decrement", payload: 1 }) }>
+        <button onClick={() => dispatch({type: "global/decrement", payload: 1})}>
           -1
         </button>
-        <button onClick={() => dispatch({ type: "global/incrementAsync", payload: 2 }) }>
+        <button onClick={() => dispatch({type: "global/incrementAsync", payload: 2})}>
           +2 async takeEvery
         </button>
-        <button onClick={() => dispatch({ type: "global/decrementAsync", payload: 2 }) }>
+        <button onClick={() => dispatch({type: "global/decrementAsync", payload: 2})}>
           -2 async takeLatest
         </button>
       </div>
@@ -126,7 +129,7 @@ class Counter extends React.PureComponent {
   }
 }
 
-const mapStateToProps = state => ({ globalState: state.global })
+const mapStateToProps = state => ({globalState: state.global})
 export default connect(mapStateToProps)(Counter)
 ```
 

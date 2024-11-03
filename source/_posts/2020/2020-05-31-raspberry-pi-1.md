@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 树莓派 Raspberry Pi (一)：入门 
+title: 树莓派 Raspberry Pi (一)：入门
 date: 2020-05-31 12:17:00 GMT+0800
-categories: [开发板]
-tags:  [树莓派]
+categories: [ 开发板 ]
+tags: [ 树莓派 ]
 ---
 
 之前的文章介绍了树莓派的安装和开机，本次开始，我来聊一聊拥有树莓派后，可以做那些具体的应用，以及我现在怎么来用。

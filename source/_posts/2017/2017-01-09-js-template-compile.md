@@ -2,8 +2,8 @@
 layout: post
 title: "js 模板编译的实现"
 date: 2017-01-09 21:03:00 GMT+0800
-categories: [前端]
-tags:  [模板,编译]
+categories: [ 前端 ]
+tags: [ 模板,编译 ]
 ---
 
 看过很多模板，语法各不相同，执行效率也差异很大。在用angular 1 的时候，有一个名词是编译（$compile）。我很诧异，js作为解释型语言，为什么要编译？
@@ -94,10 +94,10 @@ p hello!
 
 ```js
 var data = {
-    user: {
-        name: 'Jason',
-        age: 25
-    }
+  user: {
+    name: 'Jason',
+    age: 25
+  }
 }
 ```
 
@@ -112,8 +112,8 @@ var data = {
 对于上面的这个模板，其实也可以这样来写：
 
 ```js
-var tpl = function(data){
-    return "<p>Hello, I'm " + data.name + "! " + data.age + " years old!</p>";
+var tpl = function (data) {
+  return "<p>Hello, I'm " + data.name + "! " + data.age + " years old!</p>";
 }
 ```
 
@@ -128,14 +128,14 @@ var tpl = function(data){
 可以这样写：
 
 ```js
-var fn = new Function('x','y','return x + y');
+var fn = new Function('x', 'y', 'return x + y');
 
 console.log(fn);
 
 // 返回
-(function(x,y
-/**/) {
-return x + y
+(function (x, y
+           /**/) {
+  return x + y
 })
 ```
 
@@ -147,10 +147,10 @@ return x + y
 
 ```js
 var template = function (tpl) {
-    // 模板字符串
-    var retStr = '';
-    //...
-    return new Function('obj', retStr);
+  // 模板字符串
+  var retStr = '';
+  //...
+  return new Function('obj', retStr);
 };
 ```
 
@@ -158,10 +158,10 @@ var template = function (tpl) {
 
 ```js
 var template = function (tpl) {
-    // 模板字符串
-    var retStr = tpl.replace(/{ {(.+?)} }/g, 'obj.$1');
-    retStr = 'return "' + retStr + '"';
-    return new Function('obj', retStr);
+  // 模板字符串
+  var retStr = tpl.replace(/{ {(.+?)} }/g, 'obj.$1');
+  retStr = 'return "' + retStr + '"';
+  return new Function('obj', retStr);
 };
 
 var tpl = "<p>Hello, I'm { {user.name} }! { {user.age} } years old!</p>";
@@ -173,8 +173,8 @@ console.log(render);
 
 ```js
 function anonymous(obj
-/**/) {
-return "<p>Hello, I'm obj.user.name! obj.user.age years old!</p>"
+                   /**/) {
+  return "<p>Hello, I'm obj.user.name! obj.user.age years old!</p>"
 }
 ```
 
@@ -182,18 +182,18 @@ return "<p>Hello, I'm obj.user.name! obj.user.age years old!</p>"
 
 ```js
 var template = function (tpl) {
-    // 模板字符串
-    var retStr = tpl.replace(/{ {(.+?)} }/g, '" + obj.$1 + "');
-    retStr = 'return "' + retStr + '"';
-    return new Function('obj', retStr);
+  // 模板字符串
+  var retStr = tpl.replace(/{ {(.+?)} }/g, '" + obj.$1 + "');
+  retStr = 'return "' + retStr + '"';
+  return new Function('obj', retStr);
 };
 
 var tpl = "<p>Hello, I'm { {user.name} }! { {user.age} } years old!</p>";
 var data = {
-    user: {
-        name: 'Jason',
-        age: 25
-    }
+  user: {
+    name: 'Jason',
+    age: 25
+  }
 };
 var render = template(tpl);
 console.log(render);
@@ -207,8 +207,8 @@ console.log(result);
 
 ```js
 function anonymous(obj
-/**/) {
-return "<p>Hello, I'm " + obj.user.name + "! " + obj.user.age + " years old!</p>"
+                   /**/) {
+  return "<p>Hello, I'm " + obj.user.name + "! " + obj.user.age + " years old!</p>"
 }
 ```
 
@@ -220,23 +220,27 @@ return "<p>Hello, I'm " + obj.user.name + "! " + obj.user.age + " years old!</p>
 
 ## 高级模板编译
 
-上面的例子，可以处理各种对象形式的赋值。我们还应该支持 `if` `for` 这样的语法。 这里我就不展开写了。代码我放在了 [Github - template-render](https://github.com/yukapril/template-render)。代码是ES6的，可以放在最新的浏览器执行，或者**自行**去编译。
+上面的例子，可以处理各种对象形式的赋值。我们还应该支持 `if` `for` 这样的语法。 这里我就不展开写了。代码我放在了 [Github - template-render](https://github.com/yukapril/template-render)
+。代码是ES6的，可以放在最新的浏览器执行，或者**自行**去编译。
 
 我说下过程：
 
 1. 字符串模板解析：要从模板中分析出那些是普通字符串，那些是模板代码。见 [`parse2array`](https://github.com/yukapril/template-render/blob/master/template.js#L27) 方法。
-2. 合成返回函数主体：可以直接写入字符串，也有人喜欢写入数组（最后执行`arr.join('')`）。要区分三种情况，普通字符串（直接简单处理返回就行），普通赋值语法（稍作处理返回），高级语法字符串（需要根据你自己定义的模板语法来写解释器）。见 [编译为函数](https://github.com/yukapril/template-render/blob/master/template.js#L92) 和 [高级语法处理 - syntaxParse](https://github.com/yukapril/template-render/blob/master/template.js#L67)。
+2. 合成返回函数主体：可以直接写入字符串，也有人喜欢写入数组（最后执行`arr.join('')`
+   ）。要区分三种情况，普通字符串（直接简单处理返回就行），普通赋值语法（稍作处理返回），高级语法字符串（需要根据你自己定义的模板语法来写解释器）。见 [编译为函数](https://github.com/yukapril/template-render/blob/master/template.js#L92)
+   和 [高级语法处理 - syntaxParse](https://github.com/yukapril/template-render/blob/master/template.js#L67)。
 3. 将第二步的内容稍加处理，采用 `new Function` 返回就行了。见 [最后处理并返回](https://github.com/yukapril/template-render/blob/master/template.js#L109)
 
 还有一些经验可以借鉴：
 
-1. 使用`with`语法。这样可以方便的处理多层的对象，对上文来说，就是可以省去正则替换后中的`obj`了。这个灵感好像来源于Vue，我记得在哪里听说过。这个语法我没用过，曾经听说是效率低下，现在不太清楚。可以参见[这里](https://www.zhihu.com/question/49929356)。
+1. 使用`with`语法。这样可以方便的处理多层的对象，对上文来说，就是可以省去正则替换后中的 `obj` 了。这个灵感好像来源于Vue，我记得在哪里听说过。
+   这个语法我没用过，曾经听说是效率低下，现在不太清楚。可以参见[这里](https://www.zhihu.com/question/49929356)。
 
 2. 我对逻辑循环等语法进行了设计，比如：
 
 ```html
 { {# each hobbys as item } }
-    <li>{ {$index+1} }/{ {$length} } - { {item} }</li>
+<li>{ {$index+1} }/{ {$length} } - { {item} }</li>
 { {# endeach } }
 ```
 

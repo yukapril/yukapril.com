@@ -44,11 +44,11 @@ tags: [ 旅游, 重庆 ]
 
 如果说是吃辣比较多，这算不上什么有趣。不过几乎每家餐馆，都会有这种大电扇。
 
-![大电扇](https://cdn0.yukapril.com/20240828-chongqing-1.jpg-wm.white)
+![大电扇](https://cdn1.yukapril.com/2024-08-28-chongqing-1.jpg)
 
 而且纸巾是付费的！一般两到三元。不过如果团券，里面会包含餐位费，即包含纸巾费。我们去了五个餐馆，其中四个都有付费纸巾，我当作特产来回来了。
 
-![付费纸巾](https://cdn0.yukapril.com/20240828-chongqing-2.jpg-wm.white)
+![付费纸巾](https://cdn1.yukapril.com/2024-08-28-chongqing-2.jpg)
 
 不过有一说一，纸巾盒里面的纸巾还是挺满的，值这个价格（相对一元一包的小面巾纸）。
 
@@ -86,7 +86,6 @@ tags: [ 旅游, 重庆 ]
 
 大致就是这种感觉
 
-![灰原哀](https://cdn0.yukapril.com/20240828-chongqing-3.jpg-wm.white)
-
+![灰原哀](https://cdn1.yukapril.com/2024-08-28-chongqing-3.jpg)
 
 --END--

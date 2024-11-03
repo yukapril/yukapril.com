@@ -2,8 +2,8 @@
 layout: post
 title: 中文输入法在 React 文本输入框的特殊处理
 date: 2019-11-11 22:54:00 GMT+0800
-categories: [前端]
-tags:  [react,input,event,composition]
+categories: [ 前端 ]
+tags: [ react,input,event,composition ]
 ---
 
 看 anu 的源码，看到注释里面有一篇文章，说输入法的问题，正好很多年前也遇到过，虽然不是特别影响使用，但是这个思路确实不常见。
@@ -44,28 +44,28 @@ class App extends React.PureComponent {
   // 在 handleChange 中调用此方法后，
   // event.type 就存在 change 的情况。
   handleCompsition = event => {
-    const { isInputing } = this.state;
+    const {isInputing} = this.state;
     const type = event.type;
     const value = event.target.value;
     console.log("handleCompsition", type, value);
 
     if (type === "compositionstart") {
       // 输入法开始输入
-      this.setState({ isInputing: true });
+      this.setState({isInputing: true});
     } else if (type === "compositionupdate") {
       // 输入法每次敲击，这里不需要特殊处理
       // 只需要关注开始和结束事件即可
     } else if (type === "compositionend") {
       // 输入法结束输入
-      this.setState({ isInputing: false });
+      this.setState({isInputing: false});
       // 由于是先调用 onChange
       // 最后调用 compositionend
       // 故此事件内需要将最终的内容写入 state
-      this.setState({ text: value });
+      this.setState({text: value});
     } else if (type === "change") {
       if (!isInputing) {
         // 非输入法情况下，直接保存内容到 state
-        this.setState({ text: value });
+        this.setState({text: value});
       } else {
         // 输入法情况下，等待输入法输入完毕
         // 然后在 compositionend 事件内，再保存内容到 state
@@ -84,8 +84,8 @@ class App extends React.PureComponent {
     this.handleCompsition(event);
   };
 
-  render () {
-    const { text, isInputing } = this.state;
+  render() {
+    const {text, isInputing} = this.state;
 
     return (
       <div>
@@ -98,7 +98,7 @@ class App extends React.PureComponent {
             onCompositionUpdate={this.handleCompsition}
             onCompositionEnd={this.handleCompsition}
             onChange={this.handleChange}
-            value={this.state.innerInputText} />
+            value={this.state.innerInputText}/>
         </p>
       </div>
     );

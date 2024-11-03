@@ -2,8 +2,8 @@
 layout: post
 title: "chrome浏览器无法打开htpps网站的处理"
 date: 2017-01-09 00:34:00 GMT+0800
-categories: [随笔]
-tags:  [chrome,https,无法连接]
+categories: [ 随笔 ]
+tags: [ chrome,https,无法连接 ]
 ---
 
 在升级chrome53到54的时候，访问https站点经常会出现问题。
@@ -27,19 +27,16 @@ tags:  [chrome,https,无法连接]
 
 今天访问稀土掘金，页面不能正常显示。使用<kbd>cmd</kbd> + <kbd>alt</kbd> + <kbd>I</kbd>（或者windows下<kbd>F12</kbd>）打开面板，切换到`console`栏目下，发现了大量链接访问错误。
 
-![image](https://cdn0.yukapril.com/blog/2017-01-09-chrome-https-error-1.png-wm.black)
+![image](https://cdn1.yukapril.com/2017-01-09-chrome-https-error-1.png)
 
 只需要右键选择无法访问的链接，新开窗口打开就行了。
 
-![image](https://cdn0.yukapril.com/blog/2017-01-09-chrome-https-error-2.png-wm.black)
+![image](https://cdn1.yukapril.com/2017-01-09-chrome-https-error-2.png)
 
 熟悉的页面又出现了，继续就可以了。
 
-![image](https://cdn0.yukapril.com/blog/2017-01-09-chrome-https-error-3.png-wm.black)
+![image](https://cdn1.yukapril.com/2017-01-09-chrome-https-error-3.png)
 
 之后就可以回到原网站，刷新看看效果了。
 
 如果还有失败的链接，继续再来一遍。一个链接的网站域名/端口不同，就算一个新网站，就需要重来一遍，一般网站最多3-4遍足够了。
-
-
-

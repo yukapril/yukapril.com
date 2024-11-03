@@ -2,8 +2,8 @@
 layout: post
 title: "codewars - Father and son"
 date: 2016-10-31 22:14:00 GMT+0800
-categories: [codewars]
-tags:  [codewars]
+categories: [ codewars ]
+tags: [ codewars ]
 ---
 
 在 codewars 上面做题，有这样[一道题](https://www.codewars.com/kata/shortest-code-father-and-son)。
@@ -31,11 +31,11 @@ tags:  [codewars]
 原始版本   (length=187)
 
 ```js
-function sc(s){
-  return s.split('').map((v)=>{
-    if(v.toLowerCase()==v && s.indexOf(v.toUpperCase())>=0){
+function sc(s) {
+  return s.split('').map((v) => {
+    if (v.toLowerCase() == v && s.indexOf(v.toUpperCase()) >= 0) {
       return v
-    }else if(v.toUpperCase()==v && s.indexOf(v.toLowerCase())>=0){
+    } else if (v.toUpperCase() == v && s.indexOf(v.toLowerCase()) >= 0) {
       return v
     }
   }).join('')
@@ -47,12 +47,12 @@ function sc(s){
 竟然长度基本没有减少...要命啊，看来重复次数太少了，不太管用。
 
 ```js
-function sc(s){
-  var l='toLowerCase', u='toUpperCase'
-  return s.split('').map((v)=>{
-    if(v[l]()==v && s.indexOf(v[u]())>=0){
+function sc(s) {
+  var l = 'toLowerCase', u = 'toUpperCase'
+  return s.split('').map((v) => {
+    if (v[l]() == v && s.indexOf(v[u]()) >= 0) {
       return v
-    }else if(v[u]()==v && s.indexOf(v[l]())>=0){
+    } else if (v[u]() == v && s.indexOf(v[l]()) >= 0) {
       return v
     }
   }).join('')
@@ -62,10 +62,10 @@ function sc(s){
 删除else if (length=169)，这句话可以合并的。
 
 ```js
-function sc(s){
-  var l='toLowerCase', u='toUpperCase'
-  return s.split('').map((v)=>{
-    if(v[l]()==v && s.indexOf(v[u]())>=0 || v[u]()==v && s.indexOf(v[l]())>=0){
+function sc(s) {
+  var l = 'toLowerCase', u = 'toUpperCase'
+  return s.split('').map((v) => {
+    if (v[l]() == v && s.indexOf(v[u]()) >= 0 || v[u]() == v && s.indexOf(v[l]()) >= 0) {
       return v
     }
   }).join('')
@@ -75,10 +75,10 @@ function sc(s){
 去掉没用的括号 (length=165)
 
 ```js
-function sc(s){
-  var l='toLowerCase', u='toUpperCase'
+function sc(s) {
+  var l = 'toLowerCase', u = 'toUpperCase'
   return s.split('').map(v => {
-    if(v[l]()==v && s.indexOf(v[u]())>=0 || v[u]()==v && s.indexOf(v[l]())>=0)return v
+    if (v[l]() == v && s.indexOf(v[u]()) >= 0 || v[u]() == v && s.indexOf(v[l]()) >= 0) return v
   }).join('')
 }
 ```
@@ -88,10 +88,10 @@ function sc(s){
 仔细研究下，其实if语句内容是多余的，直接判断当前字符在字符串里面，必须有大写和小写就行了，没必要进行区分(length=143)
 
 ```js
-function sc(s){
-  var l='toLowerCase', u='toUpperCase'
+function sc(s) {
+  var l = 'toLowerCase', u = 'toUpperCase'
   return s.split('').map(v => {
-    if(s.indexOf(v[l]())>=0 &&s.indexOf(v[u]())>=0)return v
+    if (s.indexOf(v[l]()) >= 0 && s.indexOf(v[u]()) >= 0) return v
   }).join('')
 }
 ```
@@ -99,10 +99,10 @@ function sc(s){
 突然发现，只要函数正确，也可以修改自带的函数结构的。调整为ES6格式。(length=132)
 
 ```js
-sc=s=>{
-  var l='toLowerCase', u='toUpperCase'
+sc = s => {
+  var l = 'toLowerCase', u = 'toUpperCase'
   return s.split('').map(v => {
-    if(s.indexOf(v[l]())>=0 &&s.indexOf(v[u]())>=0)return v
+    if (s.indexOf(v[l]()) >= 0 && s.indexOf(v[u]()) >= 0) return v
   }).join('')
 }
 ```
@@ -116,20 +116,18 @@ sc=s=>{
 举个非常简单的例子：
 
 ```js
-var filtered = [12, 5, 8, 130, 44].filter((el)=>el >= 10)
+var filtered = [12, 5, 8, 130, 44].filter((el) => el >= 10)
 // [12, 130, 44]
 ```
 
 改造下，试试看。(length=121)
 
 ```js
-sc=s=>{
-  var l='toLowerCase', u='toUpperCase'
-  return s.split('').filter(v => s.indexOf(v[l]())>=0 && s.indexOf(v[u]())>=0).join('')
+sc = s => {
+  var l = 'toLowerCase', u = 'toUpperCase'
+  return s.split('').filter(v => s.indexOf(v[l]()) >= 0 && s.indexOf(v[u]()) >= 0).join('')
 }
 ```
-
-
 
 这次虽然是121字符，但是实际可以通过了，刷个流氓就能（去掉`var`）。
 
@@ -144,8 +142,8 @@ sc=s=>{
 使用`includes`有个好处，那就是省去了判断符号`>=`。我来看看。
 
 ```js
-sc=s=>{
-  var l='toLowerCase', u='toUpperCase'
+sc = s => {
+  var l = 'toLowerCase', u = 'toUpperCase'
   return s.split('').filter(v => s.includes(v[l]()) && s.includes(v[u]())).join('')
 }
 ```
@@ -159,8 +157,8 @@ sc=s=>{
 ```js
 //length=117
 sc = s => {
-  var l='toLowerCase',
-      u='toUpperCase'
+  var l = 'toLowerCase',
+    u = 'toUpperCase'
   return s.split('').filter(
     v => s.includes(v[l]()) && s.includes(v[u]())
   ).join('')
@@ -172,8 +170,8 @@ sc = s => {
 ```js
 //length=113
 sc = s => {
-  l='toLowerCase',
-  u='toUpperCase'
+  l = 'toLowerCase',
+    u = 'toUpperCase'
   return s.split('').filter(
     v => s.includes(v[l]()) && s.includes(v[u]())
   ).join('')

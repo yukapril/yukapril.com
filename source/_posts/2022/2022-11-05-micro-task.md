@@ -18,50 +18,50 @@ tags:  [js, 宏任务, 微任务]
 
 ```js
 const p1 = new Promise((resolve) => {
-  console.log("promise1");
-  resolve();
+   console.log("promise1");
+   resolve();
 });
 const p2 = new Promise((resolve) => {
-  console.log("promise2");
-  resolve();
+   console.log("promise2");
+   resolve();
 });
 const p3 = new Promise((resolve) => {
-  console.log("promise3");
-  resolve();
+   console.log("promise3");
+   resolve();
 });
 const p4 = new Promise((resolve) => {
-  console.log("promise4");
-  resolve();
+   console.log("promise4");
+   resolve();
 });
 
 console.log("start");
 
 setTimeout(() => {
-  console.log("setTimeout1-run");
-  setTimeout(() => {
-    console.log("setTimeout1-setTimeout-run");
-  });
+   console.log("setTimeout1-run");
+   setTimeout(() => {
+      console.log("setTimeout1-setTimeout-run");
+   });
 });
 
 setTimeout(() => {
-  console.log("setTimeout2-run");
-  p3.then(() => {
-    console.log("setTimeout2-promise-run");
-  });
+   console.log("setTimeout2-run");
+   p3.then(() => {
+      console.log("setTimeout2-promise-run");
+   });
 });
 
 setTimeout(() => {
-  console.log("setTimeout3-run");
-  p4.then(() => {
-    console.log("setTimeout3-promise-run");
-  });
+   console.log("setTimeout3-run");
+   p4.then(() => {
+      console.log("setTimeout3-promise-run");
+   });
 });
 
 p1.then(() => {
-  console.log("promise1-run");
+   console.log("promise1-run");
 });
 p2.then(() => {
-  console.log("promise2-run");
+   console.log("promise2-run");
 });
 
 console.log("end");

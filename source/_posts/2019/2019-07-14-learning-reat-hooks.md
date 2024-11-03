@@ -2,8 +2,8 @@
 layout: post
 title: React Hooks 入门
 date: 2019-07-14 10:45:00 GMT+0800
-categories: [前端]
-tags:  [react, hooks]
+categories: [ 前端 ]
+tags: [ react, hooks ]
 ---
 
 学习使用 react-hooks 语法。
@@ -17,11 +17,13 @@ tags:  [react, hooks]
 官方分了类，一类基础，一类扩展。其实常用的不多，主要还是 `useState`、`useEffect`、`useRef`、`useCallback`(`useMemo`和它差不多)。
 
 **Basic Hooks**
+
 * useState
 * useEffect
 * useContext
 
 **Additional Hooks**
+
 * useReducer
 * useCallback
 * useMemo
@@ -39,9 +41,9 @@ function Counter() {
   // 这样写是可以的，hooks 每次都必定执行到
   const [count, setCount] = useState(0)
   const [timer, setTimer] = useState(0)
-    
+
   // 这样是不行的，因为 hooks 有的时候可能不会被执行
-  if(condition) {
+  if (condition) {
     const [data, setData] = useState([])
   }
   // ...
@@ -63,11 +65,11 @@ function Counter() {
 ```jsx
 function Counter() {
   const [count, setCount] = useState(0)
-  
+
   const handleClick = () => {
     setCount(count + 1)
   }
-  
+
   return (
     <div>
       <p>You clicked {count} times</p>
@@ -86,7 +88,7 @@ function Counter() {
 ```jsx
 function Counter() {
   const [count, setCount] = useState(0)
-  
+
   const handleClick = () => {
     setCount(count + 1)
   }
@@ -105,11 +107,12 @@ function Counter() {
 ```
 
 #### 传入函数
- 
+
 虽然第二个参数没有了，但是第一个参数还可以是一个函数：
 
 ```jsx
-setState(state => {})
+setState(state => {
+})
 ```
 
 比如上文的代码，可以调整为：
@@ -160,7 +163,7 @@ function Test() {
   const handleInput1Change = e => {
     setValue1(e.target.value)
   }
-  
+
   const handleInput2Change = e => {
     setValue2(e.target.value)
   }
@@ -180,17 +183,17 @@ function Test() {
       <input
         value={value1}
         onChange={handleInput1Change}
-        style={ { border: '1px solid #333' } }
+        style={{border: '1px solid #333'}}
         placeholder="username"
       />
-      <br />
+      <br/>
       <input
         value={value2}
         onChange={handleInput2Change}
-        style={ { border: '1px solid #333' } }
+        style={{border: '1px solid #333'}}
         placeholder="password"
       />
-      <br />
+      <br/>
       <p>allowed:{allowed ? 'yes' : 'no'}</p>
     </div>
   )
@@ -204,23 +207,23 @@ function Test() {
 再给出一个需要取消副作用的例子（例子的实际意义不好，仅做代码演示）：
 
 ```jsx
-  // 仅当输入内容长度均大于5位后，才考虑自动提交数据
-  // 并在提交前提供3秒延迟
-  // 这个例子就是常见的防抖
-  useEffect(() => {
-    setAllowed(value1 && value2)
-    let ref = null
-    if (value1.length >= 5 && value2.length >= 5) {
-      console.log('启动定时器打印log')
-      ref = setTimeout(() => {
-        console.log('log', value1, value2)
-      }, 3000)
-    }
-    return () => {
-      console.log('清理定时器')
-      clearTimeout(ref)
-    }
-  }, [value1, value2])
+// 仅当输入内容长度均大于5位后，才考虑自动提交数据
+// 并在提交前提供3秒延迟
+// 这个例子就是常见的防抖
+useEffect(() => {
+  setAllowed(value1 && value2)
+  let ref = null
+  if (value1.length >= 5 && value2.length >= 5) {
+    console.log('启动定时器打印log')
+    ref = setTimeout(() => {
+      console.log('log', value1, value2)
+    }, 3000)
+  }
+  return () => {
+    console.log('清理定时器')
+    clearTimeout(ref)
+  }
+}, [value1, value2])
 ```
 
 返回清理函数的情况，大部分是处理定时器或者发出一个 ajax 请求后，需要中断处理的情况。
@@ -268,12 +271,12 @@ function Test() {
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         ref={inputRef}
-        style={ { border: '1px solid #333' } }
+        style={{border: '1px solid #333'}}
       />
-      <button onClick={handleBtnClick} style={ { border: '1px solid #333' } }>
+      <button onClick={handleBtnClick} style={{border: '1px solid #333'}}>
         click for focus
       </button>
-      <br />
+      <br/>
       <p>focus:{isFocus ? 'yes' : 'no'}</p>
     </div>
   )
@@ -303,12 +306,12 @@ function Test() {
   return (
     <div>
       <span>counter:{count}</span>&nbsp;&nbsp;
-      <button onClick={handleAddClick} style={ { border: '1px solid #333' } }>
+      <button onClick={handleAddClick} style={{border: '1px solid #333'}}>
         +1
       </button>
-      <br />
-      <br />
-      <button onClick={handleAlertClick} style={ { border: '1px solid #333' } }>
+      <br/>
+      <br/>
+      <button onClick={handleAlertClick} style={{border: '1px solid #333'}}>
         alert
       </button>
     </div>
@@ -351,12 +354,12 @@ function Test() {
   return (
     <div>
       <span>counter:{count}</span>&nbsp;&nbsp;
-      <button onClick={handleAddClick} style={ { border: '1px solid #333' } }>
+      <button onClick={handleAddClick} style={{border: '1px solid #333'}}>
         +1
       </button>
-      <br />
-      <br />
-      <button onClick={handleAlertClick} style={ { border: '1px solid #333' } }>
+      <br/>
+      <br/>
+      <button onClick={handleAlertClick} style={{border: '1px solid #333'}}>
         alert
       </button>
     </div>
@@ -387,11 +390,11 @@ function Child() {
 }
 
 function Parent() {
-  const [data, setData] = useState({ name: 'tim', age: 20 })
+  const [data, setData] = useState({name: 'tim', age: 20})
   return (
     <DataContext.Provider value={data}>
       <div>
-        <Child />
+        <Child/>
       </div>
     </DataContext.Provider>
   )
@@ -400,24 +403,23 @@ function Parent() {
 
 唯一要说明的就是，`Provider` 的传值属性必须是 `value`。所以要么传一个值，要么传一个对象。
 
-
 ## useReducer
 
 `useReducer` 使用起来非常简单，不管是否接触过 Redux，都能容易上手。
 
 ```jsx
-const initialState = { count: 0 }
+const initialState = {count: 0}
 
 function reducer(state, action) {
   switch (action.type) {
     case 'increment':
-      return { count: state.count + 1 }
+      return {count: state.count + 1}
     case 'incrementAny':
-      return { count: state.count + action.count }
+      return {count: state.count + action.count}
     case 'decrement':
-      return { count: state.count - 1 }
+      return {count: state.count - 1}
     default:
-      return { count: state.count }
+      return {count: state.count}
   }
 }
 
@@ -426,10 +428,10 @@ function Counter() {
   return (
     <div>
       Count: {state.count}
-      <br />
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-      <button onClick={() => dispatch({ type: 'incrementAny', count: 5 })}>
+      <br/>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'incrementAny', count: 5})}>
         +5
       </button>
     </div>
@@ -477,8 +479,8 @@ function Counter() {
 
   return (
     <div>
-      <input onChange={handleInput1Change} value={val1} />
-      <input onChange={handleInput2Change} value={val2} />
+      <input onChange={handleInput1Change} value={val1}/>
+      <input onChange={handleInput2Change} value={val2}/>
       <p>sum:{memoized}</p>
     </div>
   )
@@ -488,7 +490,7 @@ function Counter() {
 如果要用 `useCallback`，上文需要调整一点就可以了。官方给出了两者关系，如下：
 
 ```jsx
-useCallback(fn, deps) 
+useCallback(fn, deps)
 useMemo(() => fn, deps)
 ```
 
@@ -505,4 +507,5 @@ const memoized = useMemo(() => {
 
 根据我这一段时间的使用，基本上没遇到太多坑，也就是参考上文的这些处理方法基本都可解决。
 
-唯独要注意的是，hooks 里面不要使用 `setInterval`，一言难尽，建议看 react 原作者文章（[见此](https://overreacted.io/zh-hans/making-setinterval-declarative-with-react-hooks)），解释的很清晰，也有直接用的 `useInterval` 方案。
+唯独要注意的是，hooks 里面不要使用 `setInterval`，一言难尽，建议看 react 原作者文章（[见此](https://overreacted.io/zh-hans/making-setinterval-declarative-with-react-hooks)），解释的很清晰，也有直接用的
+`useInterval` 方案。

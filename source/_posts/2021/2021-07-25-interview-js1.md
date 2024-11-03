@@ -2,8 +2,8 @@
 layout: post
 title: 面试题（compose 函数组合）
 date: 2021-07-25 12:08:00 GMT+0800
-categories: [前端]
-tags:  [面试,compose]
+categories: [ 前端 ]
+tags: [ 面试,compose ]
 ---
 
 redux 有一个方法 `compose`。如何实现？
@@ -88,14 +88,14 @@ export default function compose(...funcs: Function[]) {
 // 有一个函数 fn，支持一个数字参数 n
 // 将数字带入一个复杂的 complexFunc 函数中可以进行计算
 const fn = n => {
-    return complexFunc(n) // 此计算非常耗时
+  return complexFunc(n) // 此计算非常耗时
 }
 
 // 经过统计分析，95%情况下，入参n=100/200。而且返回值此时固定是 'abc'/'def'
 // 那么可以进行优化为
 const fn = n => {
-  if(n === 100) return 'abc'
-  if(n === 200) return 'def'
+  if (n === 100) return 'abc'
+  if (n === 200) return 'def'
   return complexFunc(n) // 此计算非常耗时
 }
 

@@ -2,8 +2,8 @@
 layout: post
 title: "jekyll 下文章无法显示双大括号{{ }}和{% %}的处理"
 date: 2017-03-01 21:25:00 GMT+0800
-categories: [前端]
-tags:  [jekyll,括号,转义]
+categories: [ 前端 ]
+tags: [ jekyll,括号,转义 ]
 ---
 
 在前些天写一篇渲染的文章时候，文章内容反复出现了 `{ { name } }` 这种格式的代码。
@@ -26,23 +26,22 @@ jekyll 会把模板中 `{ { ... } }` 当做语法串进行处理，最终传输�
 
 ```js
 var fixBrace = function () {
-    var list = document.querySelectorAll('code');
-    list.forEach(function(item){
-        if (item.innerHTML.indexOf('\\{\\{') >= 0) {
-            item.innerHTML = item.innerHTML.replace(/\\{\\{/g,'{ {');
-        } 
-        if (item.innerHTML.indexOf('\\}\\}') >= 0) {
-            item.innerHTML = item.innerHTML.replace(/\\}\\}/g,'} }');
-        }
-        if (item.innerHTML.indexOf('\\{\\%') >= 0) {
-            item.innerHTML = item.innerHTML.replace(/\\{\\%/g,'\{\%');
-        }
-        if (item.innerHTML.indexOf('\\%\\}') >= 0) {
-            item.innerHTML = item.innerHTML.replace(/\\%\\}/g,'\%\}');
-        }
-    });
+  var list = document.querySelectorAll('code');
+  list.forEach(function (item) {
+    if (item.innerHTML.indexOf('\\{\\{') >= 0) {
+      item.innerHTML = item.innerHTML.replace(/\\{\\{/g, '{ {');
+    }
+    if (item.innerHTML.indexOf('\\}\\}') >= 0) {
+      item.innerHTML = item.innerHTML.replace(/\\}\\}/g, '} }');
+    }
+    if (item.innerHTML.indexOf('\\{\\%') >= 0) {
+      item.innerHTML = item.innerHTML.replace(/\\{\\%/g, '\{\%');
+    }
+    if (item.innerHTML.indexOf('\\%\\}') >= 0) {
+      item.innerHTML = item.innerHTML.replace(/\\%\\}/g, '\%\}');
+    }
+  });
 };
 ```
-
 
 完毕，搞定。

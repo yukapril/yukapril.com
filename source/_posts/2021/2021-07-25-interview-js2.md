@@ -2,8 +2,8 @@
 layout: post
 title: 面试题（判断对象类型、数组拍平、字符重复）
 date: 2021-07-25 12:22:00 GMT+0800
-categories: [前端]
-tags:  [面试,type,flat,repeat]
+categories: [ 前端 ]
+tags: [ 面试,type,flat,repeat ]
 ---
 
 这次的题目都不太复杂。但是深究起来还挺难的。
@@ -60,7 +60,7 @@ const arr = [
   1, 2, 3, 4,
   [1, 2, 3, [1, 2, 3, [1, 2, 3]]],
   5, 'string',
-  { name: '弹铁蛋同学' }
+  {name: '弹铁蛋同学'}
 ]
 ```
 

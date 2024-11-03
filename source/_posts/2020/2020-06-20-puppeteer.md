@@ -1,9 +1,9 @@
 ---
 layout: post
-title: puppeteer 安装和启动 
+title: puppeteer 安装和启动
 date: 2020-06-20 16:30:00 GMT+0800
-categories: [前端]
-tags:  [puppeteer,npm]
+categories: [ 前端 ]
+tags: [ puppeteer,npm ]
 ---
 
 puppeteer 入门其实挺容易的，但是想安装成功确有难度。自己找了点配置，贴出来算作备份。
@@ -73,11 +73,9 @@ const log = (...args) => {
   const page0 = await browser.newPage()
   await page0.emulate(iPhone6P)
   await page0.goto('https://m.so.com')
-  await page0.type('.search-txt', 'yukapril', { delay: 100 })
+  await page0.type('.search-txt', 'yukapril', {delay: 100})
   await page0.click('.search-btn')
 })()
 ```
-
-
 
 --END--

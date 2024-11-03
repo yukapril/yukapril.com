@@ -2,8 +2,8 @@
 layout: post
 title: js 数组扁平化与反扁平化处理（上）
 date: 2018-06-26 00:56:00 GMT+0800
-categories: [前端]
-tags:  [扁平化]
+categories: [ 前端 ]
+tags: [ 扁平化 ]
 ---
 
 在做业管项目时候，遇到老的接口返回的是扁平化的数据结构，但是使用 ElementUI 的 `树状控件` （ `Tree` ）时候，他需要的是非扁平化的数据结构，这就需要对数据进行一次处理了。
@@ -18,15 +18,15 @@ tags:  [扁平化]
 
 ```js
 const flattenedArr = [
-    { id: 1, text: 'A' },
-    { id: 2, text: 'B' },
-    { id: 3, text: 'C' },
-    { id: 4, text: 'A1', pid: 1 },
-    { id: 5, text: 'A2', pid: 1 },
-    { id: 6, text: 'B1', pid: 2 },
-    { id: 7, text: 'B2', pid: 2 },
-    { id: 8, text: 'B21', pid: 7 },
-    { id: 9, text: 'B22', pid: 7 }
+  {id: 1, text: 'A'},
+  {id: 2, text: 'B'},
+  {id: 3, text: 'C'},
+  {id: 4, text: 'A1', pid: 1},
+  {id: 5, text: 'A2', pid: 1},
+  {id: 6, text: 'B1', pid: 2},
+  {id: 7, text: 'B2', pid: 2},
+  {id: 8, text: 'B21', pid: 7},
+  {id: 9, text: 'B22', pid: 7}
 ]
 ```
 
@@ -34,33 +34,33 @@ const flattenedArr = [
 
 ```js
 [
-    {
-        id: 1,
-        text: "A",
+  {
+    id: 1,
+    text: "A",
+    children: [
+      {id: 4, text: "A1"},
+      {id: 5, text: "A2"}
+    ]
+  },
+  {
+    id: 2,
+    text: "B",
+    children: [
+      {id: 6, text: "B1"},
+      {
+        id: 7,
+        text: "B2",
         children: [
-            {id: 4, text: "A1"},
-            {id: 5, text: "A2"}
+          {id: 8, text: "B21"},
+          {id: 9, text: "B22"}
         ]
-    },
-    {
-        id: 2,
-        text: "B",
-        children: [
-            {id: 6, text: "B1"},
-            {
-                id: 7,
-                text: "B2",
-                children: [
-                    {id: 8, text: "B21"},
-                    {id: 9, text: "B22"}
-                ]
-            }
-        ]
-    },
-    {
-    	id: 3, 
-    	text: "C"
-    }
+      }
+    ]
+  },
+  {
+    id: 3,
+    text: "C"
+  }
 ]
 ```
 
@@ -76,18 +76,18 @@ const flattenedArr = [
 
 ```js
 const unflattened = arr => {
-    // 拷贝一下原有数组，防止后续修改会影响原数组
-    const flattenedArr = JSON.parse(JSON.stringify(arr))
-    
-    // 临时缓存索引(id 为下标的对象)
-    // 大致这个样子 { 1:{},2:{},3:{} }
-    let cache = {}  
-    
-    flattenedArr.forEach(item => {
-        // 使用 id 做缓存索引
-        // 之后只需要知道 id，就可以直接找到数据对象
-        cache[item.id] = item
-    })
+  // 拷贝一下原有数组，防止后续修改会影响原数组
+  const flattenedArr = JSON.parse(JSON.stringify(arr))
+
+  // 临时缓存索引(id 为下标的对象)
+  // 大致这个样子 { 1:{},2:{},3:{} }
+  let cache = {}
+
+  flattenedArr.forEach(item => {
+    // 使用 id 做缓存索引
+    // 之后只需要知道 id，就可以直接找到数据对象
+    cache[item.id] = item
+  })
 }
 ```
 
@@ -103,21 +103,21 @@ console.log(item)
 
 ```js
 const unflattened = arr => {
-    // 拷贝一下原有数组，防止后续修改会影响原数组
-    const flattenedArr = JSON.parse(JSON.stringify(arr))
-    
-    // 临时缓存索引(id 为下标的对象)
-    // 大致这个样子 { 1:{},2:{},3:{} }
-    let cache = {}  
-    
-    flattenedArr.forEach(item => {
-++++    // 每一个元素都加上 children 字段
-++++    item.children = []
-        
-        // 使用 id 做缓存索引
-        // 之后只需要知道 id，就可以直接找到数据对象
-        cache[item.id] = item
-    })
+  // 拷贝一下原有数组，防止后续修改会影响原数组
+  const flattenedArr = JSON.parse(JSON.stringify(arr))
+
+  // 临时缓存索引(id 为下标的对象)
+  // 大致这个样子 { 1:{},2:{},3:{} }
+  let cache = {}
+
+  flattenedArr.forEach(item => {
+    // 每一个元素都加上 children 字段
+    item.children = []
+
+    // 使用 id 做缓存索引
+    // 之后只需要知道 id，就可以直接找到数据对象
+    cache[item.id] = item
+  })
 }
 ```
 
@@ -131,37 +131,33 @@ const unflattened = arr => {
 
 ```js
 const unflattened = arr => {
-    // 拷贝一下原有数组，防止后续修改会影响原数组
-    const flattenedArr = JSON.parse(JSON.stringify(arr))
-    
-    // 临时缓存索引(id 为下标的对象)
-    // 大致这个样子 { 1:{},2:{},3:{} }
-    let cache = {}  
-    
-++++ // 最终要返回的非扁平化数组
-++++ let unflattenedArr = []
-++++ // 存放非根结点的数组
-++++ let tempArr = []
-    
-    flattenedArr.forEach(item => {
-        // 每一个元素都加上 children 字段
-        item.children = []
-        
-        // 使用 id 做缓存索引
-        // 之后只需要知道 id，就可以直接找到数据对象
-        cache[item.id] = item
-        
-++++    if (!item.pid) {
-++++        // 不存在 pid 属性，当前元素为根结点
-++++        // 直接放到最终的返回对象里面，后续元素可以直接挂载
-++++        unflattenedArr.push(item)
-++++    } else {
-++++        // 子节点，放到新对象里面，后续会用到
-++++        tempArr.push(item)
-++++    }
-    })
-    
-++++ return unflattenedArr
+  // 拷贝一下原有数组，防止后续修改会影响原数组
+  const flattenedArr = JSON.parse(JSON.stringify(arr))
+
+  // 临时缓存索引(id 为下标的对象)
+  // 大致这个样子 { 1:{},2:{},3:{} }
+  let cache = {}
+  // 最终要返回的非扁平化数组
+  let unflattenedArr = []
+  // 存放非根结点的数组
+  let tempArr = []
+
+  flattenedArr.forEach(item => {
+    // 每一个元素都加上 children 字段
+    item.children = []
+    // 使用 id 做缓存索引
+    // 之后只需要知道 id，就可以直接找到数据对象
+    cache[item.id] = item
+    if (!item.pid) {
+      // 不存在 pid 属性，当前元素为根结点
+      // 直接放到最终的返回对象里面，后续元素可以直接挂载
+      unflattenedArr.push(item)
+    } else {
+      // 子节点，放到新对象里面，后续会用到
+      tempArr.push(item)
+    }
+  })
+  return unflattenedArr
 }
 ```
 
@@ -171,45 +167,45 @@ const unflattened = arr => {
 
 ```js
 const unflattened = arr => {
-    // 拷贝一下原有数组，防止后续修改会影响原数组
-    const flattenedArr = JSON.parse(JSON.stringify(arr))
-    
-    // 临时缓存索引(id 为下标的对象)
-    // 大致这个样子 { 1:{},2:{},3:{} }
-    let cache = {}  
-    
-    // 最终要返回的非扁平化数组
-    let unflattenedArr = []
-    // 存放非根结点的数组
-    let tempArr = []
-    
-    flattenedArr.forEach(item => {
-        // 每一个元素都加上 children 字段
-        item.children = []
-        
-        // 使用 id 做缓存索引
-        // 之后只需要知道 id，就可以直接找到数据对象
-        cache[item.id] = item
-        
-        if (!item.pid) {
-            // 不存在 pid 属性，当前元素为根结点
-            // 直接放到最终的返回对象里面，后续元素可以直接挂载
-            unflattenedArr.push(item)
-        } else {
-            // 子节点，放到新对象里面，后续会用到
-            tempArr.push(item)
-        }
-    })
-    
-++++ // 处理非根子节点
-++++ tempArr.forEach(item => {
-++++     // 当前 item 的父节点 id 
-++++     const pid = item.pid
-++++     // 通过上面的 cache 索引，直接将子节点挂到对应的父节点上
-++++     cache[pid].children.push(item)
-++++ })
-    
-    return unflattenedArr
+  // 拷贝一下原有数组，防止后续修改会影响原数组
+  const flattenedArr = JSON.parse(JSON.stringify(arr))
+
+  // 临时缓存索引(id 为下标的对象)
+  // 大致这个样子 { 1:{},2:{},3:{} }
+  let cache = {}
+
+  // 最终要返回的非扁平化数组
+  let unflattenedArr = []
+  // 存放非根结点的数组
+  let tempArr = []
+
+  flattenedArr.forEach(item => {
+    // 每一个元素都加上 children 字段
+    item.children = []
+
+    // 使用 id 做缓存索引
+    // 之后只需要知道 id，就可以直接找到数据对象
+    cache[item.id] = item
+
+    if (!item.pid) {
+      // 不存在 pid 属性，当前元素为根结点
+      // 直接放到最终的返回对象里面，后续元素可以直接挂载
+      unflattenedArr.push(item)
+    } else {
+      // 子节点，放到新对象里面，后续会用到
+      tempArr.push(item)
+    }
+  })
+
+  // 处理非根子节点
+  tempArr.forEach(item => {
+    // 当前 item 的父节点 id
+    const pid = item.pid
+    // 通过上面的 cache 索引，直接将子节点挂到对应的父节点上
+    cache[pid].children.push(item)
+  })
+
+  return unflattenedArr
 }
 ```
 
@@ -217,60 +213,60 @@ const unflattened = arr => {
 
 ```js
 [
-    {
-        "id": 1,
-        "text": "A",
-        "children": [
-            {
-                "id": 4,
-                "text": "A1",
-                "pid": 1,
-                "children": []
-            },
-            {
-                "id": 5,
-                "text": "A2",
-                "pid": 1,
-                "children": []
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "text": "B",
-        "children": [
-            {
-                "id": 6,
-                "text": "B1",
-                "pid": 2,
-                "children": []
-            },
-            {
-                "id": 7,
-                "text": "B2",
-                "pid": 2,
-                "children": [
-                    {
-                        "id": 8,
-                        "text": "B21",
-                        "pid": 7,
-                        "children": []
-                    },
-                    {
-                        "id": 9,
-                        "text": "B22",
-                        "pid": 7,
-                        "children": []
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "text": "C",
+  {
+    "id": 1,
+    "text": "A",
+    "children": [
+      {
+        "id": 4,
+        "text": "A1",
+        "pid": 1,
         "children": []
-    }
+      },
+      {
+        "id": 5,
+        "text": "A2",
+        "pid": 1,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "text": "B",
+    "children": [
+      {
+        "id": 6,
+        "text": "B1",
+        "pid": 2,
+        "children": []
+      },
+      {
+        "id": 7,
+        "text": "B2",
+        "pid": 2,
+        "children": [
+          {
+            "id": 8,
+            "text": "B21",
+            "pid": 7,
+            "children": []
+          },
+          {
+            "id": 9,
+            "text": "B22",
+            "pid": 7,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "text": "C",
+    "children": []
+  }
 ]
 ```
 
@@ -283,11 +279,11 @@ const unflattened = arr => {
 
 ```js
 Object.keys(cache).forEach(id => {
-    const item = cache[id]
-    if (item.children.length === 0) {
-        delete item.children
-    }
-    delete item.pid
+  const item = cache[id]
+  if (item.children.length === 0) {
+    delete item.children
+  }
+  delete item.pid
 })
 ```
 

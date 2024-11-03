@@ -2,8 +2,8 @@
 layout: post
 title: npm 私服 - 源管理及私有包管理篇
 date: 2020-12-16 21:13:00 GMT+0800
-categories: [前端]
-tags:  [npm,私服,Verdaccio,nexus]
+categories: [ 前端 ]
+tags: [ npm,私服,Verdaccio,nexus ]
 ---
 
 上一篇文章介绍了私服的搭建，这次我们来说如何切换到私服上。
@@ -80,7 +80,6 @@ npm publish
 ```
 
 如果私服是 nexus，则需要继续往下看。
-
 
 因为此时你执行上面命令直接发布包，会报错的，上篇文章已经提到，group 链接非 PRO-licensed 是不让提交的。
 

@@ -2,8 +2,8 @@
 layout: post
 title: iOS disabled 颜色样式过浅问题
 date: 2021-04-28 21:11:00 GMT+0800
-categories: [前端]
-tags:  [disabled]
+categories: [ 前端 ]
+tags: [ disabled ]
 ---
 
 之前一次在做输入框 `disabled` 时候，发现电脑浏览器模拟没问题，安卓手机没问题，但是 iPhone 手机竟然获取不到内容。反复排查，才发现是输入框中有内容，但是文字颜色太浅了，导致肉眼极难看见。
@@ -60,12 +60,12 @@ tags:  [disabled]
 
 实际安卓手机效果图：
 
-![安卓效果](https://cdn0.yukapril.com/2021-04-28-disabled-1.png-wm.black)
+![安卓效果](https://cdn1.yukapril.com/2021-04-28-disabled-1.png)
 
 实际 iPhone 效果图：
 
 > 直接修改 `disabled` 颜色，会导致文字特别浅，配合灰色背景很可能看不到。
 
-![iPhone 效果](https://cdn0.yukapril.com/2021-04-28-disabled-2.png-wm.black)
+![iPhone 效果](https://cdn1.yukapril.com/2021-04-28-disabled-2.png)
 
 --END--

@@ -2,8 +2,8 @@
 layout: post
 title: "苹果MAC系统读写NTFS格式u盘硬盘方法"
 date: 2017-04-22 16:04:00 GMT+0800
-categories: [技术]
-tags:  [MAC,NFTS,U盘]
+categories: [ 技术 ]
+tags: [ MAC,NFTS,U盘 ]
 ---
 
 平时用U盘传数据时候，如果是windows或者linux，一般不会有问题，但是如果要从MAC下拷文件，那基本上就会遇到无法写入NTFS格式U盘的问题。
@@ -71,7 +71,7 @@ LABEL=KINGSTON none ntfs rw,auto,nobrowse
 
 至于含义，我也不懂，粘贴如下：
 
->后面的ntfs rw表示把这个分区挂载为可读写的ntfs格式
+> 后面的ntfs rw表示把这个分区挂载为可读写的ntfs格式
 >
 >最后nobrowse非常重要，因为这个代表了在finder里不显示这个分区，这个选项非常重要，如果不打开的话挂载是不会成功的。
 

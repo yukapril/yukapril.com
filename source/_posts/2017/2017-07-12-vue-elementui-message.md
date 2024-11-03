@@ -2,8 +2,8 @@
 layout: post
 title: "elementUI Message 独立引入的用法"
 date: 2017-07-12 13:04:00 GMT+0800
-categories: [前端]
-tags:  [vue,elementUI]
+categories: [ 前端 ]
+tags: [ vue,elementUI ]
 ---
 
 今天在做项目时候，用到了 elementUI 的 Message 组件。因为我是按需 `import` 引入的方法，结果按照原本的文档API代码不生效。
@@ -41,7 +41,8 @@ export default {
 但是如果是单独引入的，就只能在某个vue单文件组件中这样来实现：
 
 ```js
-import { Message } from 'element-ui';
+import {Message} from 'element-ui';
+
 export default {
   methods: {
     open() {
@@ -59,6 +60,7 @@ export default {
 
 ```js
 import Message from './src/main.js';
+
 export default Message;
 ```
 
@@ -83,6 +85,7 @@ Vue.use(Message)
 ```
 
 当然，也可以不用 Vue.use 来实现，比如直接写在 Vue 实例上：
+
 ```js
 // 和其他组件一样，一并引入
 import {Button, Message} from 'element-ui'
