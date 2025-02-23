@@ -79,7 +79,7 @@ const config = {
     },
     algolia: {
       appId: 'WVWYYBVS2P',
-      apiKey: '8f454d5d4c9b032d6417a248a0d58585',  // 只读 API Key（不是管理员 Key）
+      apiKey: '11381652305be8b9f002fc1fad8fcb49',  // 只读 API Key（不是管理员 Key）
       indexName: 'Blog',
       contextualSearch: false, // 是否开启上下文搜索
       searchParameters: {}, // 可选：传递给 Algolia API 的搜索参数
