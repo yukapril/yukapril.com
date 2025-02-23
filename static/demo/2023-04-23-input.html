@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>input</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+
+        section {
+            padding: 4px 10px;
+        }
+
+        code {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>input type</h1>
+    <section>
+        <h2>写法1: 非表单中的 input</h2>
+        <code>&lt;div&gt;&lt;input type=&quot;text&quot;/&gt;&lt;/div&gt;</code>
+        <div><input type="text"/></div>
+    </section>
+    <section>
+        <h2>写法2: 没有 action 的 type="text"</h2>
+        <code>&lt;form&gt;&lt;input type=&quot;text&quot;/&gt;&lt;/form&gt;</code>
+        <form><input type="text"/></form>
+    </section>
+    <section>
+        <h2>写法3: input type="text"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text"/></form>
+    </section>
+    <section>
+        <h2>写法4: input type="search"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;search&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="search"/></form>
+    </section>
+    <section>
+        <h2>写法5: input type="number"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;number&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="number" id="J_Number"/></form>
+    </section>
+    <section>
+        <h2>写法6: input type="tel"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;tel&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="tel"/></form>
+    </section>
+    <section>
+        <h2>写法7: input type="url"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;url&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="url"/></form>
+    </section>
+    <section>
+        <h2>写法8: input type="email"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;email&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="email"/></form>
+    </section>
+    <section>
+        <h2>写法9: input type="password"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;password&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="password"/></form>
+    </section>
+</div>
+
+<div>
+    <h1>input inputmode</h1>
+    <section>
+        <h2>写法1: input inputmode="none"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;none&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="none"/></form>
+    </section>
+    <section>
+        <h2>写法2: input inputmode="text"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;text&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="text"/></form>
+    </section>
+    <section>
+        <h2>写法3: input inputmode="decimal"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;decimal&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="decimal"/></form>
+    </section>
+    <section>
+        <h2>写法4: input inputmode="numeric"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;numeric&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="numeric"/></form>
+    </section>
+    <section>
+        <h2>写法5: input inputmode="tel"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;tel&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="tel"/></form>
+    </section>
+    <section>
+        <h2>写法6: input inputmode="search"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;search&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="search"/></form>
+    </section>
+    <section>
+        <h2>写法7: input inputmode="email"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;email&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="email"/></form>
+    </section>
+    <section>
+        <h2>写法8: input inputmode="url"</h2>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;text&quot; inputmode=&quot;url&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="text" inputmode="url"/></form>
+    </section>
+</div>
+
+<div>
+    <h1>input type 与 inputmode 混用</h1>
+    <section>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;number&quot; inputmode=&quot;decimal&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="number" inputmode="decimal"/></form>
+    </section>
+    <section>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;search&quot; inputmode=&quot;url&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="search" inputmode="url"/></form>
+    </section>
+    <section>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;tel&quot; inputmode=&quot;url&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="tel" inputmode="url"/></form>
+    </section>
+    <section>
+        <code>&lt;form action=&quot;#&quot;&gt;&lt;input type=&quot;url&quot; inputmode=&quot;tel&quot;/&gt;&lt;/form&gt;</code>
+        <form action="#"><input type="url" inputmode="tel"/></form>
+    </section>
+</div>
+
+</body>
+</html>

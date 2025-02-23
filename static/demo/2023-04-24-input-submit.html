@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>input-submit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            font-size: 16px;
+        }
+    </style>
+    <script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/vConsole/3.12.1/vconsole.min.js"
+            type="application/javascript"></script>
+    <script>new VConsole()</script>
+</head>
+<body>
+<div>
+    <div>
+        <h2>普通元素模式</h2>
+        <input type="text" id="input1"/>
+    </div>
+    <div>
+        <h2>表单模式</h2>
+        <form action="/submit/path" id="form">
+            <input type="text" id="input2"/>
+            <input type="text" id="input3"/>
+            <button>submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+  const input1 = document.getElementById('input1')
+
+  input1.addEventListener('keyup', (e) => {
+    console.log('[INPUT 1] keyup', 'key=' + e.key, 'code=' + e.code, 'keyCode=' + e.keyCode)
+    if (e.key === 'Enter' || e.code === 'Enter' || e.keyCode === 13) {
+      console.log('按下了提交按钮')
+    }
+  })
+
+  const form = document.getElementById('form')
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault() // 阻止默认提交，否则会提交到数据到/submit/path
+    console.log('[FORM] submit')
+  })
+
+  const input2 = document.getElementById('input2')
+  input2.addEventListener('keyup', (e) => {
+    console.log('[INPUT 2] keyup', 'key=' + e.key, 'code=' + e.code, 'keyCode=' + e.keyCode)
+  })
+</script>
+</body>
+</html>
