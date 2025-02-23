@@ -58,6 +58,6 @@ jobs:
         env:
           SECRET_ID: ${{ secrets.CDN_SECRET_ID}}
           SECRET_KEY: ${{ secrets.CDN_SECRET_KEY }}
-          PATHS: "https://knowledge.yukapril.com/"
+          PATHS: "https://www.yukapril.com/"
           FLUSH_TYPE: "flush" # optional
 
